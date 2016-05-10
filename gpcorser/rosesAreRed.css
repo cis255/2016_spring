@@ -1,0 +1,37 @@
+/*
+Filename  : rosesAreRed.css
+Language  : CSS 
+Author    : George Corser (gpcorser@svsu.edu)
+Purpose   : This is a "code poem"
+
+Title     : "Elements of class, rose, are of color red"
+
+Poem, translated into English: 
+
+			Elements of class, rose, are of color red;
+			Elements of class, violet, are of color blue;
+			Elements of class, sugar, are of color sweet;
+			The element with identity, you, is of color sweet, too.
+			
+Submitted : April 26, 2016, to art@SourceCodePoetry.com (http://www.sourcecodepoetry.com/)
+*/
+
+:root {
+  --sweet: #000000;
+}
+
+.rose {
+  color: red; 
+}
+
+.violet {
+  color: blue; 
+}
+
+.sugar {
+  color: var(--sweet);
+}
+
+#you {
+  color: var(--sweet);
+}
