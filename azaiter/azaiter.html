@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- ------------------------------------------------------------------------
+filename  : azaiter.html
+author    : Abdulrahman Zaiter
+date      : 2016-05-10
+email     : azaiter@svsu.edu
+course    : CIS-255
+link      : csis.svsu.edu/~azaiter/cis255/azaiter/azaiter.html
+backup    : https://github.com/azaiter/CIS255
+purpose   : This file serves as a menu for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			jquery and bootstrap CDNs
+external code references in this file: 
+			cis255 course templates, bootstrap css and components
+program structure (design):
+	<head>: 
+		Meta Data
+		TAB TITLE
+		Bootstrap components
+	<body>: 
+		Defined fluid container that includes:
+			cis255Menu Section: dropdown menu in a button group
+			howToCite Section: 3 how to cite sources (University of Arkansas, University of Bedfordshire, Langara Higher Learning Collage ) and a short summary of them.
+		The last part of <body> is the copyright notice.
+
+------------------------------------------------------------------------- -->
+
+<html lang="en">
+
+<head>
+	<!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="copyright" content="Abdulrahman Zaiter">
+	<meta name="author" content="Abdulrahman Zaiter">
+	<meta name="description" content="menu">
+
+	<!-- TAB TITLE -->
+    <title>Abdulrahman Zaiter - CIS255 Menu</title>
+
+	<!-- Start Bootstrap components -->
+	<!-- Latest Jquery needed to run bootstrap -->
+	<script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<!-- End Bootstrap components -->
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<section id="cis255Menu">
+			<h1>CIS 255 Project Index</h1>
+			<p>Please select from the dropdown menu</p>
+			<div class="btn-group">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownAssignments" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					Select Assignment
+					<span class="caret"></span>
+					</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownAssignments">
+							<li><a href="./resume.html">Resume</a></li>
+						</ul>
+				</div>
+			</div>
+		</section>
+		<section id="howToCite">
+			<h1>How to cite source code</h1>
+			<h3>My three sources are :- </h3>
+			<ul>
+				<li>University of Arkansas: <a href="http://uark.libguides.com/CSCE/CitingCode">Citing Programming Code</a>.</li>
+				<li>University of Bedfordshire: <a href="http://lrweb.beds.ac.uk/guides/a-guide-to-referencing/cite_computer_program">How to cite computer programs and source code</a>.</li>
+				<li>Langara Higher Learning Collage: <a href="http://langara.ca/library/research-help/assignment-help/computer-science/_citing-code.html">Citing Programming Code</a>.</li>
+			</ul>
+			<p>
+				In summary: it is very important for a programmer, or a student who's doing a programming course to cite and give credit to the original author whenever he/she (adapt,use,copy) any sort of written code. 
+				This could be done by several ways and formats, all of them agree that the title, original author name, date of code creation and type specifications must be included in a proper way within the main code of the person who is citing the code.
+			</p>
+		</section>
+	</div>
+	<p id="copyright">&copy; 2016 Abdulrahman Zaiter.</p>
+</body>
