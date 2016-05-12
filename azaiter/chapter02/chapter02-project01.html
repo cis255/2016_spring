@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- 
+filename  : chapter02-project01.html
+author    : Abdulrahman Zaiter
+date      : 2016-05-10
+email     : azaiter@svsu.edu
+course    : CIS-255
+link      : csis.svsu.edu/~azaiter/cis255/azaiter/chapter02/chapter02-project01.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a menu for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			most of the file is from chapter 2 source code from : http://wps.pearsoned.com/ecs_connollyhoar_cwwebdev_1/244/62601/16026105.cw/index.html
+external code references in this file: 
+			html share buttons adapted from : https://simplesharebuttons.com/html-share-buttons/
+program structure (design):
+	<head>: 
+		Meta Data
+		TAB TITLE
+		Bootstrap components
+	<body>: 
+		HEADER
+			navigation to : Description - Related Photos - Reviews
+		CONTENT
+			3 sections : Description - Related Photos - Reviews
+		FOOTER
+			The last part of <body> is the copyright notice.
+
+ -->
+<html>
+<head lang="en">
+	<!-- Meta Data -->
+	<meta charset="utf-8"/>
+   	<meta name="copyright" content="Abdulrahman Zaiter">
+	<meta name="author" content="Abdulrahman Zaiter">
+	<meta name="description" content="chapter02 project01">
+	<!-- TAB TITLE -->
+	<title>Share Your Travels -- New York - Central Park</title>
+</head>
+<body>
+	<!-- HEADER -->
+	<header>
+	  <h1>Share Your Travels</h1>
+	  <h2>New York - Central Park</h2>
+	  <nav>
+		<ul>
+		  <li><a href="#description">Description</a></li>
+		  <li><a href="#related">Related Photos</a></li>
+		  <li><a href="#reviews">Reviews</a></li>
+		</ul> 
+	  </nav>
+	</header>
+	
+	<!-- CONTENT -->
+	<article>
+	   <section>
+		   <h3 id="description">Description</h3>
+		   <p>Photo by Randy Connolly</p>
+		   <p>This photo of Conservatory Pond in 
+		   <a href="http://www.centralpark.com/">Central Park</a> in
+		   <a href="newyork.html">New York City</a> was 
+		   taken on October 22, 2011 with a Canon EOS 30D camera. 
+		   </p>
+			<figure>
+			 <a href="images/large-central-park.jpg" target="_blank"><img src="images/central-park.jpg" alt="Central Park" title="Central Park"/></a>
+			 <figcaption>Conservatory Pond in Central Park</figcaption>
+			</figure>
+			<p>Share: 
+			   <a href="mailto:?Subject=Share Your Travels: New York Central and Park&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://csis.svsu.edu/~azaiter/cis255/azaiter/chapter02/chapter02-project01.html#description">
+				<img src="images/social/email_16.png" alt="Email this to someone" />
+			   </a>
+			   <a href="#">
+				<img src="images/social/rss_16.png" alt="Syndicated content" />
+			   </a>
+			   <a href="https://twitter.com/share?url=http://csis.svsu.edu/~azaiter/cis255/azaiter/chapter02/chapter02-project01.html#description&amp;text=From%20CIS255&amp;hashtags=cis255" target="_blank">
+				<img src="images/social/twitter_16.png" alt="Share this on Twitter" />
+			   </a>
+			   <a href="http://www.facebook.com/sharer.php?u=http://csis.svsu.edu/~azaiter/cis255/azaiter/chapter02/chapter02-project01.html#description" target="_blank">
+				<img src="images/social/facebook_16.png" alt="Share this on Facebook" />
+			   </a>
+			   <a href="#">
+				<img src="images/social/flickr_16.png" alt="Share this on Flickr" />
+			   </a>
+		   </p>   
+	   </section>
+	   <section>
+		   <h3 id="related">Related Photos</h3>
+		    <figure>
+				<a href="images/related-large1.jpg" target="_blank"><img src="images/related-square1.jpg" alt="First Photo" title="First Photo"/></a>
+				<a href="images/related-large2.jpg" target="_blank"><img src="images/related-square2.jpg" alt="Second Photo" title="Second Photo"/></a>
+				<a href="images/related-large3.jpg" target="_blank"><img src="images/related-square3.jpg" alt="Third Photo" title="Third Photo"/></a>
+			</figure>
+	   </section>
+	   <section>
+		   <h3 id="reviews">Reviews</h3>
+		   <div>
+			  <p>By Ricardo on <time>September 15, 2015</time></p>
+			  <p>Easy on the HDR buddy.</p>
+		   </div>
+		   <hr/>
+		   <div>
+			  <p>By Susan on <time>October 1, 2015</time></p>
+			  <p>I love Central Park.</p>
+		   </div>
+		   <hr/>
+	   </section>
+	</article>
+	
+	<!-- FOOTER -->
+	<footer>
+		<p>
+		<a href='#'>Home</a> | 
+		<a href='#'>Browse</a> | 
+		<a href='#'>Search</a>
+		</p>
+	  <p><em>Copyright &copy; 2013 Share Your Travels</em></p>
+	</footer>
+</body>
+</html>
