@@ -24,6 +24,7 @@ external code used in this file:
 external code references in this file: 
 			cis255 course templates
 			adapted Colin Mealey resume styling with few edits.
+			CSS3 gradient from W3C School : http://www.w3schools.com/css/css3_gradients.asp
 
 program structure : 
 	<head> 
@@ -47,12 +48,21 @@ program structure :
     <title>Abdulrahman Zaiter - Resume</title>
 	<!-- STYLE -->
 	<style>	
-		body {background-color:#00C861;
+		body {
+			background: blue; /* For browsers that do not support gradients */
+			background: -webkit-linear-gradient(left top, blue, purple); /* For Safari 5.1 to 6.0 */
+			background: -o-linear-gradient( right, blue, purple); /* For Opera 11.1 to 12.0 */
+			background: -moz-linear-gradient( right, blue, purple); /* For Firefox 3.6 to 15 */
+			background: linear-gradient(to right, blue, purple); /* Standard syntax */
 			font-family: 'Roboto', sans-serif;
 			}
 		#main {
-				background-color:#FCC14B;
-				width:80%;
+				background: red; /* For browsers that do not support gradients */
+				background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
+				background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
+				background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
+				background: linear-gradient(to bottom right, red, yellow); /* Standard syntax */
+				width:60%;
 				padding: 20px;
 				margin-left: auto;
 				margin-right: auto;
