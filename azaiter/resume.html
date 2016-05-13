@@ -22,11 +22,16 @@ copyright : GNU General Public License (http://www.gnu.org/licenses/)
 external code used in this file: 
 			none
 external code references in this file: 
-			cis255 course templates	
+			cis255 course templates
+			adapted Colin Mealey resume styling with few edits.
+			CSS3 gradient from W3C School : http://www.w3schools.com/css/css3_gradients.asp
+
 program structure : 
 	<head> 
 		META DATA
+		LINKS
 		TAB TITLE
+		STYLE
 	<body> The sections of the resume: 
 		NAME/ADDRESS, OBJECTIVE, EDUCATION, WORK EXPERIENCE , PROFESSIONAL ASSOCIATONS, COMPUTER SKILLS AND EXPERTISE, HONORS/ AWARDS/ ACTIVITIES
 		The last part of <body> is the copyright notice. 
@@ -37,110 +42,139 @@ program structure :
 	<meta name="copyright" content="Abdulrahman Zaiter">
 	<meta name="author" content="Abdulrahman Zaiter">
 	<meta name="description" content="resume">
+	<!-- LINKS -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 	<!-- TAB TITLE -->
     <title>Abdulrahman Zaiter - Resume</title>
+	<!-- STYLE -->
+	<style>	
+		body {
+			background: blue; /* For browsers that do not support gradients */
+			background: -webkit-linear-gradient(left top, blue, purple); /* For Safari 5.1 to 6.0 */
+			background: -o-linear-gradient( right, blue, purple); /* For Opera 11.1 to 12.0 */
+			background: -moz-linear-gradient( right, blue, purple); /* For Firefox 3.6 to 15 */
+			background: linear-gradient(to right, blue, purple); /* Standard syntax */
+			font-family: 'Roboto', sans-serif;
+			}
+		#main {
+				background: red; /* For browsers that do not support gradients */
+				background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
+				background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
+				background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
+				background: linear-gradient(to bottom right, red, yellow); /* Standard syntax */
+				width:60%;
+				padding: 20px;
+				margin-left: auto;
+				margin-right: auto;
+				box-shadow: 0px 0px 30px #000000;
+				}
+		#photo {
+				box-shadow: 0px 0px 20px #000000;
+				}
+	</style>
 </head>
 
 <body>
 
-	<!-- NAME/ADDRESS -->
-	<section id="info" align="center" >
-		<img src="top.jpg" width="150" height="150" title="Abdulrahman Zaiter" alt="This is Abdulrahman Zaiter after HSPC in SVSU">
-		<h1 align="center"alt="Name">Abdulrahman Zaiter</h1>
-		<p align="center" alt="Address, Phone Number, and Email">
-		7400 Bay Road, University Center, MI 48710, Pine Grove 7805-3B 
-		<br>(989) 493-7928|<a href="mailto:azaiter@svsu.edu">azaiter@svsu.edu</a>
-		</p>
-	</section>
-	
-	<!-- EDUCATION -->
-	<section id="education">
-		<h3 title="Education">EDUCATION</h3>
-		<ul>
-			<li title = "First Bachelor"><strong>Bachelor of Science in Computer Science</strong>, Anticipated: <time>May 2019</time> 
-			<br><a href='http:\\svsu.edu'>Saginaw Valley State University</a>, University Center, MI
-			<br>Minor: <strong>Computer Information Systems</strong>
-			<br>GPA: 4.00/4.00 - President's List 2 Semesters.
-			</li>
-		</ul>
-	</section>
-	
-	<!-- WORK EXPERIENCE -->
-	<section id="work_experiance">
-		<h3>WORK EXPERIENCE</h3>
+	<div id="main" >
+		<!-- NAME/ADDRESS -->
+		<section id="info" align="center" >
+			<img id="photo" src="top.jpg" width="150" height="150" title="Abdulrahman Zaiter" alt="This is Abdulrahman Zaiter after HSPC in SVSU">
+			<h1 align="center"alt="Name">Abdulrahman Zaiter</h1>
+			<p align="center" alt="Address, Phone Number, and Email">
+			7400 Bay Road, University Center, MI 48710, Pine Grove 7805-3B 
+			<br>(989) 493-7928|<a href="mailto:azaiter@svsu.edu">azaiter@svsu.edu</a>
+			</p>
+		</section>
 		
-		<p style="padding-left: 15pt;">
-			<strong>Network Analyst, Student Employee</strong>, <time>December 2015 - Present</time>
-			<br /><a href='http:\\svsu.edu'>Saginaw Valley State University</a>, University Center, MI
+		<!-- EDUCATION -->
+		<section id="education">
+			<h3 title="Education"><font color = "blue">EDUCATION</font></h3>
 			<ul>
-				<li>Responsible for maintaining troubleshooting university's networking devices and their software.</li>
-				<li>Working in cooperation with IT support team to identify and eliminate various networking issues.</li>
+				<li title = "First Bachelor"><strong>Bachelor of Science in Computer Science</strong>, Anticipated: <time>May 2019</time> 
+				<br><a href='http:\\svsu.edu'>Saginaw Valley State University</a>, University Center, MI
+				<br>Minor: <strong>Computer Information Systems</strong>
+				<br>GPA: 4.00/4.00 - President's List 2 Semesters.
+				</li>
 			</ul>
-		</p>
+		</section>
 		
+		<!-- WORK EXPERIENCE -->
+		<section id="work_experiance">
+			<h3><font color = "red">WORK EXPERIENCE</font></h3>
+			
+			<p style="padding-left: 15pt;">
+				<strong>Network Analyst, Student Employee</strong>, <time>December 2015 - Present</time>
+				<br /><a href='http:\\svsu.edu'>Saginaw Valley State University</a>, University Center, MI
+				<ul>
+					<li>Responsible for maintaining troubleshooting university's networking devices and their software.</li>
+					<li>Working in cooperation with IT support team to identify and eliminate various networking issues.</li>
+				</ul>
+			</p>
+			
+			
+			<p style="padding-left: 15pt;">
+				<strong>Co-Manager and IT Administrator, Quat Al-Asefa</strong>, <time>May 2012 - Present</time>
+				<br />Online Game: <a href='http:\\destructive-storm.com'>Destructive-storm.com</a>
+				<ul>
+					<li>Managing an Arabic online game server with more than 26000 users providing an outstanding gaming experience that meets all player’s needs.</li>
+					<li>Administrating most of IT related matters, including server maintenance, programming, database, networking and website management.</li>
+				</ul>
+			</p>
+			
+			<p style="padding-left: 15pt;">
+				<strong>Student Employee, Dining Services</strong>, <time>August 2015 - December 2015</time>
+				<br /><a href='http:\\svsu.edu'>Saginaw Valley State University</a>, University Center, MI
+				<ul>
+					<li>Assisting chefs in making food, gaining interpersonal, communication and teamwork skills.</li>
+					<li>Serving food to a massive amount of SVSU's students and faculty dealing with high volumes in a professional manner.</li>
+				</ul>
+			</p>
+		</section>
 		
-		<p style="padding-left: 15pt;">
-			<strong>Co-Manager and IT Administrator, Quat Al-Asefa</strong>, <time>May 2012 - Present</time>
-			<br />Online Game: <a href='http:\\destructive-storm.com'>Destructive-storm.com</a>
-			<ul>
-				<li>Managing an Arabic online game server with more than 26000 users providing an outstanding gaming experience that meets all player’s needs.</li>
-				<li>Administrating most of IT related matters, including server maintenance, programming, database, networking and website management.</li>
-			</ul>
-		</p>
+		<!-- PROFESSIONAL ASSOCIATONS -->
+		<section id="professional_associations">
+			<h3><font color = "grey">PROFESSIONAL ASSOCIATONS</font></h3>
+			
+			<p style="padding-left: 15pt;">
+				<strong>Webmaster, Association of Computing Machinery (ACM)</strong>, <time>August 2015 - Present</time>
+				<br /><a href='http:\\svsu.edu'>Saginaw Valley State University</a>, University Center, MI
+				<ul>
+					<li>Selected to be one of the webmasters of SVSU's chapter of ACM web page, helping in designing and programming it.</li>
+					<li>Third position in coding and programming skills among all SVSU computer science students in <a href='https://open.kattis.com/universities/svsu.edu'>Kattis coding problems archive</a>.</li>
+				</ul>
+			</p>
+		</section>
 		
-		<p style="padding-left: 15pt;">
-			<strong>Student Employee, Dining Services</strong>, <time>August 2015 - December 2015</time>
-			<br /><a href='http:\\svsu.edu'>Saginaw Valley State University</a>, University Center, MI
-			<ul>
-				<li>Assisting chefs in making food, gaining interpersonal, communication and teamwork skills.</li>
-				<li>Serving food to a massive amount of SVSU's students and faculty dealing with high volumes in a professional manner.</li>
-			</ul>
-		</p>
-	</section>
-	
-	<!-- PROFESSIONAL ASSOCIATONS -->
-	<section id="professional_associations">
-		<h3>PROFESSIONAL ASSOCIATONS</h3>
+		<!-- COMPUTER SKILLS AND EXPERTISE -->
+		<section id="computer_skills">
+		<h3><font color = "red">COMPUTER SKILLS AND EXPERTISE</font></h3>
+			<p style="padding-left: 15pt;">
+				<strong>Programming: </strong>C++, VB.NET, LUA. <strong>Databases: </strong>MSQL, MySQL. <strong>Web Development: </strong>PHP, HTML, CSS.
+				<br><strong>Networking Solutions and Power Management: </strong>HP, Aruba, Tripp Lite. <strong>OS: </strong>Linux/Unix, Windows.
+				<br><strong>Libraries/Tools: </strong>LaTex, Julia, Markdown, STL, MSDOS, IIS7.
+			</p>
+		</section>
 		
-		<p style="padding-left: 15pt;">
-			<strong>Webmaster, Association of Computing Machinery (ACM)</strong>, <time>August 2015 - Present</time>
-			<br /><a href='http:\\svsu.edu'>Saginaw Valley State University</a>, University Center, MI
-			<ul>
-				<li>Selected to be one of the webmasters of SVSU's chapter of ACM web page, helping in designing and programming it.</li>
-				<li>Third position in coding and programming skills among all SVSU computer science students in <a href='https://open.kattis.com/universities/svsu.edu'>Kattis coding problems archive</a>.</li>
-			</ul>
-		</p>
-	</section>
-	
-	<!-- COMPUTER SKILLS AND EXPERTISE -->
-	<section id="computer_skills">
-	<h3>COMPUTER SKILLS AND EXPERTISE</h3>
-		<p style="padding-left: 15pt;">
-			<strong>Programming: </strong>C++, VB.NET, LUA. <strong>Databases: </strong>MSQL, MySQL. <strong>Web Development: </strong>PHP, HTML, CSS.
-			<br><strong>Networking Solutions and Power Management: </strong>HP, Aruba, Tripp Lite. <strong>OS: </strong>Linux/Unix, Windows.
-			<br><strong>Libraries/Tools: </strong>LaTex, Julia, Markdown, STL, MSDOS, IIS7.
-		</p>
-	</section>
-	
-	<!-- HONORS/ AWARDS/ ACTIVITIES -->
-	<section id="awardsAndActivities">
-		<h3>HONORS/ AWARDS/ ACTIVITIES</h3>
-		<p style="padding-left: 15pt;">
-			<strong>Volunteer, </strong>Mathematics Olympics Competition, SVSU, <time>Winter 2016</time>
-			<br><strong>Volunteer, </strong>High School Programming Competition webmaster and room monitor, SVSU, <time>Winter 2016</time>
-			<br><strong>Member, </strong>The National Society of Collegiate Scholars (NSCS), SVSU, <time>February 2016 - Present</time>
-			<br><strong>Member, </strong>Association of Computing Machinery (ACM), SVSU, <time>August 2015 - Present</time>
-			<br><strong>Recipient, </strong>Ming Chuan Endowed Scholarship, SVSU, <time>August 2015 - May 2016</time>
-			<br><strong>Recipient, </strong>Red and White Scholarship, SVSU, <time>January 2015 - Present</time>
-			<br><strong>Volunteer, </strong>Relay for Life, SVSU, <time>March 2015 - March 2015</time>
-			<br><strong>Syrian Ambassador, </strong>International Students club, SVSU, <time>January 2015 - Present</time>
-			<br><strong>Recipient, </strong>Fourth Position Award for Intelligent Free Syrians, Kuwait, <time>June 2014 - June 2014</time>
-		</p>
-	</section>
-	
-	<section id="copyright">
-		<p id="copyright">&copy; 2016 Abdulrahman Zaiter. Resume version: 2016-04-01. </p>
-	</section>
-	
+		<!-- HONORS/ AWARDS/ ACTIVITIES -->
+		<section id="awardsAndActivities">
+			<h3><font color = "green">HONORS/ AWARDS/ ACTIVITIES</font></h3>
+			<p style="padding-left: 15pt;">
+				<strong>Volunteer, </strong>Mathematics Olympics Competition, SVSU, <time>Winter 2016</time>
+				<br><strong>Volunteer, </strong>High School Programming Competition webmaster and room monitor, SVSU, <time>Winter 2016</time>
+				<br><strong>Member, </strong>The National Society of Collegiate Scholars (NSCS), SVSU, <time>February 2016 - Present</time>
+				<br><strong>Member, </strong>Association of Computing Machinery (ACM), SVSU, <time>August 2015 - Present</time>
+				<br><strong>Recipient, </strong>Ming Chuan Endowed Scholarship, SVSU, <time>August 2015 - May 2016</time>
+				<br><strong>Recipient, </strong>Red and White Scholarship, SVSU, <time>January 2015 - Present</time>
+				<br><strong>Volunteer, </strong>Relay for Life, SVSU, <time>March 2015 - March 2015</time>
+				<br><strong>Syrian Ambassador, </strong>International Students club, SVSU, <time>January 2015 - Present</time>
+				<br><strong>Recipient, </strong>Fourth Position Award for Intelligent Free Syrians, Kuwait, <time>June 2014 - June 2014</time>
+			</p>
+		</section>
+		
+		<section id="copyright">
+			<p id="copyright">&copy; 2016 Abdulrahman Zaiter. Resume version: 2016-04-01. </p>
+		</section>
+	</div>
 </body>
 </html>
