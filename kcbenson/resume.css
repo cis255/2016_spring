@@ -1,10 +1,18 @@
-li {
-	list-style-position: inside;
-	list-style-type: square;
-}
 h3 {
 	color: indigo;
 }
-a:hover {
-	color: greenyellow;
+abbr:hover {
+	color: magenta;
+}
+.list {
+	list-style-type: square;
+}
+#Dow {
+	color: red;
+}
+#SVSU {
+	color: red;
+}
+#InnTech {
+	color: darkblue;
 }
