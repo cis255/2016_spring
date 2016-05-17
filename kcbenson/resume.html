@@ -20,10 +20,10 @@ copyright : GNU General Public License (http://www.gnu.org/licenses/)
 			but WITHOUT ANY WARRANTY; without even the implied warranty of
 			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
 external code used in this file: 
-			Dr. George Corser's template
+			Dr. George Corser's resume template
 			
 program structure : 
-	<head> metadata
+	<head> metadata, style
 	<body> The sections of the resume: 
 		NAME/ADDRESS, EDUCATION, EXPERIENCE
 		The last part of <body> is the copyright notice. 
@@ -34,10 +34,13 @@ program structure :
 	<meta name="author" content="Kelsi Benson">
 	<meta name="description" content="resume">
 	<style>
-		h1, abbr{color: blue;}
+		h1 {color: darkmagenta;}
+		abbr {color: darkturquoise;}
+		abbr:hover {color: magenta;}
 	</style>
 	<title>Benson, Kelsi</title>
-	<link rel='icon' href='http://csis.svsu.edu/~gpcorser/cardinal_logo.png' / >
+	<link rel='icon' href='http://csis.svsu.edu/~gpcorser/cardinal_logo.png' />
+	<link rel="stylesheet" href="resume.css" />
 </head>
 
 <body>
@@ -46,7 +49,7 @@ program structure :
 
 	<h1 align="center">Kelsi Benson</h1>
 	<center><img src="https://foundation.svsu.edu/view.image?Id=1259"; height="15%"; width="15%";/></center>
-	<p align="center">2101 Quartz Isle Drive, Saginaw, MI 48603, (989) 657-1562, kcbenson@svsu.edu, 
+	<p align="center">Saginaw, MI 48603, (989) 657-1562, kcbenson@svsu.edu, 
 	
 	<h3>EDUCATION</h3>
 	<strong><abbr title="Bachelor of Science">BS</abbr></strong>, Computer Science, <a href='www.svsu.edu'>Saginaw Valley State University</a>, Universtiy Center, Michigan, Anticipated 12/2018</li>
@@ -58,17 +61,21 @@ program structure :
 		<br /><a href='www.dow.com'>The Dow Chemical Company</a>, 
 		Midland, Michigan, 01/2016 to present
 	</p>
-	<p style="padding-left: 15pt;">
-		Kelsi Benson is a college co-op on the information systems administrative support team at The Dow 
-		Chemical Company. She works closely with the mobile team as well as with the security team assisting
-		on daily operations as well as specific projects. 
-	</p>
+	<ul>
+		<li>Assist administrative team with meeting management, general office tasks</li>
+		<li>Assist the mobile team with metrics, device repurposing, database management of over 14,000 devices.</li>
+	</ul>
 	
 	<p style="padding-left: 15pt;">
 		<strong>Electrical Engineering Intern</strong>
 		<br /><a href='http://www.innovatechsolutionscorp.com/'>Innova-Tech Solutions Corp.</a>, 
 		Alpena, Michigan, Summer, 2015
 	</p>
+	<ul>
+		<li>Designed product and developing manuals that will be used for testing purposes and end-user literature</li>
+		<li>Read wiring diagrams to hard wire customer orders of six to forty units under time constraints</li>
+		<li>Developed controls schematics as efficiently as possible and wired controls on prototype products</li>
+	</ul>
 	<h3>TECHNICAL SKILLS</h3>
 	<ul>
 		<li>Java</li>
@@ -77,7 +84,7 @@ program structure :
 	</ul>
 	
 
-	<p id="copyright">&copy; 2016 Kelsi Benson. Resume version: 2016-05-10. </p>
+	<p id="copyright">&copy; 2016 Kelsi Benson. Resume version 1.1: 2016-05-17. </p>
 	
 </body>
 </html>
