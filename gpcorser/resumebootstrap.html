@@ -23,20 +23,32 @@ external code used in this file:
 			none (if code is copied from external source, cite the source!)
 			
 program structure : 
-	<head> metadata
+	<head> metadata, Bootstrap code, title/favicon
 	<body> The sections of the resume: 
-		NAME/ADDRESS, OBJECTIVE, EDUCATION, EXPERIENCE, SELECTED PUBLICATIONS
-		The last part of <body> is the copyright notice. 
+		NAME/ADDRESS, EDUCATION, EXPERIENCE, SELECTED PUBLICATIONS, COPYRIGHT NOTICE
+
 ------------------------------------------------------------------------- -->
 <html>
 <head>
+	<!-- metadata -->
 	<meta name="copyright" content="George Corser">
 	<meta name="author" content="George Corser">
 	<meta name="description" content="resume">
+
+	<!-- Bootstrap code -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<!-- Bootstrap prints web link addresses by default. The code below overrides this. -->
 	<style>
-		h1, abbr {color: green;} 
+		@media print {
+			a[href]:after {
+			content: none !important;
+			}
+		}
 	</style>
-	<title>Great Humanitarian</title>
+	
+	<!-- title/favicon -->
+	<title>George Corser, PhD</title>
 	<link rel='icon' href='../../cardinal_logo.png' type='image/png' / >
 </head>
 
@@ -51,7 +63,7 @@ program structure :
 	<h3>EDUCATION</h3>
 	<ul>
 		<li><strong>PhD</strong>, Computer Science and Informatics, <a href='www.oakland.edu'>Oakland University</a>, Rochester, Michigan, 12/2015</li>
-		<li><strong><abbr title="Master of Science">MS</abbr></strong>, Computer and Information Science, <a href='www.umflint.edu'>University of Michigan-Flint</a>, Flint, Michigan, 8/2011</li>
+		<li><strong>MS</strong>, Computer and Information Science, <a href='www.umflint.edu'>University of Michigan-Flint</a>, Flint, Michigan, 8/2011</li>
 		<li><strong>BSE</strong>, Civil Engineering, <a href='www.princeton.edu'>Princeton University</a>, Princeton, New Jersey, 6/1985</li>
 	</ul>
 	
@@ -61,7 +73,6 @@ program structure :
 		<strong>Assistant Professor</strong>, Computer Science and Information Systems
 		<br /><a href='www.svsu.edu'>Saginaw Valley State University</a>, 
 		University Center, Michigan, 7/2014 to present
-		<br />(Concurrent with PhD studies until 12/2015)
 	</p>
 	<p style="padding-left: 15pt;">
 		George Corser is an Assistant Professor of Computer Science and Information Systems (CSIS) 
@@ -157,6 +168,8 @@ program structure :
 			G. Corser, et al., "Knowing the Enemy at the Gates: Measuring Attacker Motivation," in International Journal of Interdisciplinary Telecommunications and Networking (IJITN), vol.5, no.2, 2013, pp.83-95. 
 			doi: 10.4018/JITN.2013040107</li>
 	</ul>
+	
+	<!-- COPYRIGHT NOTICE -->
 	
 	<p id="copyright">&copy; 2016 George Corser. Resume version: 2016-05-05. </p>
 	
