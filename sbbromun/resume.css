@@ -1,3 +1,4 @@
+/* */
 *{font-family: "Lucida Console", Monaco, monospace; color: white; background-color: black}
 h1{color: Red;}
 h3{color: firebrick;}
@@ -5,3 +6,7 @@ p,ul{font-size: 14px;}
 ul{list-style-type: square;}
 a{color: firebrick;}
 a:visited{color: red;}
+a:hover{color:darkred;}
+.info{
+	text-align: center;
+	}
