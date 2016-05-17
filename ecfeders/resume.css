@@ -1,0 +1,19 @@
+body{{
+	background-color: lightgrey;
+}
+
+h1{
+	color:orange;
+}
+
+h2{
+	color:blue;
+}
+
+h3{
+	color:green;
+}
+
+favicon{
+	<link rel='icon' href='pic.jpg' type='image/png' / >
+}

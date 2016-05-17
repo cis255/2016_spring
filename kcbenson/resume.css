@@ -1,0 +1,18 @@
+h3 {
+	color: indigo;
+}
+abbr:hover {
+	color: magenta;
+}
+.list {
+	list-style-type: square;
+}
+#Dow {
+	color: red;
+}
+#SVSU {
+	color: red;
+}
+#InnTech {
+	color: darkblue;
+}
