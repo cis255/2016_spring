@@ -1,0 +1,74 @@
+body {background: #360033; /* fallback for old browsers */
+			background: -webkit-linear-gradient(to left, #360033 , #0b8793); /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to left, #360033 , #0b8793); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+			font-family: 'Roboto', sans-serif;
+			}
+			
+			
+/* ============== DIV FORMATTING =============== */
+			
+	#main {
+			background-color:#E5E5E5;
+			width:80%;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			box-shadow: 10px 10px 25px #000000;
+			border-radius: 5px;
+			}
+	#main_content {
+			background-color: #F7F7F7;
+			margin-left: 20px;
+			margin-right: 20px;
+			padding: 20px;
+			box-shadow: 10px 10px 25px #888888;
+			border-radius: 5px;
+			}
+	#portrait{
+			background-color: #F7F7F7;
+			max-width: 76%;
+			margin-left: 12%;
+			margin-right: 12%;
+			padding: 20px;
+			box-shadow: 10px 10px 25px #888888;
+			border-radius: 5px;
+			}
+			
+	.color-sect{
+	
+			}
+			
+/* ============== DIV FORMATTING =============== */
+			
+			
+			
+/* ============== ELEMENT FORMATTING =============== */		
+			
+	a 	{
+		text-decoration: none;
+		color: #0b8793;
+		}
+	a:hover	{
+		color: #360033;
+		text-decoration: underline;
+		}
+		
+	abbr	{
+		text-decoration: none;
+		}
+	
+	h1	{
+		font-weight: 300;
+		font-size: 60px;
+		color: #0b8793;
+		margin-bottom: -0px;
+		}
+	h3	{
+		color: #360033;
+		}
+	
+	
+		

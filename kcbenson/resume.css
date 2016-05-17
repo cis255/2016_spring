@@ -1,0 +1,10 @@
+li {
+	list-style-position: inside;
+	list-style-type: square;
+}
+h3 {
+	color: indigo;
+}
+a:hover {
+	color: greenyellow;
+}
