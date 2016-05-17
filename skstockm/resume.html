@@ -33,28 +33,37 @@ program structure :
 	<meta name="copyright" content="Staci Stockmeyer">
 	<meta name="author" content="Staci Stockmeyer">
 	<meta name="description" content="resume">
+	<!--internal css-->
 	<style>
-	  h1 {color: #2ECCFA;}
+	  h1 {color: #FFCCFF;}
 	  h3 {color: #00FFFF;}
+	  .job {color: #CCFFFF;}
+	  #nameonresume {color: #2ECCFA} 
 	  p {color: white;}
 	  ul {color: white;}
 	  a {color: #01DFA5;}
+	  a:hover {color: #FFFFCC;}
+	  a:visited {color: #CCCCFF;}
+	  .copy {color: #FFCCE5;}
+	  abbr:hover {color: #A0A0A0;}
 	</style>
 	<title>Stockmeyer Resume</title>
 	<link rel='icon' href='https://www.svsu.edu/media/writingcenter/svsu%20thumbnail.jpg' type='image/jpg' / >
+	<link href="resume.css" rel="stylesheet">
 </head>
 
 <body>
     <body style="background:#610B21">
 	<!-- NAME/ADDRESS -->
 
-	<h1 align="center"><font face="verdana">Staci Stockmeyer</font></h1>
+	<h1 align="center" id="nameonresume"><font face="verdana">Staci Stockmeyer</font></h1>
 	<p align="center">9761 Fairgrove Rd, Reese, MI 48757, (989) 525-3932, skstockm@svsu.edu </p>
 	
 	<center><img src="https://wcmu.org/news/wp-content/uploads/2015/10/logo.jpg" alt="SVSU"></center>
 	
 	<h3>EDUCATION</h3>
 	<ul>
+	    <!--abbreviation one is in-line css-->
 		<li>Computer Science Major, <a href='www.svsu.edu'>Saginaw Valley State University</a>, University Center, Michigan, 5/2018</li>
 		<li>Math Minor, <a href='www.svsu.edu'>Saginaw Valley State University</a>, University Center, Michigan, 12/2016</li>
 	    <li>Associates Liberal Arts, <a href='www.delta.edu'>Delta College</a>, University Center, Michigan, 5/2014</li>
@@ -62,7 +71,7 @@ program structure :
 	
 	<h3>EXPERIENCE</h3>
 	
-	<p style="padding-left: 15pt;">
+	<p style="padding-left: 15pt;" class="job">
 		<strong><font face ="verdana">Cashier</font></strong>, Worked with customers, and the computers.
 		<br /><a href='www.kohls.com'>Kohl's</a>, 
 		Saginaw, Michigan, 6/2012 to 11/2015
@@ -77,7 +86,7 @@ program structure :
 		<li><abbr title="Computer Information Systems">CIS</abbr>-357: Advanced Programming with Java</li>
 	</ul>
 	
-	<p id="copyright">&copy; 2016 Staci Stockmeyer. Resume version: 2016-05-12. </p>
+	<p id="copyright" class="copy">&copy; 2016 Staci Stockmeyer. Resume version: 2016-05-12. </p>
 	
 </body>
 </html>
