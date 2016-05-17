@@ -10,8 +10,6 @@
 	a 			{color:red;}
 	.school 	{color:orange;}
 	#email		{color:purple; font-size:160%;}
+	head		{background-color:black;}
+	body		{background-color:black;}
 </style>
-
-<head> {background-color:black;} </head>
-<body> {background-color:black;} </body>
-<img>  {align:center;} </img>

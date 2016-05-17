@@ -29,17 +29,14 @@ body {background: #360033; /* fallback for old browsers */
 			}
 	#portrait{
 			background-color: #F7F7F7;
-			max-width: 76%;
-			margin-left: 12%;
-			margin-right: 12%;
+			margin-left: 20px;
+			margin-right: 20px;
 			padding: 20px;
 			box-shadow: 10px 10px 25px #888888;
 			border-radius: 5px;
 			}
 			
-	.color-sect{
-	
-			}
+	.color-sect{}
 			
 /* ============== DIV FORMATTING =============== */
 			
@@ -64,7 +61,7 @@ body {background: #360033; /* fallback for old browsers */
 		font-weight: 300;
 		font-size: 60px;
 		color: #0b8793;
-		margin-bottom: -20px;
+		margin-bottom: -0px;
 		}
 	h3	{
 		color: #360033;
