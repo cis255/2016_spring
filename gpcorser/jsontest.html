@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<script
+			src="https://code.jquery.com/jquery-2.2.3.min.js"
+			integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+			crossorigin="anonymous">
+		</script>
+		<script>
+			<!-- jquery solution: only replaces innerHTML -->
+			$.getJSON("https://api.svsu.edu/courses?prefix=CIS", function (data) {
+				// console.log(data);
+				for (var i = 0; i < data.courses.length; i++) { 
+					$("#id01").append(data.courses[i].prefix + " ");
+					$("#id01").append(data.courses[i].courseNumber+"<br/>");
+				}
+			});
+			
+			<!-- javascript solution: creates new elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+					// out += arr.courses[i].prefix + " " + arr.courses[i].courseNumber + "<br />";
+				}
+				// document.getElementById("id01").innerHTML = out;
+			}
+			
+		</script>
+	</head>
+	<body>
+		<p id="id01"></p>
+		<select id="id02"></select>
+	</body>
+</html>
