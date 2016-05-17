@@ -23,16 +23,23 @@ external code used in this file:
 			none (if code is copied from external source, cite the source!)
 			
 program structure : 
-	<head> metadata
+	<head> metadata, Style, Favicon
 	<body> The sections of the resume: 
 		NAME/ADDRESS, EDUCATION, EXPERIENCE
 		The last part of <body> is the copyright notice. 
 ------------------------------------------------------------------------- -->
 <html>
 <head>
+	<!--METADATA -->
 	<meta name="copyright" content="Samuel Bromund">
 	<meta name="author" content="Samuel Bromund">
 	<meta name="description" content="resume">
+	<!--STYLE-->
+	<link href="resume.css" rel="stylesheet">
+	
+	<title>A Great Guy</title>
+	<!--FAVICON-->
+	<link rel="icon" href="http://csis.svsu.edu/~gpcorser/cardinal_logo.png" type="image/png">
 </head>
 
 <body>
@@ -41,18 +48,17 @@ program structure :
 
 	<h1 align="center">Samuel Bromund</h1>
 	<p align="center">342 N. Jefferson St, Alpena, MI 49707, (989) 657-3234, sbbromun@svsu.edu, 
-	
 	<h3>EDUCATION</h3>
 	<ul>
-		<li><strong>AA</strong>, Computer Information Systems, <a href='http://discover.alpenacc.edu/'>Alpena Communtiy College</a>, Alpena, Michigan, 5/2014</li>
-		
+		<li><strong><abbr title="Associate of Arts">AA</abbr></strong>, <em>Computer Information Systems</em>, <a href='http://discover.alpenacc.edu/'>Alpena Communtiy College</a>, Alpena, Michigan, 5/2014  <img src="http://www.american-school-search.com/images/logo/alpena-community-college.png" alt="AlpenaCommunityCollege" height="50"></li>
+		<li><strong><abbr title="Bachelors Degree">BA</abbr></strong>, <em>Computer Information Systems (In Progress)</em>, <a href='http://svsu.edu/'> Saginaw Valley State University</a>, Saginaw, Michigan, 5/2017  <img src="https://www.svsu.edu/media/writingcenter/svsu%20thumbnail.jpg" alt="SaginawValleyStateUniversity" width="50" height="50"></li>
 	</ul>
 	
 	<h3>EXPERIENCE</h3>
 	
 	<p style="padding-left: 15pt;">
-		<strong>Resident Assistant </strong>
-		<br /><a href='www.svsu.edu'>Saginaw Valley State University</a>, 
+		<strong>Resident Assistant </strong><img src="https://pbs.twimg.com/profile_images/628598345615937536/oKVWBWEp.jpg" alt="ResLife" height="100" width="100">
+		<br /><a href='http://svsu.edu/'>Saginaw Valley State University</a>, 
 		University Center, Michigan, 7/2015 to present
 		<br />
 	</p>
@@ -63,6 +69,16 @@ program structure :
 		and provide community building opportunities to residents. Skills in this role include working on a team of 8, 
 		timely attendance to weekly meetings and reports, flexibility, organization, and managing high stress
 	</p>
+	
+	<h3> TECHNICAL SKILLS </h3>
+	
+	<p style="Padding-left: 15pt;">
+		<strong> Coding Languages Known: </strong>
+		<ul>
+			<li>Visual Basic</li>
+			<li>C++</li>
+		</ul>
+		
 		<p id="copyright">&copy; 2016 Samuel Bromund.</p>
 </body>
 </html>
