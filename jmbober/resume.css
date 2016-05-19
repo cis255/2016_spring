@@ -1,0 +1,32 @@
+#nameonresume {color:#007acc; font-family: verdana;}
+h3 {color:#4d0099;}
+
+html {
+	margin:0;
+	padding:0;
+	height:100%;
+	float: center;
+	font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
+	background: -webkit-linear-gradient(to bottom, #3399ff, #eb99ff, #730099); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #3399ff, #eb99ff, #730099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+}
+body {
+	margin: 0px auto;
+	height:100%;
+}
+#main {
+	display:inline-block;
+	width:70%;
+	height:auto !important; 
+    height:100%;
+    min-height:100%;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding:15px;
+	background-color:white;
+	
+	-moz-box-sizing: border-box;
+	-webkit-box-shadow: 0px 0px 61px -22px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 61px -22px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 61px -22px rgba(0,0,0,0.75);
+}
