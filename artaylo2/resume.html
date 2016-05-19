@@ -24,40 +24,64 @@ external code used in this file:
 			
 program structure : 
 	<head> metadata
+		   link to background image 
+		   styles
+	<title>
 	<body> The sections of the resume: 
-		NAME/ADDRESS, OBJECTIVE, EDUCATION, EXPERIENCE, SELECTED PUBLICATIONS
-		The last part of <body> is the copyright notice. 
+		NAME/ADDRESS, OBJECTIVE
+		 
 ------------------------------------------------------------------------- -->
 <html>
 <head>
 	<meta name="copyright" content="Andy Taylor">
 	<meta name="author" content="Andy Taylor">
 	<meta name="description" content="resume">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style>
+		h1 {color:white;
+			font-family: "arial", sans-serif;}
+		h3 {color:white;}
+		
+		p{color:white;}
+	</style>
 </head>
 
-<body>
+<title>Andy Taylor</title>
 
-	<!-- NAME/ADDRESS -->
-
+<body background = "http://zellox.com/wp-content/uploads/2016/02/background-image-html.jpg">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#"><!--andytaylor--><img style="max-width:100px; margin-top: -20px;"
+             src="http://menssoccer.svsusportscamps.com/images/SVSU_Logo_105px.jpg"></a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="education.html">EDUCATION</a></li>
+			<li><a href="experience.html">EXPERIENCE</a></li> 
+			<li><a href="info.html">ADD. INFO</a></li> 
+		</ul>
+		</div>
+</nav>
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-12"></div>
+	</div>
 	<h1 align="center">Andy Taylor</h1>
-	<p align="center">1417 Sixth Street Bay City, MI 48708, (989) 600-5862, gpcorser@svsu.edu, 
-		
-	
-	<h3>EDUCATION</h3>
-	<ul>
-		<li><strong>High School Diploma</strong>, Central High School, Bay City, Michigan, 07/2007</li>
-	</ul>
-	
-	<h3>EXPERIENCE</h3>
-	
-	<p style="padding-left: 15pt;">
-		<strong>Cryptologic Technician 2nd Class (CTR2)</strong>, U.S. Navy 
-		<br /> 
-		San Diego, CA 05/2010 to 11/2014
-		<br />
-	</p>
-	<p style="padding-left: 15pt;">
+	<p align="center">1417 Sixth Street Bay City, MI 48708, (989) 600-5862, artaylo2@svsu.edu</p>
+	</div>
+		<div class="container">
+	<div class="row">
+	<div class="col-lg-12"></div>
+	</div>
+	<h3><center>OBJECTIVE</cener></h3>
+	<p style="padding-left: 10pt; padding-right: 10pt;">
+		To gain experience by working with a team of professionals in my area of study as an intern or co-op while
+			pursing a four year degree from Saginaw Valley State University. 
+			The profesionalism and hard work ethic that I can bring to a work place will allow me the opportunity to
+			have relevent experience in order to make myself more marketable upon graduation.
 	
 	</p>
+	</div>
 </body>
 </html>

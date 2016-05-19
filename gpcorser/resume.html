@@ -33,25 +33,34 @@ program structure :
 	<meta name="copyright" content="George Corser">
 	<meta name="author" content="George Corser">
 	<meta name="description" content="resume">
+	<!-- internal css -->
 	<style>
-		h1, abbr {color: green;} 
+		#nameonresume {color:blue}
+		h1 {color: green;} 
+		abbr {color: orange;} 
+		li abbr {color: green;}
+		.crime {color:red;}
+		
 	</style>
 	<title>Great Humanitarian</title>
 	<link rel='icon' href='../../cardinal_logo.png' type='image/png' / >
+	<link href="resume.css" rel="stylesheet" />
+
 </head>
 
 <body>
 
 	<!-- NAME/ADDRESS -->
 
-	<h1 align="center">George Corser, PhD</h1>
+	<h1 align="center" id="nameonresume" >George Corser, PhD</h1>
 	<p align="center">2974 Vido Drive, Saginaw, MI 48603, (989) 780-3168, gpcorser@svsu.edu, 
 		<a href="www.georgecorser.com">www.georgecorser.com</a></p>
 	
 	<h3>EDUCATION</h3>
 	<ul>
 		<li><strong>PhD</strong>, Computer Science and Informatics, <a href='www.oakland.edu'>Oakland University</a>, Rochester, Michigan, 12/2015</li>
-		<li><strong><abbr title="Master of Science">MS</abbr></strong>, Computer and Information Science, <a href='www.umflint.edu'>University of Michigan-Flint</a>, Flint, Michigan, 8/2011</li>
+		<!-- in-line css -->
+		<li><strong><abbr title="Master of Science" >MS</abbr></strong>, Computer and Information Science, <a href='www.umflint.edu'>University of Michigan-Flint</a>, Flint, Michigan, 8/2011</li>
 		<li><strong>BSE</strong>, Civil Engineering, <a href='www.princeton.edu'>Princeton University</a>, Princeton, New Jersey, 6/1985</li>
 	</ul>
 	
@@ -65,7 +74,7 @@ program structure :
 	</p>
 	<p style="padding-left: 15pt;">
 		George Corser is an Assistant Professor of Computer Science and Information Systems (CSIS) 
-		at Saginaw Valley State University (SVSU). His research defines and analyzes location privacy 
+		at Saginaw Valley State University (<abbr title="Sag Val Sta Uni" >SVSU</abbr>). His research defines and analyzes location privacy 
 		and security protocols in vehicle networks. His teaching explores web and mobile app development, 
 		theoretical computer science and cybercrime. His professional service includes advisory 
 		and leadership positions in SVSU student organizations, international technical societies, 
@@ -81,10 +90,10 @@ program structure :
 		a teaching collaboration website, www.teacherati.com. Courses taught so far:
 	</p>
 	<ul>
-		<li>CIS-255: Client Side Web Application Development (HTML, CSS, JavaScript, jQuery, Angular)</li>
+		<li>CIS-255: Client Side Web Application Development (<abbr title="HyperText Markup Language" >HTML</abbr>, CSS, JavaScript, jQuery, Angular)</li>
 		<li>CIS-355: Server Side Web Application Development (PHP, MySQL, CodeIgniter, Laravel 5)</li>
 		<li>CS-116: Computer Programming I (Java, C++)</li>
-		<li>CS-233: Cybercrime (starting winter 2017)</li>
+		<li class="crime">CS-233: Cybercrime (starting winter 2017)</li>
 		<li>CS-403: Mobile App Dev (Android, Android Auto)</li>
 		<li>CS-411: Database Systems (starting winter 2017)</li>
 		<li>CS-461: Theory of Computation</li>
@@ -98,10 +107,10 @@ program structure :
 		in the 2014-15 academic year, which led to an SVSU undergraduate co-authored IEEE conference 
 		paper. He led two teams under an NSF-funded Research Experience for Undergraduates (REU) grant 
 		in vehicle network research, leading to 2 IEEE conference paper publications and one journal 
-		paper with 4 OU undergraduate co-authors. His research led to invitations by Intel to participate 
+		paper with 4 OU undergraduate co-authors. <span class="crime">His research led to invitations by Intel to participate 
 		on the Automotive Security Review Board (ASRB) car dashboard hacking investigations and to serve 
 		as a featured speaker at IEEE End to End Trust and Security Workshop for the Internet of Things 
-		in Washington, D.C.
+		in Washington, D.C.</span>
 	</p>
 	<p style="padding-left: 15pt;">
 		Service: Corser is a leader and advisor in a range of professional service activities. He is Organizer 
@@ -121,7 +130,7 @@ program structure :
 	</p>
 	<ul>
 		<li>CIS-448: Information Security Practice</li>
-		<li>CRJ-341: Cybercrime</li>
+		<li class="crime">CRJ-341: Cybercrime</li>
 	</ul>
 	
 	<p style="padding-left: 15pt;">	
@@ -133,7 +142,7 @@ program structure :
 		<li>CS-111: Client Side Web Scripting (JavaScript)</li>
 		<li>CS-140: Business Concepts for Application Developers</li>
 		<li>CS-250: Open Source Programming (PHP)</li>
-		<li>CS-280: Web Security and Ethics</li>
+		<li class="crime">CS-280: Web Security and Ethics</li>
 		<li>IT-104: Introduction to Programming (Python)</li>
 		<li>IT-219: Programming in Java II</li>
 	</ul>
@@ -153,7 +162,7 @@ program structure :
 		<li class="publication">
 			G. Corser, H. Fu, T. Shu, P. D'Errico and W. Ma, "Endpoint protection zone (EPZ): Protecting LBS user location privacy against deanonymization and collusion in vehicular networks," 2013 International Conference on Connected Vehicles and Expo (ICCVE), Las Vegas, NV, 2013, pp. 369-374. 
 			doi: 10.1109/ICCVE.2013.6799822</li>
-		<li class="publication">
+		<li class="crime publication" >
 			G. Corser, et al., "Knowing the Enemy at the Gates: Measuring Attacker Motivation," in International Journal of Interdisciplinary Telecommunications and Networking (IJITN), vol.5, no.2, 2013, pp.83-95. 
 			doi: 10.4018/JITN.2013040107</li>
 	</ul>

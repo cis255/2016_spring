@@ -1,4 +1,7 @@
+/* Comments go in these weird brackets. */
 <style>
+	head		{background-color:black;}
+	body		{background-color:black;}
     h1 			{color:blue;}
     h3 			{color:white;}
     h4 			{color:yellow;}
@@ -11,7 +14,3 @@
 	.school 	{color:orange;}
 	#email		{color:purple; font-size:160%;}
 </style>
-
-<head> {background-color:black;} </head>
-<body> {background-color:black;} </body>
-<img>  {align:center;} </img>
