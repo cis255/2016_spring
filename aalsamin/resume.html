@@ -23,18 +23,51 @@ program structure:
 	<body> The sections of the resume: 
 		TITLE, RESUME
 		The last part of <body> is the copyright notice.
---------------------------------------------------------------------------->
+------------------------------------------------------------------------- -->
 <html>
 <head>
 	<meta name="copyright" content="Abdulmohsen Alsamin">
 	<meta name="author" content="Abdulmohsen Alsamin">
 	<meta name="description" content="menu">
+	<!-- internal css -->
+	<style>
+	h1 {color: red;}
+	body {background: #8fbc8f;}
+	h3 {color: #B8860B;
+		font-family: "Comic Sans Ms", cursive, sans-serif;}
+	.languages {color: #4b0082;}
+	#address {color: #ff6347;}
+	#copyright {font-family: "Lucida Console", monaco, monospace;
+				font-size: 75%;
+				color: #CD5C5C;)
+	</style>
 </head>
+
 <body>
-	<h2> Main Menu </h2>
+	<h1 align="center">Abdulmohsen Alsamin</h1>
+	<p id="address" align="center">3065 Dale rd, Saginaw, MI 48603, (989)980-3202, aalsamin@svsu.edu</p>
+		
+	<h3>EDUCATION</h3>
 	<ul>
-		<li><a href="resume.html">Resume</a></li>
+		<li><strong><abbr title="Computer Information System">CIS</abbr></strong>, Computer Information Systems, <a href='www.svsu.edu'>SVSU</a>, 2017</li>
+		<li><strong><abbr title="Information Technology">IT</abbr></strong>, Information Technology, DAMMAM College of Technology, 2010</li>
 	</ul>
-	<p id="copyright">&copy; 2016 Alsamin, Abdulmohsen.</p>
+	
+	<h3>EXPERIENCE</h3>	
+		<ul>
+			<li><strong>Salesman</strong> in Jarir Bookstore</li>
+			<li><strong>Salesman</strong> in Gold and Jewelry Store</li>
+		</ul>
+	
+	<h3>PROGRAMMING</h3>
+		<ul class="languages">
+			<li>Visual Basic</li>
+			<li>C++</li>
+			<li>SQL, PHP</li>
+			<li>HTML, CSS</li>
+		</ul>
+	
+	<p id="copyright">&copy; 2016 Abdulmohsen Alsamin's Resume </p>
+	
 </body>
 </html>
