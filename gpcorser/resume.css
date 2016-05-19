@@ -1,3 +1,5 @@
+/* Make top header green */
 h1 {
-	font-family: Verdana, Georgia, Serif;
+	color: purple;
+	/* font-family: Helvetica; */ 
 }

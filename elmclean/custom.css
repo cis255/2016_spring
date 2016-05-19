@@ -1,0 +1,18 @@
+.jumbotron {
+	/* change bootstrap jumbotron text color */
+    color: white;
+    /* add bootstrap jumbotron background image */
+    background: url(https://cdn.cloudpix.co/images/tumblr-backgrounds/tumblr-static-tumblr-background-1179d37000ac8efa7f001cb500ac0531-large-1548461.jpg);
+    /*background: url(http://data.whicdn.com/images/63168745/large.jpg);*/
+    /*background: url(http://data.whicdn.com/images/46315373/original.jpg);*/
+    background-size: cover;
+    text-shadow: 0px 0px 3px rgb(50,50,50);
+}
+
+.jumbotron h1 {
+	font-family: 'Pacifico', cursive;
+}
+
+h3 {
+	font-family: 'Handlee', cursive;
+}

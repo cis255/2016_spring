@@ -1,0 +1,27 @@
+table  {
+	border: solid 1pt black;
+	text-align: center;	
+	border-spacing: 10pt;
+	background:  #C70039 ;
+}
+
+td{
+	background:   #FFC300  ;
+	border-radius: 15px 50px;
+	box-shadow: 2px 2px 5px;
+	padding: 10pt;
+	border: solid 1pt black;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+	font-weight: bold;
+	text-shadow: 0 0 5px #FFFFFF,0 0 5px #FFFFFF;
+}
+th{
+	background:    #FF5733  ;
+	border-radius: 15px 50px;
+	box-shadow: 2px 2px 5px;
+	padding: 10pt;
+	border: solid 1pt black;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+	font-weight: bold;
+	text-shadow: 0 0 5px #FFFFFF,0 0 5px #FFFFFF;
+}
