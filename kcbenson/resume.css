@@ -1,0 +1,20 @@
+/* Make section headers color indigo */
+h3 {
+	color: indigo;
+}
+/* When hover over abbreviations, they turn magenta */
+abbr:hover {
+	color: magenta;
+}
+/* change bullets in list to squares */
+.list {
+	list-style-type: square;
+}
+/*Dow and SVSU tags are red */
+#Dow, #SVSU {
+	color: red;
+}
+/* InnTech tag is darkblue */
+#InnTech {
+	color: darkblue;
+}
