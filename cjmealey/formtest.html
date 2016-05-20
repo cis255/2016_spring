@@ -1,0 +1,41 @@
+<form action='http://csis.svsu.edu/~gpcorser/cis355/jsonTest.php'>
+<div id="tableHold">
+<fieldset>
+	<table>
+	<tr>
+		<td><label>Course Prefix (Department)</label></td><!-- Course Prefix -->
+		<td>
+			<input type='radio' name='prefix' value='cis'>CIS
+			<input type='radio' name='prefix' value='cs'>CS
+			<input type='radio' name='prefix' value='math'>MATH
+		</td>
+	</tr>
+	<tr>
+		<td><label>Course Number</label><br/></td><!-- Course Number -->
+		<td>
+			<select name='courseNumber'>
+				<option value='255'>255</option>
+				<option value='355'>355</option>
+				<option value='161'>161</option>
+				<option value='116'>116</option>
+			</select>
+		</td><br/>
+	</tr>
+	<tr>	
+		<td><label>Instructor</label><br/></td><!-- Instructor Name -->
+		<td><input type='text' name='instructor'><br/></td>
+	</tr>
+	<tr>
+		<!-- This doesn't work in firefox -->
+		<td><label>Date</label></td>
+		<td><input type="date" name='date'></td>
+	</tr>
+	
+	</table>	
+		
+		<!-- Submit -->
+		<div><input type='submit' value='Submit'></div>
+		
+</fieldset>
+</div>
+</form>
