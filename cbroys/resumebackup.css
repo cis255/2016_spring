@@ -1,0 +1,82 @@
+body {
+	background: url("http://www.psdgraphics.com/file/blue-abstract-background.jpg"); 
+	font-family: 'Lucida Sans Unicode', sans-serif;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+#main{
+	display:inline-block;
+	background: center;
+	background: background: yellow; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(yellow, orange); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(yellow, orange); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(yellow, orange); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(yellow, orange); /* Standard syntax */
+    padding: 5%;
+    border: 10px solid navy;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-top: 2%;
+}
+#ts_tabmenu {
+    font-size: .75em;
+    /* padding: 20px 0px 0px 20px; */
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#ts_tabmenu ul
+{
+    line-height: 1em;
+    margin: 0px;
+    list-style-type: none;
+    /* float: left; */
+    padding: 0px 0px 0px 5px;
+}
+/*#ts_tabmenu ul li
+{
+    float: left;
+}*/
+#ts_tabmenu ul li a
+{
+    text-decoration: none;
+    display: block;
+    /*float: left; */
+    padding: 0px 0px 0px 10px;
+    background: url(tabs.gif) no-repeat left top;
+    /*margin-left: -5px; */
+    z-index: 0;
+    position: relative;
+    color: #666666;
+}
+#ts_tabmenu ul li a strong
+{
+    font-weight: normal; /* remove the bold effect */
+    display: block;
+    background: url(tabs.gif) no-repeat right top;
+    padding: 6px 10px 7px 5px;
+    cursor: pointer;
+}
+#ts_tabmenu ul li a:hover
+{
+    position: relative;
+    z-index: 5;
+    background: url(tabs.gif) no-repeat left bottom;
+    color: #000000;
+}
+#ts_tabmenu ul li a:hover strong
+{
+    background-image: url(tabs.gif) no-repeat;
+    position: relative;
+    z-index: 5;
+    background-position: right bottom;
+}
+#ts_tabmenu ul li
+{
+  display:inline-block;
+  /* float: left; */
+}

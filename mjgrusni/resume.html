@@ -32,21 +32,28 @@ program structure :
 	<meta name="copyright" content="Michael Grusnick">
 	<meta name="author" content="Michael Grusnick">
 	<meta name="description" content="resume">
+	<!-- Internal CSS -->
+	<style>
+		h1 {color: blue;}
+		#nameonresume {color:orange}
+		.listheading {color:green}
+	</style>
+	<title>
+		Michael Grusnick's Resume
+	</title>
 </head>
 
 <body>
 
 	<!-- NAME/ADDRESS -->
 
-	<h1 align="center">Michael Grusnick</h1>
+	<h1 align="center" id="nameonresume">Michael Grusnick</h1>
 	<p align="center">P.O. Box 404 Pinconning, MI 48650 (989) 313-2694, mjgrusni@svsu.edu</a></p>
 	
-	<h3>EDUCATION</h3>
-	<ul>
-		<li><strong>In Progress, BSE</strong>, Computer Science, <a href='www.svsu.edu'>Saginaw Valley State University</a>, University Center, Michigan</li>
-	</ul>
+	<span class=listheading><h3>EDUCATION</h3></span>
+		<strong><abbr title="Bachelor of Science" style={color: orange;} >B.S.</abbr></strong>, Anticipated 12/2017: Computer Science, <a href='www.svsu.edu'>Saginaw Valley State University</a>, University Center, Michigan
 	
-	<h3>EXPERIENCE</h3>
+	<span class=listheading><<h3>EXPERIENCE</h3></span>
 	
 	<p style="padding-left: 15pt;">
 		<strong>Controls Engineering Co-op</strong>,
@@ -70,6 +77,33 @@ program structure :
 		of building a robot for FRC's annual competition. Michael has been involved with team 5504 since they started
 		in the 2015 season.
 	</p>
+	
+	<span class=listheading><<h3>TECHNICAL SKILLS</h3></span>
+	
+	<table style="width:25%; padding-left: 15pt" border="1">
+		<tr>
+			<td>Software</td>
+			<td>Hardware</td>
+		</tr>
+		<tr>
+			<td>SPLat IDE</td>
+			<td>SPLat Controllers</td>	
+		</tr>
+		<tr>
+			<td>RSLogix</td>
+			<td>Allen Bradley PLCs</td>	
+		</tr>
+		<tr>
+			<td>S5/S7</td>
+			<td>Siemens PLCs</td>		
+		</tr>
+		<tr>
+			<td>S5/S7</td>
+			<td>Siemens PLCs</td>		
+		</tr>
+	</table>
+	
+	
 	
 	<p id="copyright">&copy; 2016 Michael Grusnick. Resume version: 2016-05-10. </p>
 	

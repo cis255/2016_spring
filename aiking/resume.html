@@ -28,43 +28,30 @@ program structure :
 		The last part of <body> is the copyright notice. 
 ------------------------------------------------------------------------- -->
 <html>
-<head style="background-color:black;">
+<head>
 	<meta name="copyright" content="Alexander King">
 	<meta name="author" content="Alexander King">
 	<meta name="description" content="resume">
 
-	<style>
-		h1 {color:blue;}
-		h3 {color:white;}
-		h4 {color:yellow;}
-		p  {color:white;}
-		li {color:white;}
-		td {color:white;}
-		abbr {
-			  color:green;
-			 }
-		a {color:red;}
-	</style>
+	<link href="resume.css" rel="stylesheet" />
+
 	<title>Alexander I. King</title>
-<!--	<link rel='icon' href='../../cardinal_logo.png' type='image/png' /> -->
 </head>
 
-<body style="background-color:black;">
+<body>
 
 	<!-- NAME/ADDRESS -->
 
-	<img src="http://alexanderiking.weebly.com/uploads/1/4/8/6/14867358/1354680388.png"/>
+	<img src="http://alexanderiking.weebly.com/uploads/1/4/8/6/14867358/1354680388.png" />
 
-	<h1 align="center">Alexander King</h1>
-	<p align="center">19500 Ottawa Lane, Big Rapids, MI 49307, (989) 630-8745, aiking@svsu.edu</p>
+	<h1 align="center" color="blue">Alexander King</h1>
+	<p align="center">19500 Ottawa Lane, Big Rapids, MI 49307, (989) 630-8745, <span id="email"> aiking@svsu.edu </span></p>
 	
 	<h3>EDUCATION</h3>
 	<ul>
-		<li><strong>High School Diploma</strong>, Harrison Community High School, Harrison, Michigan, 05/2012</li>
-		<li><strong><acronym title="Cadet Company Officer>Cadet CO</acronym></strong>, Harrison Community High School
-					<acronym title="Maring Corps Junior Reserve Officer Training Corps>MCJROTc</acronym></li>
-		<li><strong><abbr title="Bachelor of Arts">BA</abbr> in Psychology</strong>, Saginaw Valley State University,
-																					 Saginaw, Michigan, 05/2012-Present</li>
+		<li class="school"><strong>High School Diploma</strong>, Harrison Community High School, Harrison, Michigan, 05/2012</li>
+		<li><strong>Cadet Company Officer, Cadet 2nd Lieutenant</strong>, Harrison Community High School <acronym title="Maring Corps Junior Reserve Officer Training Corps">MCJROTC</acronym></li>
+		<li class="school"><strong><abbr title="Bachelor of Arts">BA</abbr> in Psychology</strong>, Saginaw Valley State University, Saginaw, Michigan, 05/2012-Present</li>
 		<li><strong>Study Abroad</strong>, Ming Chuan University, Taiperi, Taiwan, 06/2013</li>
 		<li><strong>Study Abroad</strong>, Kansai Gaidai University, Hirakata, Japan, 01/2015-05/2015</li>
 	</ul>
@@ -84,14 +71,14 @@ program structure :
 		<tr>
 			<td width=10%>HTML</td>
 			<td width=10%>CSS</td>
+			<td width=10%> - </td>
 		</tr>
 	</table>
 	</ br>
 	<h4>LANGUAGES:</h4>
 		<ol>
 			<li>English</li>
-			<li>Japanese/日本語</li>
-			<li>Chinese/中文 (some/一点点)</li>
+			<li>Japanese</li>
 		</ol>	
 
 	<h3>EXPERIENCE</h3>
@@ -114,11 +101,15 @@ program structure :
 	<h3>EXAMPLES OF WRITING</h3>
 	<p>Examples of my writing may be found at the following links:</p>
 	<ul>
-		<li><a href="http://alexanderiking.weebly.com">Weebly Portfolio</a></li>
-		<li><a href="http://hubpages.com/@aking21">Hubpages Articles</a></li>
+		<li><a href="http://alexanderiking.weebly.com" target="_blank">Weebly Portfolio</a></li>
+		<li><a href="http://hubpages.com/@aking21" target="_blank">Hubpages Articles</a></li>
 	</ul>
 	
+	</br>
+	<a href="http://csis.svsu.edu/~gpcorser/cis255/aiking/aiking.html" align="center">Menu</a>
 	<p id="copyright">&copy; 2016 Alexander King. Resume version: 2016-05-10. </p>
 	
+<!-- Add a "." to create a class, and add a "#" to create an ID. -->
+
 </body>
 </html>
