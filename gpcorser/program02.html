@@ -1,23 +1,6 @@
 <html>
 	<head>
-		<script
-			src="https://code.jquery.com/jquery-2.2.3.min.js"
-			integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
-			crossorigin="anonymous">
-		</script>
-		<script>
-		    <!-- do not use jQuery for Program02 -->
-			<!-- jquery solution: only replaces innerHTML -->
-			/* 
-			$.getJSON("https://api.svsu.edu/courses?prefix=CIS", function (data) {
-				// console.log(data);
-				for (var i = 0; i < data.courses.length; i++) { 
-					$("#id01").append(data.courses[i].prefix + " ");
-					$("#id01").append(data.courses[i].courseNumber+"<br/>");
-				}
-			});
-			*/
-			
+		<script>		
 			<!-- javascript solution: creates new elements with attributes -->
 			var xmlhttp = new XMLHttpRequest();
 			var url = "https://api.svsu.edu/courses?prefix=CS";
@@ -54,7 +37,64 @@
 		</script>
 	</head>
 	<body>
+		<h1>Program 02: SVSU API</h1>
+		<table border="1">
+			<tr>
+				<td>
+					<h2>Courses Taken</h2>
+					<p>Enter courses separated by commas: CS 105, CIS 255, ...</p>
+					<input type="text">
+				</td>
+				<td>
+					<h2>Courses for Degree</h2>
+					<p>Edit, if desired</p>
+					<textarea id="allCoursesNeeded" rows="10" cols="20">
+					</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2>Courses Available for Registration</h2>
+					<p>Courses Needed and Not Taken But Pre-reqs Have Been Taken</p>
+				</td>
+				<td>
+					<h2>Courses Not Yet Available</h2>
+					<p>Courses Needed and Not Taken But Pre-reqs Have NOT Been Taken</p>
+				</td>
+			</tr>
+		</table>
 		<p id="id01"></p>
 		<select id="id02"></select>
+		
+		<script>
+		    // courses for CS
+			var cs = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245"];
+			
+			// course for CIS
+			var cis = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245"];
+		
+		    // insert CS courses into textarea (id="allCoursesNeeded")
+			var allCourses = document.getElementById("allCoursesNeeded");
+			var allCoursesText = "";
+			for(var i=0; i<cs.length; i++) 
+				allCoursesText += cs[i] + ", ";
+			allCourses.innerHTML = allCoursesText;
+		</script>
+		
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
