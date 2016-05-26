@@ -1,0 +1,21 @@
+img{
+	height: 42px;
+	width: 42px;
+	}
+table{
+		border-top: 4px solid #DCA806;
+		border-bottom: 4px solid #FFFFFF;
+		border-collapse: collapse;
+		text-align: left;
+	}
+.doubleFred{
+			 border:solid 1pt black;
+			}
+td{
+	padding: 10pt;
+	font-size: .8em;
+	font-family:Ariel, Helvetica, sans-serif;
+}
+th{
+	background-color: #CACACA
+	}
