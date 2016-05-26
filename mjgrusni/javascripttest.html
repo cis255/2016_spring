@@ -1,0 +1,33 @@
+<html>
+<head>
+	<script>
+		var z = 11;
+		//functions
+		function bar(){
+			var el = document.getElementById("id01");
+			el.innerHTML = "Foo!";
+			
+			var newP = document.createElement("SPAN");
+			newP.innerHTML = "spanTest"
+			document.getElementById("id02").appendChild(newP)
+		}
+		function foo () {
+			//variables
+			var x = 5;
+			y = 6;
+			//conditionals
+			if (z > 10) alert('not an emergency');
+			console.log("hi");
+			//loops
+			for(var i=0; i<10; i++)
+				document.write("bar" + i + "<br />");
+		}
+	</script>
+</head>
+<body id="body01">
+	<h1 onclick="foo();">Foo</h1>
+	<h1 onclick="bar();">Bar</h1>
+	<p id="id01">This is a paragraph</p>
+	<p id="id02">This is a paragraph</p>
+</body>
+</html>
