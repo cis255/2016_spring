@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <script>
+      function zippydee() 
+      {
+        var x = 5; <!-- available to function -->
+        y = 6; <!-- for everything -->
+        if ( x < 9)
+        {
+          alert('Really Bro Function?');
+        }
+        for (var i=0;i<10; i++)
+        {
+          //document.write("zippydee" + i + "<br>");
+          console.log("massage " + i);
+        }
+      }
+      
+      //object var object = new objectType(something)
+      // object.method()
+      // 1 + Number((5*Math.random()).toFoxed()) // random between 1 to 6
+      
+      function changetext()
+      {
+        var el = document.getElementById("id01");
+        el.innerHTML = "ZippyDoo!";
+        var newP = document.createElement('SPAN');
+        newP.innerHTML = "Hellow Worldddd!!";
+        document.getElementById("id02").appendChild(newP);
+      }
+      
+    </script>
+  </head>
+  <body id = "body01">
+    <button onclick = "changetext()" >Test Alert</button>
+    <h1 onclick = "zippydee()">Test Alert Function</h1>
+    <p id = "id01" > this is id01 </h1>
+  </body>
+</html>
+
+
+
+<html>
+<head>
+<script>
+    // comments: similar to C++
+    var z = 8; 
+	function zippydoo () {
+	    var el = document.getElementById("id01");
+		el.innerHTML = "ZippyDoo!";
+		
+		var newP = document.createElement("SPAN");
+		newP.innerHTML = "spanTest";
+		document.getElementById("id02").appendChild(newP);
+	
+	}
+    function zippydee () {
+	    // variable
+	    var x = 5;
+		y = 6;
+		// conditionals
+		if (z > 9) alert('not an emergency');
+		// loops
+
+		for (var i=0; i<10; i++) 
+			document.write("zippydee" + i + "<br />");
+
+		// functions (see this function)
+		console.log("Put Messages Here");
+		
+	};;;;;
+</script>
+</head>
+<body id="body01">
+   <h1 onclick="zippydee();">Alert</h1>
+   <button onclick="zippydoo();">Change Paragraph</button>
+   <p id="id01">This is a paragraph</p>
+   <p id="id02">This is a paragraph</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
