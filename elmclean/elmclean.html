@@ -32,27 +32,102 @@ program structure :
 	<meta name="copyright" content="Erika McLean">
 	<meta name="author" content="Erika McLean">
 	<meta name="description" content="menu">
+	
+	<link rel="icon" href="http://www.faviconshut.com/pics/7/7873-technology-icons-pc-technology-icon-favicon.png" type="image/x-icon" />
+
+	<title>CSIS 255 Erika McLean</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" integrity="sha384-XXXXXXXX" crossorigin="anonymous">
+	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js" integrity="sha384-XXXXXXXX" crossorigin="anonymous"></script>
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- My custom CSS styles and fonts-->
+	<link rel="stylesheet" type="text/css" href="custom.css">
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1>CIS-255: Erika McLean</h1>
-	<h2>Course Assignments</h2>
-	<p>Click the link to view assignments.</p>
-	<ul>
+	<!-- static navigation bar --> 
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-header">
+			<a class="container navbar-brand" href="">CIS-255: Erika McLean</a>
+		</div>
+	</nav>
+	
+	<!-- giant image header block with intro text -->
+	<div class="jumbotron"> <!-- outside container for full width -->
+		<div class="container">
+		<br>
+			<h1 class="display-3"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> Welcome!</h1>
+			<p class="lead">This course focuses on web design and the client side of web application development. Topics include XHTML, Cascading Style Sheets (CSS), the Document Object Model, creating dynamic content and architecture, and building/deploying web pages and web sites. A large portion of the class is spent on examining the ECMA/JavaScript client side scripting language. Current topics of interest such as Web 2.0 and AJAX are explored. An introduction to using both commercial and open source web development tools is also provided.</p>
+			<hr class="m-y-2">
+			<p><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Course assignments can be found below.</p>
+		</div>
+	</div>
+	
+	<!-- menu link references
 		<li>Menu (this page)</li>
 		<li><a href="resume.html">Resume</a></li>
 		<li><a href="http://elmclean.wix.com/resume">Wix Resume Site</a></li>
 		<li><a href="http://elmclean.weebly.com/">Weebly Resume Site</a></li>
 		<li><a href="http://csis.svsu.edu/~elmclean/cis255/elmclean/McLean_Project1/theme/index.html">Project 1 - Bootstrap Resume</a></li>
-	</ul>
-	<h2>Cite any code you copy!</h2>
-	<p>You must properly cite any copied code. Consequences for not identifying source: 
-		first offense, summarize IN YOUR OWN WORDS three sources explaining how to properly cite source code; 
-		second offense, zero for the project with improperly cited code; 
-		third offense, fail the course. Note: properly citing the code does not mean you get credit
-		for the work. I can cite "War and Peace," but that does not mean I get credit for writing it!</p>
-	<h2>How to cite source code</h2>
-	<p>See <a href="https://integrity.mit.edu/handbook/writing-code">Academic Integrity at MIT</a>. 
-	This MIT source cannot be one of the three you use if you are caught for a violaion. </p>
-	<p id="copyright">&copy; 2016 Erika McLean.</p>
+	end link references -->
+	
+	<div class="container">
+		<!-- rows full of all the links to the course projects -->
+		<div class="row">
+			<div class="col-md-4">
+				<h3>1. Resume</h3>
+				<p>Use the templates from cis255.com to create your resume. </p>
+				<p><a class="btn btn-primary" href="resume.html" role="button">Go to project <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a></p>
+			</div>
+			<div class="col-md-4">
+				<h3>2. Wix Resume Site</h3>
+				<p>Use the resume from Assignment 1 as a reference and recreate it using the Wix website builder.</p>
+				<p><a class="btn btn-primary" href="http://elmclean.wix.com/resume" role="button">Go to project <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a></p>
+			</div>
+			<div class="col-md-4">
+				<h3>3. Weebly Resume Site</h3>
+				<p>Use the resume from Assignment 1 as a reference and recreate it using the Weebly website builder.</p>
+				<p><a class="btn btn-primary" href="http://elmclean.weebly.com/" role="button">Go to project <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a></p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-4">
+				<h3>4. Project 1 - Bootstrap Resume</h3>
+				<p>Make a 3-page web resume on the CSIS server using a Bootstrap template. </p>
+				<p><a class="btn btn-primary" href="http://csis.svsu.edu/~elmclean/cis255/elmclean/McLean_Project1/theme/index.html" role="button">Go to project <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a></p>
+			</div>
+			<!-- more projects to come
+			<div class="col-md-4">
+				<h3>5.</h3>
+				<p></p>
+				<p><a class="btn btn-primary" href="#" role="button">Go to project <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a></p>
+			</div>
+			<div class="col-md-4">
+				<h3>6.</h3>
+				<p></p>
+				<p><a class="btn btn-primary" href="#" role="button">Go to project <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a></p>
+			</div>
+			end more projects-->
+		</div>
+		<!-- end content rows -->
+		
+		<br>
+		
+		<!-- copyright footer -->
+		<footer class="footer">
+			<p class="text-muted">&copy; 2016 Erika McLean</p>
+		</footer>
+	</div>
 </body>
 </html>

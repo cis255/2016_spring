@@ -1,0 +1,9 @@
+table{
+	border: solid 5pt magenta;
+}
+.dude{
+	border: solid 2pt blue;
+}
+td {
+	padding: 10pt;
+}
