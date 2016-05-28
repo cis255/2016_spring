@@ -1,6 +1,48 @@
 <html>
   <head>
     <script>
+    
+    
+    //types of datatypes: number, string , undefined, nulll, boolean
+    // NOTE: undefined kills the script...... !!!
+    // IN IF STATEMENT !! it parses first one then the second one.
+    // null || 5 is returns 5
+    // it returns value of the first one of leftmost one if null exists in OR statements.
+    
+    //unsual application of OR -- look at prof corser file.
+    
+    var jobject = {
+      name: "Jim Hanse",
+      age: 20,
+      address: "his address",
+      function1: function() {return 5;},
+      array1: [1,2,3,4,5,"asd"]
+    };
+    
+    console.log(jobject);
+    
+    // first class function - assign a function to a variable name
+    
+    f1 = function() {return 5;};
+    console.log(f1);
+    //different than
+    console.log(f1());
+    console.log(jobject.function1());
+    
+    //arrays:
+    //try catch and finally
+    //javascript usually stops at first error
+    //array.concat
+    // array.concat(array2.split(", "))
+    // and join too.
+    // slide 74
+    // onload event for scripts
+    // slide 80
+    // use the add event listener , multiple clicks or multiple events./
+    // form events.
+    // blah.style.color // here color is javascript property.
+    
+    
       function zippydee() 
       {
         var x = 5; <!-- available to function -->
