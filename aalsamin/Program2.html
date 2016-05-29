@@ -1,0 +1,123 @@
+
+<html>
+	<head>
+	    <style>
+			td {
+				vertical-align: text-top;
+			}
+		</style>
+		<script>		
+			<!-- javascript solution: creates new elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			// var url = "https://api.svsu.edu/courses?prefix=CS";
+			var url = "https://api.svsu.edu/courses";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						// + (arr.courses[i].prerequisites).substring(0, 10) + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+					// out += arr.courses[i].prefix + " " + arr.courses[i].courseNumber + "<br />";
+				}
+				// document.getElementById("id01").innerHTML = out;
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>Program 02: SVSU API</h1>
+		<table border="1">
+			<tr>
+				<td>
+					<h2>Courses Taken</h2>
+					<p>Enter courses separated by commas: CS 105, CIS 255, ...</p>
+					<input type="text">
+				</td>
+				<td>
+					<h2>Courses for Degree</h2>
+						<form action="">
+							<input type="radio" name="degree" value="cs"> CS <br>
+							<input type="radio" name="degree" value="cis"> CIS
+						</form>
+					<p>Edit, if desired</p>
+					<textarea id="allCoursesNeeded" rows="10" cols="40">
+					</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2>Courses Available for Registration</h2>
+					<p>Courses Needed and Not Taken But Pre-reqs Have Been Taken</p>
+					<select id="id02"></select>
+					<br />
+				</td>
+				<td>
+					<h2>Courses Not Yet Available</h2>
+					<p>Courses Needed and Not Taken But Pre-reqs Have NOT Been Taken</p>
+				</td>
+			</tr>
+		</table>
+		<p id="id01"></p>
+
+		
+		<script>
+			// courses for CS
+			var cs = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245", "MATH 161",
+			"MATH 223", "COMM 105A", "RPW 304", "PHIL 205A!", "PHIL 210B", "CS 146",
+			"CS 316", "CS 331", "CS 401", "CS 411", "CS 421", "CS 446", "CS 451", "CS 461"
+			, "CS 471", "CIS 255", "CIS 355", "CIS 357", "CIS 311", "CS 345", "CS 403",
+			"CS 431", "CS 476", "CS 482", "CS 490"];
+
+			// courses for CIS
+			var cis = ["CS 245", "MATH 120B", "COMM 105A", "RPW 304", "ACCT 213",
+			"ECON 221", "LAW 308", "MGT 321", "MKT 331", "PHIL 205A!", "PHIL 210B",
+			"CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CIS 301", "CIS 311",
+			"CIS 333", "CIS 355", "CIS 366", "CIS 386", "CIS 386", "CIS 422", "CS 345",
+			"CIS 357", "CIS 371", "CIS 425", "CIS 486", "CIS 490"];
+			
+
+		    // insert CS courses into textarea (id="allCoursesNeeded")
+			var allCourses = document.getElementById("allCoursesNeeded");
+			var allCoursesText = "";
+			for(var i=0; i<cs.length; i++) 
+				allCoursesText += cs[i] + ", ";
+			allCourses.innerHTML = allCoursesText;
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
