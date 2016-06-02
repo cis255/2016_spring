@@ -1,14 +1,37 @@
 
 <html>
 	<head>
+		<title>Alsamin's Program 02: SVSU API</title>
 	    <style>
-			td {
-				vertical-align: text-top;
+			td {vertical-align: text-top;}
+			body {background: url(http://csis.svsu.edu/~aalsamin/cis255/aalsamin/imgs/black-back.jpg); }
+			p { color: white; }
+			h1, h2 {
+				color: white;
+				text-align: center;
+			}
+			table, th, td {
+				color: white;
+				border: 3px solid white;
+			}
+			textarea {font-size: 14px;}
+			button{
+				float: right;
+				width: 150;
+				height: 30;
+				font-size: 14px;
+				border-radius: 12px;
 			}
 		</style>
-		<script>		
+		<script>
+			//  .. taken from Corser
+			
 			<!-- javascript solution: creates new elements with attributes -->
+			// 1. Create New HTTP Request
 			var xmlhttp = new XMLHttpRequest();
+			var xmlhttp2 = new XMLHttpRequest();
+			// 2. Initialize URL
+
 			// var url = "https://api.svsu.edu/courses?prefix=CS";
 			var url = "https://api.svsu.edu/courses";
 
@@ -46,26 +69,26 @@
 	</head>
 	<body>
 		<h1>Program 02: SVSU API</h1>
-		<table border="1">
+		<table  align="center" border="1">
 			<tr>
-				<td>
+				<td width="50%" height="265">
 					<h2>Courses Taken</h2>
-					<p>Enter courses separated by commas: CS 105, CIS 255, ...</p>
-					<input type="text">
+					<p>Enter courses separated by commas</p>
+					<button type="submit" value="Submit">Submit</button><br><br>
+					<textarea rows="10" cols="60" placeholder="CS 105, CIS 255, ..."></textarea
 				</td>
 				<td>
 					<h2>Courses for Degree</h2>
 						<form action="">
-							<input type="radio" name="degree" value="cs"> CS <br>
-							<input type="radio" name="degree" value="cis"> CIS
+							<input type="radio" name="degree" value="cs" onclick="fillCourses('cs');"> CS 
+							<input type="radio" name="degree" value="cis" onclick="fillCourses('cis');"> CIS
 						</form>
 					<p>Edit, if desired</p>
-					<textarea id="allCoursesNeeded" rows="10" cols="40">
-					</textarea>
+					<textarea id="allCoursesNeeded" rows="10" cols="60"></textarea>
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td height="265">
 					<h2>Courses Available for Registration</h2>
 					<p>Courses Needed and Not Taken But Pre-reqs Have Been Taken</p>
 					<select id="id02"></select>
@@ -74,6 +97,8 @@
 				<td>
 					<h2>Courses Not Yet Available</h2>
 					<p>Courses Needed and Not Taken But Pre-reqs Have NOT Been Taken</p>
+					<textarea rows="10" cols="60"></textarea
+
 				</td>
 			</tr>
 		</table>
@@ -81,29 +106,42 @@
 
 		
 		<script>
-			// courses for CS
+			// courses for CS .. taken from Corser
 			var cs = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245", "MATH 161",
 			"MATH 223", "COMM 105A", "RPW 304", "PHIL 205A!", "PHIL 210B", "CS 146",
-			"CS 316", "CS 331", "CS 401", "CS 411", "CS 421", "CS 446", "CS 451", "CS 461"
-			, "CS 471", "CIS 255", "CIS 355", "CIS 357", "CIS 311", "CS 345", "CS 403",
+			"CS 316", "CS 331", "CS 401", "CS 411", "CS 421", "CS 446", "CS 451", "CS 461",
+			"CS 471", "CIS 255", "CIS 355", "CIS 357", "CIS 311", "CS 345", "CS 403",
 			"CS 431", "CS 476", "CS 482", "CS 490"];
 
-			// courses for CIS
+			// courses for CIS .. taken from Corser
 			var cis = ["CS 245", "MATH 120B", "COMM 105A", "RPW 304", "ACCT 213",
 			"ECON 221", "LAW 308", "MGT 321", "MKT 331", "PHIL 205A!", "PHIL 210B",
 			"CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CIS 301", "CIS 311",
-			"CIS 333", "CIS 355", "CIS 366", "CIS 386", "CIS 386", "CIS 422", "CS 345",
-			"CIS 357", "CIS 371", "CIS 425", "CIS 486", "CIS 490"];
+			"CIS 333", "CIS 355", "CIS 366", "CIS 386", "CIS 422", "CS 345", "CIS 357",
+			"CIS 371", "CIS 425", "CIS 486", "CIS 490"];
 			
+					
+		    // insert CS courses OR CIS courses into textarea (id="allCoursesNeeded"), taken from Corser and make some change
+			function fillCourses(x)
+			{
+				var allCourses = document.getElementById("allCoursesNeeded");
+				var allCoursesText = "";
+				if(x == 'cs') 
+				{
+					for(var i=0; i<cs.length; i++)
+						allCoursesText += cs[i] + ", ";
+					allCourses.innerHTML = allCoursesText.substring(0, allCoursesText.length - 2);
+				}
+				else if(x == 'cis')
+				{
+					for(var i=0; i<cis.length; i++) 
+						allCoursesText += cis[i] + ", ";
+					allCourses.innerHTML = allCoursesText.substring(0, allCoursesText.length - 2);
+				}
+			}
+	
 
-		    // insert CS courses into textarea (id="allCoursesNeeded")
-			var allCourses = document.getElementById("allCoursesNeeded");
-			var allCoursesText = "";
-			for(var i=0; i<cs.length; i++) 
-				allCoursesText += cs[i] + ", ";
-			allCourses.innerHTML = allCoursesText;
 		</script>
-		
 	</body>
 </html>
 
