@@ -1,0 +1,35 @@
+00:22 Introduction
+03:27 Variables
+04:27 Math
+12:00 Random Numbers
+13:21 Strings
+17:24 Styling Strings
+18:14 If
+21:44 Switch
+23:04 Ternary Operator
+23:55 While
+24:51 Do While
+25:52 For
+27:37 For In
+28:39 Arrays
+34:42 Functions
+36:41 Pass Function as Parameter
+39:42 Receive Variable Number of Arguments
+40:55 Return Variable Number of Arguments
+42:02 Recursive Functions
+43:54 Event Handling
+46:24 Mouse Events
+51:30 Key Events
+54:02 Change Tag Value
+56:41 Change Class
+58:02 Change Input Element
+59:20 Mouse X / Y Coordinates
+1:01:42 Get Elements by Tag Name
+1:03:00 Element Styling
+1:05:48 Manipulating URLs
+1:09:37 Editing Child Nodes
+1:15:08 Setting Attributes
+1:18:11 Adding Elements
+1:19:50 OO JavaScript
+1:28:33 Form Validation
+1:34:54 Exception Handling

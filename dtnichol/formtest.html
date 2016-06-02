@@ -1,0 +1,108 @@
+<html>
+<!--form action='http://csis.svsu.edu/~gpcorser/cis355/jsonTest.php'-->
+	<!--fieldset>
+	
+		<table>
+			<tr>
+				<td><label>Course Prefix (Department):</label></td>
+				<td><input type='text' name='prefix'></td>
+				<td><input type="radio" name="Cis"><label>CIS</label></td>
+				<td><input type="radio" name="Cis"><label>CS</label></td>
+				<td><input type="radio" name="Cis"><label>MATH</label></td>
+				<td><input type="text" name="Courses Taken"><label>Courses Taken</label></td>
+			</tr>
+		
+			<tr>
+				<td><label>Course Number:</label></td>
+				<td><input type='text' name='courseNumber'></td>
+				<td>
+					<select name="courseNumber">
+						<option>255</option>
+						<option>355</option>
+						<option>161</option>
+						<option>116</option>
+					</select>
+				
+				
+				</td>
+			</tr>
+		
+			<tr>
+				<td><label>Instructor:</label></td>
+				<td><input type='text' name='instructor'></td>
+			</tr>
+			
+			<tr>
+				<td><label>Date:</label></td>
+				<td><input type='date' name='date'></td>
+			</tr>
+			
+		</table>
+		
+		<input type='submit' value="Submit">
+	</fieldset-->
+	<head>
+	
+		<script
+			src="https://code.jquery.com/jquery-2.2.3.min.js"
+			integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+			crossorigin="anonymous">
+		</script>
+		
+		<script>
+		<!-- javascript solution: creates new elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+					// out += arr.courses[i].prefix + " " + arr.courses[i].courseNumber + "<br />";
+				}
+				// document.getElementById("id01").innerHTML = out;
+			}
+
+		</script>
+	</head>
+	<div id="hcard-Derek-Thomas-Nichols" class="vcard">
+		<span class="fn n">
+			<span class="given-name">Derek</span>
+			<span class="additional-name">Thomas</span>
+			<span class="family-name">Nichols</span>
+		
+		<div class="org">SVSU</div>
+			<a class="email" href="mailto:dtnichol@svsu.edu">dtnichol@svsu.edu</a>
+		<div class="adr">
+			<span class="postal-code">48710</span>
+		
+			<span class="country-name">USA</span>
+		
+		</div>
+		<div class="tel">989-964-0000</div>
+			<span p style="font-size:smaller;">This <a href="http://microformats.org/wiki/hcard">hCard</a> created with the <a href="http://microformats.org/code/hcard/creator">hCard creator</a>.</p>
+		
+		
+	</div>
+<!--/form-->
+</html>

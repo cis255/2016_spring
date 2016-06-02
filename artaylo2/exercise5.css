@@ -1,0 +1,39 @@
+article {background-color: yellow;
+	margin: 5px, 50px;
+	padding: 5px, 20px;}
+	
+figure{border: 1pt solid #262626;
+	background-color: #c1c1c1;
+	padding: 5px;
+	width: 150px;
+	float: left;
+	margin: 10px;
+	overflow: auto;
+	position: relative;
+	}
+p{margin: 16px 0;}
+
+/* creates error if figure isnot floated left
+img{float: left;}
+
+figcaption{float: left;}*/
+
+.overlayed{position: absolute;
+	top: 10px;
+	left: 10px;}
+	
+div{float: left;
+	position: relative;}
+	
+div img:first-child{visibility: hidden;}
+
+span.popup{padding: 10px;
+	
+	position: absolute
+	visibility: hidden;}
+
+div:hover img {
+		position: absolute;
+		top: 0;
+		left: 100px;
+		visibility: visible}

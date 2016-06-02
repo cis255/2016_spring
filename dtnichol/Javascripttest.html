@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<script>
+	var z = 8;
+	
+	function zippydoo(){
+		var el = document.getElementById("id01");
+		el.innerHTML = "zippydoo!";
+		//var bod = document.getElementById("body01");
+		
+		var newP = document.createElement("SPAN");
+		newP.innerHTML = ("spanTest")
+		document.getElementById("id02").appendChild(newP)
+		
+		
+	}
+	function zippydee(){
+		//variable
+		var x = 5;
+		y = 6;
+		//conditions
+		if (z > 9) alert('not and emrgency');
+		//loops
+		for (var i=0; i<10; i++)
+			document.write("zippydee " + i + "<br />");
+		// functions (see this function)
+		console.log("put message here")
+	}
+</script>
+<body id="body01">
+	
+	<h1 onclick="zippydee();">Alert</h1>
+	<button onclick="zippydoo();">Change Paragraph</button>
+	<p id="id01">This is a paragraph</P>
+	<p id="id02">This is a paragraph</P>
+</body>
+</html>
