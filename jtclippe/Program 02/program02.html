@@ -1,0 +1,79 @@
+<html>
+	<head>
+	    <style>
+			td {vertical-align: text-top; }
+			td button {margin:auto;display:block;}
+			h1 {text-align: center;}
+			#gradient > .vertical(#333; #000);
+		</style>  
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Program 02: SVSU API</h1>
+		<table>
+			<tr>
+				<td>
+					<div class="panel panel-primary">
+					  <div class="panel-body">1. Courses Taken So Far</div>
+					  <div class="panel-footer">Enter courses taken so far, separated by commas</div>
+					  <textarea id="coursesTaken" rows="10" cols="40" placeholder="CS105, CS116, CIS255, ..."></textarea>
+					  <br /><br /><br /><br />
+					</div>	
+				</td>
+				<td>
+					<div class="panel panel-primary">
+					  <div class="panel-body">2. All Courses Needed for Degree</div>
+						<div class="panel-footer">Edit, if desired
+							<form action="">
+								<input type="radio" name="degree" value="cs" id="csRadio" onchange="displayCoursesNeeded()" checked> CS <br>
+								<input type="radio" name="degree" value="cis" id="cisRadio" onchange="displayCoursesNeeded()"> CIS
+							</form>
+						</div>
+						<textarea id="allCoursesNeeded" rows="10" cols="40"></textarea>
+					</div>
+				</td>
+			</tr>
+			<tr><td colspan='2'><button class="btn btn-primary btn-lg btn-block" onclick="submitCourses()">Submit</button></td></tr>
+			<tr>
+				<td>
+					<div class="panel panel-primary">
+					  <div class="panel-body">3. Courses Needed, But Not Taken, and Eligible for Registration</div>
+					  <div class="panel-footer">Courses needed for degree, but not yet taken, and all prereqs taken</div>
+					  <textarea id="id02" rows="30" cols="50"></textarea>
+					</div>	
+					<br />
+				</td>
+				<td>
+					<div class="panel panel-primary">
+					  <div class="panel-body">4. Courses Needed But Not Yet Eligible for Registration</div>
+					  <div class="panel-footer">Courses needed for degree, but not yet taken, and NOT all prereqs taken</div>
+					 <textarea id="coursesLeft" rows="30" cols="50"></textarea>
+					</div>	
+				</td>
+			</tr>
+		</table>
+		<p id="id01"></p>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="p2.js"></script>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
