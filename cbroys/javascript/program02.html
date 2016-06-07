@@ -1,0 +1,142 @@
+<!-- 
+filename  : program02.html
+author    : Cole Roys
+date      : 2016-05-10
+email     : cbroys@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~cbroys/cis255/cbroys/javascript/program02.html
+backup    : https://github.com/cis255/cis255
+purpose   : To find classes still needed for graduation from CS and CIS degree path.
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			None
+external code references in this file: 
+			Prof George Corser for API, XML requests, prereq, and dropdown menu functions.
+			Zaiter for sorting array data.
+			Jennifer Bobber for Radio Button Functionality.
+			bootstrap css and components.
+			
+program structure (design):
+	<head>: 
+		Meta Data
+		TAB TITLE
+		Bootstrap
+		CSS
+	<body>: 
+		Textarea for listing classes taken,
+		submit button to compare the data,
+		course list with radio buttons for selection,
+		dropdown box of all available classes for registration,
+		textarea with all classes still needing to be taken,
+		footer with copyright notices.
+ -->
+<html lang="en">
+	<head>
+	<!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="copyright" content="Dr. Corser">
+	<meta name="copyright" content="Zaiter">
+	<meta name="copyright" content="Jennifer Bobber">
+	<meta name="copyright" content="Cole Roys">
+	<meta name="author" content="Cole Roys">
+	<meta name="description" content="program02">
+
+	<!-- TAB TITLE -->
+    <title>SVSU Course Scheduler</title>
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="program02.css">
+	
+	<!-- Javascript -->
+	<script type="text/javascript" src="program02.js"></script>
+	
+	</head>
+	<body>
+		<!-- Background -->
+		<div id="background" ><img class="stretch" src="bg.png"/></div>
+		
+		<!-- Components -->
+		<div class="textShadow" align = "center">
+		
+			<!-- Header -->
+			<header>
+				<div class = "row">
+					<div class = "col-xs-12">
+					<img id="seal" src="SVSU Seal.png" align="float-center">
+						<h1>SVSU CS & CIS Course Scheduler</h1><small>Program 2</small>
+					</div>
+				</div>
+			</header>
+			
+			<!-- Boxes for input -->
+			<div class = "row">
+				<div class = "col-xs-6">
+					<h2><applet code="bubble.class" width="350" height="350">1. Courses Taken ...</h2></applet>
+					<h4>Enter courses taken so far, separated by commas</h4>
+					<textarea class="inputbox" id="coursesTaken" rows="10" cols="40" placeholder="CS 105, CS 116, CIS 255, ..."></textarea>
+				</div>
+				<div class = "col-xs-6">
+					<h2>2. All Courses Needed ...</h2>
+					<h4>Select degree type first, then edit if desired.</h4>
+					<form name = "selectCourse">
+						<div class="radio-inline">
+						  <label><input type="radio" id = "radioCS" name="degree" 
+							onclick="course('CS');" value="cs" checked>CS</label>
+						</div>
+						<div class="radio-inline">
+						  <label><input type="radio" id = "radioCIS" name="degree" 
+							onclick="course('CIS');" value="cis">CIS</label>
+						</div>
+					</form>
+					
+					<textarea class="inputbox" id="allCoursesNeeded" rows="9" cols="40"></textarea>
+					</textarea>
+				</div>
+				<div class = "col-xs-6">
+					<button type="button" class="btn btn-default btn-lg" onclick="scheduleSubmit();">
+					  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Update
+					</button>
+				</div>
+			</div>
+			<!-- Output -->
+			<div class = "row">
+				<div class = "col-xs-6">
+					<h2>3. Courses Needed, But Not Taken, and Eligible for Registration ...</h2>
+					<p>Courses needed for degree, but not yet taken, and all prereqs taken</p>
+					<select size="12" class="inputbox" multiple class="form-control" id="id02"></select>
+				</div>
+				<div class = "col-xs-6">
+					<h2>4. Courses Needed But Not Yet Eligible for Registration ...</h2>
+					<p>Courses needed for degree, but not yet taken, and NOT all prereqs taken</p>
+					<textarea class="inputbox" id="neededButNotEligible" rows="10" cols="40" readonly ></textarea>
+				</div>
+			</div>
+		</div>
+		<!-- Footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1 text-center">
+					<br />
+					<br />
+						<p class="text-muted">Copyright &copy; Cole Roys 2016</p>
+						<h6 class="text-muted">With special thanks to Mr. Zaiter, Dr. Corser, and Ms. Bobber</h6>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
