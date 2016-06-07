@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<script
+			src="https://code.jquery.com/jquery-2.2.3.min.js"
+			integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+			crossorigin="anonymous">
+		</script>
+		<script>		
+
+
+			<!-- javascript solution: creates new elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+					// out += arr.courses[i].prefix + " " + arr.courses[i].courseNumber + "<br />";
+				}
+				// document.getElementById("id01").innerHTML = out;
+			}
+			
+		</script> 
+	</head>
+	<body>
+	<h1>Program 02: SVSU API</h1>
+	<table border="1">
+		<tr>
+			<td>
+				<h2>Courses Taken</h2>
+				<p> Enter courses seperated by Commas: CIS 105, CIS 116, ETC.</p>
+				<input type="text">
+			</td>
+			<td>
+				<h2>Courses for Degree</h2>
+				<p> Edit if desired</p>
+				<textarea id="allCoursesNeeded" rows="10" cols="20"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2>Courses Available for Registration</h2>
+				<p>Courses not taken but Prereqs have been taken</p>
+			</td>
+			<td>
+				<h2>Courses Not Yet Available</h2>
+				<p>Courses not taken but Prereqs have not been taken</p>
+			</td>
+		</tr>
+	</table>
+		<p id="id01"></p>
+		<select id="id02"></select>
+	<script>
+		    // courses for CS
+			var cs = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245"];
+			
+			// course for CIS
+			var cis = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245"];
+		
+		    // insert CS courses into textarea (id="allCoursesNeeded")
+			var allCourses = document.getElementById("allCoursesNeeded");
+			var allCoursesText = "";
+			for(var i=0; i<cs.length; i++) 
+				allCoursesText += cs[i] + ", ";
+			allCourses.innerHTML = allCoursesText;
+		</script>
+	</body>
