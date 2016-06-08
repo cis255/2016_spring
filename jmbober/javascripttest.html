@@ -1,0 +1,179 @@
+<html>
+  <head>
+    <script>
+    //RECAP OF CS-116-LEVEL JAVASCRIPT
+
+    //Primitive data type: Number
+    a = 5;
+    var n = 6;
+    var z = 0;
+    
+    //Primitive data type: Object (ex. string)
+    s = "Hello";
+    console.log(s);
+    
+    //Primitive data type: Null
+    l = null;
+    console.log(l);
+    
+    //Primitive data type: Boolean
+    b = true;
+    f = false;
+    console.log(b);
+    
+    //Primitive data type: Undefined
+   // console.log(u);
+    
+    //unusual application of "or" (||)
+    console.log (l || a); //displays 5
+    
+    if(l || a) console.log("prints " + a);
+    if(l || b) console.log("prints " + b);
+    if(l || f) console.log("prints " + f);
+    if(l || z) console.log("prints " + z);
+    
+    var jobject = {
+        name: "Jimmy Joe",
+        age: 20,
+        address: "123 Fourth Street",
+        function1: function () {return 15;},
+        array1: [1, 2, 3, 5]
+    }
+    console.log(jobject);
+    
+    //Arrays
+    array2 = [2, 4, 6, 5];
+    array3 = new Array(3, 6, 9, "omg");
+    
+    console.log(jobject.array1[0]);
+    console.log(array2);
+    console.log(array3);
+    
+    
+    //first class function
+    f1 = function () {return 5;};
+    console.log(f1());
+    console.log(f1);
+    console.log(jobject.function1());
+    console.log(jobject.function1);
+    
+  
+    //Other stuff
+    var z = 8;
+    function zippydoo () {
+      var el = document.getElementById("id01");
+      el.innerHTML = "ZippyDoo!";
+      
+      var newP = document.createElement("SPAN");
+      newP.innerHTML = " zippy zippy zippy";
+      document.getElementById("id02").appendChild(newP);
+      var newText = "test01";
+    }
+    
+    function zippydee () {
+      //variable
+      var x = 5;
+      y = 6;
+      
+      //conditionals
+      if (z > 9) alert('not an emergency');
+      
+      //loops
+      for (var i = 0; i<10; i++)
+        document.write("zippydee" + i + "<br />");
+        
+      //functions(see this function lolz)
+      console.log("put messages here");     
+    };;;;;;
+    
+    //Try/Catch (from slide 41)
+    
+    try {
+      var x = 1;
+      if (x < 0) 
+        throw "smallerThanZeroError";
+      var y = 101;
+      if (y > 100) 
+        throw "greaterThan100Error";
+    } 
+    catch(err) {
+     //   alert (err + " was thrown");
+    }
+    finally {
+      console.log("value of x: " + x);
+    }
+    k = 12 / 0;
+    console.log(k);
+    // javascript will stop at first error
+    // console.log(j);
+       
+    array4 = ["CS 101", "CS 102", "CS 103"];
+    console.log(array4);
+    console.log(array4.concat("CS 104"));
+    s2 = "CS 105, CS 106, CS 107";
+    console.log(array4.concat(s2.split(", ")));
+    
+     function loadscript ()
+    {
+      // from slide 74
+      var commentTag =
+      document.getElementById("specificTag");
+      commentTag.style.backgroundColor = "#A1B2C3";
+      commentTag.style.borderWidth = "3px";   
+      
+      //Event listener: On click
+      var greetingBox = document.getElementById("gmorn");
+      greetingBox.addEventListener('click', function(){
+      alert("Good Morning") }, false);
+      
+      //Focus on me
+      document.getElementById("firstname").onfocus = function (e) { 
+        var firstnamelabel = document.getElementById("fnl");
+        firstnamelabel.style.backgroundColor = "#3AAABC";
+      };
+      
+       //Focus off me
+      document.getElementById("firstname").onblur = function (e) { 
+        var firstnamelabel = document.getElementById("fnl");
+        firstnamelabel.style.backgroundColor = "#FFFFFF";
+      };
+      
+      //Prevent Default
+      document.getElementById("form01").onsubmit = function (e) {
+        var nameValue = getElementById("firstname").value;
+        if(nameValue == null || nameValue == "")
+        {
+          e.preventDefault();
+          var firstnamelabel = document.getElementById("fnl");
+          firstnamelabel.style.backgroundColor = "#FF0000";
+          nameValue.focus();
+        }
+      };
+      
+    }
+    
+
+   console.log("End of Script 1");
+
+</script>
+
+</head>
+<body id="body01" onload="loadscript();">
+  <h1 onclick="zippydee()"> Alert</h1>
+  <button onclick="zippydoo();"> Change Paragraph </button>
+  <p id="id01"> This is a paragraph </p>
+  <p id="id02"> This is a paragraph </p>
+  <p id="specificTag"> This is a specific paragraph </p>
+  <p id="gmorn"> Click meee </p>
+    
+  <form id = "form01" action="junk.html" method="GET">
+      <label id="fnl" for="firstname" > First Name: </label>
+      <input name="firstname" id="firstname" type="text" placeholder=" John Doe"> </br>
+      <label for="address"> Address: </label>
+      <input name="address" id="address" type="text" placeholder = " 123 Fourth St."> </br>
+      <button type="submit" value = "submit"> Go! </button>
+  </form>
+    
+ 
+</body>
+</html>
