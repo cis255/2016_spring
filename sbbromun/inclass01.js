@@ -51,11 +51,6 @@ $(document).ready(function() {
 	$("#timeDiv").load("currentTime.php");
 	//$("#timeDiv").load("http://api.svsu.edu/courses?prefix=CIS&courseNumber=255");
 	
-	
-	$("#p1").click(function(){
-		$(this).hide();
-	});
-
 	// example GET request
 	var jqxhr = $.get("currentTime.php", function (data,textStatus,jsxhr) {
 		if (textStatus == "success") {
@@ -84,6 +79,31 @@ $(document).ready(function() {
 	);
 	console.log(jqxhr.statusCode());
 
+	$("#p1").click(function(){
+		$(this).hide();
+		$("#timeDiv").hide(3000);
+		$(".zippydee").fadeToggle(3000);
+	});
+	
+	$(".zippydonut").click(function(){
+		$("#p1").show();
+		$("#timeDiv").show(3000);
+		$(".zippydee").fadeToggle(3000);
+	});
+	
+	$("#timeDiv").css("position","relative")
+	$("#timeDiv").click(function(){
+		$(".zippydee").css("position","relative");
+		$(".zippydee").animate(
+			{
+				left: 300,
+				opacity: .5,
+				'font-size': "22px",
+				width: 300
+			}, 2000, "swing",function(){alert("done");}
+		);
+	});
+	
 });
 
 
