@@ -58,25 +58,25 @@
 		
 			
 
-			function myFunction(arr) {
-				var out = "";
-				var i;
-				for(i = 0; i < arr.courses.length; i++) {
-					var newP = document.createElement("option");
-					newP.setAttribute("value", i);
-					var newText 
-						= document.createTextNode(arr.courses[i].prefix + " " 
-						+ arr.courses[i].courseNumber + " " 
-						+ arr.courses[i].term + " " 
-						+ arr.courses[i].meetingTimes[0].days + " " 
-						+ arr.courses[i].meetingTimes[0].startTime + " " 
-						+ arr.courses[i].meetingTimes[0].instructor); 
-					document.getElementById("id02").appendChild(newP);
-					newP.appendChild(newText);
-				    //out += arr.courses[i].prefix + " " + arr.courses[i].courseNumber + "<br />";
-				}
-				// document.getElementById("id01").innerHTML = out;
-			}
+			//function myFunction(arr) {
+			//	var out = "";
+			//	var i;
+			//	for(i = 0; i < arr.courses.length; i++) {
+			//		var newP = document.createElement("option");
+			//		newP.setAttribute("value", i);
+			//		var newText 
+			//			= document.createTextNode(arr.courses[i].prefix + " " 
+			//			+ arr.courses[i].courseNumber + " " 
+			//			+ arr.courses[i].term + " " 
+			//			+ arr.courses[i].meetingTimes[0].days + " " 
+			//			+ arr.courses[i].meetingTimes[0].startTime + " " 
+			//			+ arr.courses[i].meetingTimes[0].instructor); 
+			//		document.getElementById("id02").appendChild(newP);
+			//		newP.appendChild(newText);
+			//	    //out += arr.courses[i].prefix + " " + arr.courses[i].courseNumber + "<br />";
+			//	}
+			//	// document.getElementById("id01").innerHTML = out;
+			//}
 			
 		</script>
 	</head>
@@ -87,7 +87,7 @@
 				<td><h2>1. Courses Taken</h2>
 					<p>Enter courses separated by commas</p>
 					<textarea id="coursesTaken []" rows="10" cols="50" placeholder="CIS 105, CS 116, ..."></textarea><br />
-					<input type="submit" value="Update" id="updateTaken"></input>
+					<input type="submit" value="Update" id="updateButton ()"></input>
 				</td>
 				<td>
 					<h2>2. All Courses for Degree</h2>
@@ -107,7 +107,7 @@
 				<td>
 					<h2>4. Courses Not Yet Available</h2>
 					<p>Courses needed and not taken but pre-reqs have not been taken</p>
-					<textarea id="coursesNotEligible" rows="10" cols="50"></textarea><br />
+					<textarea id="neededButNotEligible" rows="10" cols="50"></textarea><br />
 				</td>
 			<tr>
 			</tr>
@@ -239,7 +239,7 @@
 			
 			function updateButton(){
 			//first remove all dropdown options.
-				removeOptions(document.getElementById("id02"));
+				removeCourses(document.getElementById("id02"));
 				//assign variables to needed elements.
 				takenElement = document.getElementById("coursesTaken");
 				coursesForGraduationElement = document.getElementById("allCoursesNeeded");
@@ -280,10 +280,46 @@
 					}
 				}
 						
-						}
+					//for loop that handles the making of drop down menu of courses available for registeration. -- credits to prof Corser
+					for(var i = 0; i < coursesEligibleJsonArr.length; i++) {
+						var newP = document.createElement("option");
+						var newText 
+							= document.createTextNode(
+							coursesEligibleJsonArr[i].prefix + " " 
+							+ coursesEligibleJsonArr[i].courseNumber + " " 
+							+ coursesEligibleJsonArr[i].term + " " 
+							+ coursesEligibleJsonArr[i].meetingTimes[0].days + " " 
+							+ coursesEligibleJsonArr[i].meetingTimes[0].startTime + " " 
+							+ coursesEligibleJsonArr[i].instructors[0].name); 
+						document.getElementById("id02").appendChild(newP);
+						newP.appendChild(newText);
+					}	
 						
-							
+			//last but not least: courses that are not eligible.
+				//declare variables for element and text for neededButNotEligible in html.
+				var coursesNotEligibleElement = document.getElementById("neededButNotEligible");
+				var coursesNotEligibleText = "";
+				//for loop to generate text that goes into neededButNotEligible element.
+				for(var i=0; i<coursesNotEligible.length; i++) 
+				{
+					// if the course is in coursesNotEligible array and not in taken array, then add it to text
+					if(takenArr.indexOf(coursesNotEligible[i]) == -1)
+					{
+						if ( i != (coursesNotEligible.length-1) )
+						{
+							coursesNotEligibleText += coursesNotEligible[i] + ", ";
+						}
+						else
+						{
+							coursesNotEligibleText += coursesNotEligible[i];
+						}
+					}
+				}
+				// show it up on the html element.
+				coursesNotEligibleElement.innerHTML = coursesNotEligibleText;
 			
+							
+			}
 					
 		
 		</script>
