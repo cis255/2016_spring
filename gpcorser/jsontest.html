@@ -6,7 +6,9 @@
 			crossorigin="anonymous">
 		</script>
 		<script>
+		    <!-- do not use jQuery for Program02 -->
 			<!-- jquery solution: only replaces innerHTML -->
+			/* 
 			$.getJSON("https://api.svsu.edu/courses?prefix=CIS", function (data) {
 				// console.log(data);
 				for (var i = 0; i < data.courses.length; i++) { 
@@ -14,6 +16,7 @@
 					$("#id01").append(data.courses[i].courseNumber+"<br/>");
 				}
 			});
+			*/
 			
 			<!-- javascript solution: creates new elements with attributes -->
 			var xmlhttp = new XMLHttpRequest();

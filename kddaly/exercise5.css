@@ -1,0 +1,58 @@
+article {
+background-color: #898989;
+margin: 5px 50px;
+padding: 5px 20px;
+}
+p {margin: 16px 0;}
+figure{
+border: 1pt solid #232323;
+background-color: #c1c1c1;
+padding: 5px;
+width: 150px;
+float: left;
+margin: 10px;
+position: relative;
+}
+.first{
+clear: left;
+}
+img{
+float: left;
+}
+figcaption{
+float: left;
+}
+.overlayed {
+position: absolute;
+top: 10px;
+left: 10px;
+}
+.hide{
+display: none;
+}
+div img:first-child{
+visibility: visible;
+}
+div.thumbnail:hover  img{
+position: absolute;
+visibility: visible;
+}
+div.popup {
+position: absolute;
+visibility: hidden;
+padding: 10px;
+}
+div.wrapper1{
+background-color: tan;
+margin-left: auto;
+margin-right: auto;
+}
+@media only screen and (max-width:480px)
+{
+#slider-image {max-width: 100%}
+#flash-ad {display: none;}
+}
+@media only screen and (min-width: 481px) and (max-width: 768px)
+{
+
+}

@@ -1,0 +1,93 @@
+@media only screen and (max-width:480px) {
+	.wrapper1 {
+		width: 400px; 
+		background-color: magenta;
+	}
+}
+@media only screen and (min-width:481px) {
+	.wrapper1 {
+		width: 960px; 
+		background-color: lightblue;
+	}
+}
+div.wrapper1 {
+	margin-left: auto;
+	margin-right: auto;
+}
+article {
+	background-color: #898989;
+	margin: 5px, 50px;
+	padding: 5px, 20px;
+}
+p {margin: 16px, 0}
+figure {
+	border: 1pt solid #262626;
+	background-color: #c1c1c1;
+	padding: 5px;
+	width: 150px;
+	float: left;
+	margin: 10px;
+	/*overflow: auto; if you don't have pictures sized, this will create a scroll bar within the container*/
+	position: relative;
+}
+figcaption {
+	background-color: black;
+	color: white;
+	opacity: 0.6;
+	width: 140px;
+	height: 20px;
+	padding: 5px;
+	/*position: absolute;
+	top: 130px;
+	left: 10px;*/
+}
+.first {clear: left;}
+.overlayed {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.hide {display: none;}
+div.float {
+	float: left;
+	position: relative;
+}
+div img {
+	visibility: visible;
+	position: absolute;
+}
+/*div img:first-child {
+	visibility: hidden;
+} */
+div img:hover {
+	visibility: visible;
+}
+.popup {
+	padding: 5px;
+	background: #e1e1e1;
+	position: absolute;
+	/*hide it until there is a hover */
+	visibility: hidden;
+	/*add a drop shadow to frame */
+	-webkit-box-shadow: 0 0 15px #A9A9A9;
+	-moz-box-shadow: 0 0 15px #A9A9A9;
+	box-dhadow: 0 0 15px #A9A9A9;
+}
+.thumbnail:hover  .popup {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	/*display image upon hover */
+	visibility: visible;
+}
+span {
+	position: relative;
+}
+/*breaks things and makes them look bad if float: left is also in figure, apparently fixed with overflow: auto in figure section.
+img(
+	float: left;
+)
+figcaption {
+	float: left;
+}
+*/

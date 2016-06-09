@@ -1,0 +1,62 @@
+<style>
+	head	{background-image: url("img/headfoot.png");}
+	body	{background-color: red;}
+	.header	{background-image: url("img/headfoot.png");
+			 padding: 30px;
+			 text-align: center;
+			 color: black;
+			 font-size: 20px;
+			 }
+	.content{background-image: url("img/background.png");
+			 padding-top: 30px;
+			 padding-bottom: 10px;
+			 text-align: center;
+			 border-radius: 25px;
+			 overflow: auto;
+			}
+	.footer	{background-image: url("img/headfoot.png");
+			 padding: 10px;
+			 text-align: center;
+			 color: black;
+			}
+	#wrapper	{}
+	#divHeader	{text-align: center;
+				 color: black;
+				 font-size: 20px;
+				 text-decoration: underline;
+				 padding: 5px;
+				}
+	.taken		{overflow: scroll;
+				 height: 200px;
+				 width: 425px;
+				}
+	.takenList		{border: 2px solid white;
+					 background: transparent;
+					 padding: 10px;
+					 float: left;
+					 overflow: auto;
+					 height: 265px;
+					 width: 450px;
+					}
+	.canTakeList	{border: 2px solid white;
+					 background: transparent;
+					 padding: 10px;
+					 float: left;
+					 overflow: auto;
+					 height: 265px;
+					 width: 450px;}
+	.requiredList	{border: 2px solid white;
+					 background: transparent;
+					 padding: 10px;
+					 float: right;
+					 overflow: auto;
+					 height: 265px;
+					 width: 450px;}
+	.cantTakeList	{border: 2px solid white;
+					 background: transparent;
+					 padding: 10px;
+					 float: right;
+					 overflow: auto;
+					 height: 265px;
+					 width: 450px;}
+</style>
