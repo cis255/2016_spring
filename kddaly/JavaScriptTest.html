@@ -1,0 +1,79 @@
+<html>
+<head>
+<script>
+	var z = 8;
+	function zippydoo() {
+	var el = document.getElementById("id01");
+	el.innerHTML = "ZippyDoo!";
+	
+	var newP = document.createElement("SPAN");
+	newP.innerHTML = "spanTest";
+	document.getElementById("id02").appendChild(newP);
+	}
+	function zippydee () {
+	var x = 5;
+	y = 6;
+	if (z > 9) alert('not an emergency')
+	for (var i=0; i<10; i++)
+		document.write("zippydee" + i + "<br />")
+		console.log("put messages here");
+	};;;
+	try {
+	var x = 1;
+	if (x<0)
+		throw "smallerthanerror";
+	}
+	 catch(err) {
+	 alert (err + " was thrown");
+	 }
+	 finally {
+	  console.log("value of x: " + x)
+	 }
+	 function loadscript() {
+	 	 var commentTag = 
+		document.getElementById("id01");
+		commentTag.style.backgroundColor = "#FFFF00";
+		commentTag.style.borderWidth = "3px";
+		console.log("End of Script");
+		
+		//var greetingBox = document.getElementById('gmorn');
+		//greetingBox.addEventListener('click', function() {alert("Good Morning"), false};
+		
+		
+		document.getElementById(form01).onsubmit = function (e) {
+		var nameValue = document.getElementById(FirstName).value;
+		if(nameValue == null || nameValue == ""){
+			e.preventDefault();
+			namelabel.style.backgroundColor = "#FF0000";
+			nameValue.focus();
+			}
+		}
+	
+		//document.getElementById(FirstName).onfocus = function (e) {
+		//var namelabel = document.getElementById(fnl);
+		//namelabel.style.backgroundColor = "#FFFF00";
+		//};
+		};;;
+	</script>
+</head>
+<body id="body01" onload="loadscript();">
+	<h1 onclick="zippydee();">ALERT</h1>
+	<button onclick="zippydoo();">Change Paragraph</button>
+	<p id ="id01">This is the Paragraph</p>
+	<p id ="id02">This is the Paragraph</p>
+	<p id ="gmorn">This is the Paragraph</p>
+	
+	
+	<form id='form01' action='junk.html' method='GET'>
+		<label id='fnl' for='FirstName'>First Name</label>
+		<input name='FirstName' type='text' placeholder='Jane Doe'><br />
+		<label for='Address'>Address</label>
+		<input name='Address' type='text'placeholder='123 Fake St'>
+		<button type="submit" value="Submit">SUBMIT</button>
+	</form>
+	
+	
+	
+	
+	</body>
+	</html>

@@ -27,10 +27,12 @@ div{float: left;
 	
 div img:first-child{visibility: hidden;}
 
-span.popup{padding: 10px;
+popup{padding: 10px;
 	
 	position: absolute
 	visibility: hidden;}
+
+	span{position: relative;}
 
 div:hover img {
 		position: absolute;

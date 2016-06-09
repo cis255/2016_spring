@@ -1,0 +1,71 @@
+@media only screen and (max-width:480px) {
+	.wrapper1 { 
+		width: 400px; 
+		background-color: blue;
+	}
+}
+@media only screen and (min-width:481px) {
+	.wrapper1 { 
+		width: 960px; 
+		background-color: tan;
+	}
+}
+div.wrapper1 {
+	margin-left: auto;
+	margin-right: auto;
+}
+article {
+	background-color: #898989;
+	margin: 5px 50px;
+	padding: 5px 20px;
+}
+p{ margin: 16px 0;}
+figure{
+	border: 1pt solid #262626;
+	background-color: #c1c1c1;
+	padding: 5px;
+	width: 150px;
+	float: left;
+	margin: 10px;
+	position: relative;
+}
+.first{
+	clear: left;
+}
+.overlayed{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.hide{
+	display: none;
+}
+div{
+	position: relative;
+}
+div.thumbnail:hover span.popup{
+	visibility: visible;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+/*
+div img:first-child{
+	visibility: hidden;
+}*/
+span.popup{
+	position: absolute;
+	visibility: hidden;
+	padding: 10px;
+}
+
+}
+/* Creates error if figure is floated left.
+Solved by Overflow: auto;
+img {
+	float:left;
+	
+}
+figcaption {
+	float: left;
+}*/

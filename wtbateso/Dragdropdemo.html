@@ -1,0 +1,112 @@
+<!doctype html>
+<!-- from: http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html-->
+<html lang="en">
+<head>
+
+<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="Dragdropdemo.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript">
+
+	var correctCards = 0;
+	$(init);
+	
+	function init() {
+		  // Hide the success message
+		  $('#successMessage').hide();
+		  $('#successMessage').css( {
+			left: '580px',
+			top: '250px',
+			width: 0,
+			height: 0
+		  });
+
+		  // Reset the game
+		  cardContains = 0;
+		  $('#cardPile').html( '' );
+		  $('#cardSlots').html( '' );
+
+		  // Create the pile of shuffled cards
+		  var numbers = ['CS 105', 'CS 116','CS 146', 'CS 216', 'CS 245', 'CIS 255', 'CIS 333', 'CIS 355', 'CS 333', 'CS 490' ];
+		  
+
+		  for (var i = 0; i < 10; i++) {
+			$('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
+			  containment: '#content',
+			  stack: '#cardPile div',
+			  cursor: 'move',
+			  revert: true
+			});
+		  }
+
+		  // Create the card slots
+		  var words = [ 'Fall 16', 'Winter 17', 'Fall 17', 'Winter 18', 'Fall 18', 'Winter 19', 'Fall 19', 'Winter 20' ];
+		  for (var i = 1; i <= 8; i++) {
+			$('<div>' + words[i-1] + '</div>').data( 'number', i ).attr( 'id', words[i] ).appendTo( '#cardSlots' ).droppable( {
+			  accept: '#cardPile div',
+			  hoverClass: 'hovered',
+			  drop: handleCardDrop
+			});
+		  }
+
+	}
+
+	function handleCardDrop( event, ui ) {
+	  var slotNumber = $(this).data( 'number' );
+	  var cardNumber = ui.draggable.data( 'number' );
+
+	  // If the card was dropped to the correct slot,
+	  // change the card colour, position it directly
+	  // on top of the slot, and prevent it being dragged
+	  // again
+
+
+		//ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+		ui.draggable.draggable( 'option', 'revert', false );
+		cardContains++;
+	 //} 
+	  
+	  // If all the cards have been placed correctly then display a message
+	  // and reset the cards for another go
+
+	  if ( cardContains == 10 ) {
+			$('#successMessage').show();
+			$('#successMessage').animate( {
+			  left: '380px',
+			  top: '200px',
+			  width: '400px',
+			  height: '100px',
+			  opacity: 1
+			});
+	  }
+
+	}
+
+</script>
+
+</head>
+<body>
+
+	<div class="wideBox">
+	  <h1>Drag-and-Drop with jQuery: Your Guide to Awesome</h1>
+	  <h2>A Class List Game</h2>
+	</div>
+
+	<div id="content">
+
+	  <div id="cardPile"> </div>
+	  <div id="cardSlots"> </div>
+
+	  <div id="successMessage">
+		<h2>You Will Have No Life ....</h2>
+		<button onclick="init()">Try Again</button>
+	  </div>
+
+	</div>
+
+</body>
+</html>
+

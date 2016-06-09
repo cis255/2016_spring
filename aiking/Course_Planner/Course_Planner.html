@@ -1,0 +1,60 @@
+<!DOCTYPE HTML> 
+<html>
+	<head>
+		<meta name="copyright" content="Alexander King">
+		<meta name="author" content="Alexander King">
+		<meta name="description" content="Course Planner">
+
+		<link href="Course_Planner.css" rel="stylesheet" />
+		
+		<title>CSIS Course Planner</title>
+		
+	</head>
+	<body>
+		<div class="header">CSIS Course Planner</div>
+		<div class="content">
+			<form action="">
+				<input type="radio" name="major" value="CIS" onclick="cisRequired()"><abbr title="Computer Information Systems">CIS</abbr></input>
+				<input type="radio" name="major" value="CS" onclick="csRequired()"><abbr title="Computer Science">CS</abbr></input>
+			</form>
+			<p></p>
+			<button onclick="determineCourses()">SUBMIT</button>
+			<p></p>
+			
+			<table id="wrapper" align="center">
+				<tr>
+					<td><div class="takenList"><div id="divHeader">Classes Taken</div>
+						Enter classes already taken here, separated by a comma:
+						<textarea name="takenListing" class="taken" placeholder="CS 105, CS 116, etc."></textarea>
+					</div></td>
+					
+					<td></td>
+					
+					<td><div class="requiredList"><div id="divHeader">Required Classes</div>
+						List can be edited by user:
+						<textarea name="reqListing" class="taken" id="reqPrint" placeholder="Select major..."></textarea>
+					</div></td>
+				</tr>
+				
+				<tr></tr>
+				
+				<tr>
+					<td><div class="canTakeList"><div id="divHeader">Eligible for Registration</div>
+						<p id="id01"></p>
+					</div></td>
+					
+				<td></td>
+					
+					<td><div class="cantTakeList"><div id="divHeader">Not Eligible for Registration</div>
+						<p id="id02"></p>
+					</div></td>
+				</tr>
+		
+		</table>
+		</br>
+		</div>
+		
+		<div class="footer">Copywrite &copy; Alexander King 2016</div>
+		<script src="Course_Planner.js"></script>
+	</body>
+</html>
