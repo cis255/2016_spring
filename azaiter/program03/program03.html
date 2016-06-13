@@ -1,8 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
+<!-- 
+filename  : program03.html
+author    : Abdulrahman Zaiter
+date      : 2016-05-10
+email     : azaiter@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~azaiter/cis255/azaiter/program03/program03.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program03 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			Animate.css excution Jquery.
+			
+external code references in this file: 
+			bootstrap css and components.
+program structure (design):
+	<head>: 
+		Meta Data
+		TAB TITLE
+		Jquery
+		Bootstrap
+		CSS
+	<body>: 
+		Defined fluid container that includes:
+			Page title
+			Unordered lists that has items (courses) dragable from one list to another : Courses list, Years from one to four with 2 semesters each (fall and winter) 
+		The last part of <body> is the copyright notice in FOOTER.
+
+ -->
 <html lang="en">
-	<head>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="program03.js"></script>
+	<head>	  
+	  <!-- Meta Data -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="copyright" content="Abdulrahman Zaiter">
+	  <meta name="author" content="Abdulrahman Zaiter">
+	  <meta name="description" content="program03">
+	  
+	  <!-- TITLE -->
+	  <title>Program03</title>
+	  
+	  <!-- JQuery -->
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	  
+	  <!-- program03 JS -->
+	  <script src="program03.js"></script>
+	  
+	  <!-- program03 css -->
+	  <link rel="stylesheet" href="program03.css" />
+	  <link href="animate.css" rel="stylesheet">
+	  
+	  
+	  <!-- BOOTSTRAP -->
+	  <!-- from: https://www.bootstrapcdn.com/ -->
+	  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	  
 	</head>
+	<body>
+		<!-- Stretched Background -->
+		<div id="background" ><img class="stretch" src="bg.png"/></div>
+		<!-- Components Container -->
+		<div class="container-fluid textShadow">
+			<!-- Header -->
+			<header>
+				<div class = "row">
+					<div class = "col-xs-12 textShadowTop">
+						<h1>Program 03: JQuery Drag and Drop</h1>
+					</div>
+				</div>
+			</header>
+			<!-- Main Body -->
+			<div class = "row">
+				<div class="col-lg-3 fixed" style="position: fixed; width: 25%;">
+						<h1 align="center">Courses List</h1>
+						<ul id="dragable" class="connectedSortable sortableItem Courses boxShadow"></ul>
+				</div>
+				<div class="col-lg-9 scrollit" style="float: right; width: 71%">
+					<div class="row">
+						<h1> First Year </h1>
+						<div class="col-xs-4">
+							<h2>Fall</h2>
+							<ul id="dragable" class="connectedSortable sortableItem boxShadow"></ul>
+						</div>
+						<div class="col-xs-4">
+							<h2>Winter</h2>
+							<ul id="dragable" class="connectedSortable sortableItem boxShadow"></ul>
+						</div>
+					</div>
+					<div class="row">
+						<h1> Second Year </h1>
+						<div class="col-xs-4">
+							<h2>Fall</h2>
+							<ul id="dragable" class="connectedSortable sortableItem boxShadow"></ul>
+						</div>
+						<div class="col-xs-4">
+							<h2>Winter</h2>
+							<ul id="dragable" class="connectedSortable sortableItem boxShadow"></ul>
+						</div>
+					</div>
+					<div class="row">
+						<h1> Third Year </h1>
+						<div class="col-xs-4">
+							<h2>Fall</h2>
+							<ul id="dragable" class="connectedSortable sortableItem boxShadow"></ul>
+						</div>
+						<div class="col-xs-4">
+							<h2>Winter</h2>
+							<ul id="dragable" class="connectedSortable sortableItem boxShadow"></ul>
+						</div>
+					</div>
+					<div class="row">
+						<h1> Fourth Year </h1>
+						<div class="col-xs-4">
+							<h2>Fall</h2>
+							<ul id="dragable" class="connectedSortable sortableItem boxShadow"></ul>
+						</div>
+						<div class="col-xs-4">
+							<h2>Winter</h2>
+							<ul id="dragable" class="connectedSortable sortableItem boxShadow"></ul>
+						</div>
+					</div>
+					<!-- <div class="row">
+						<div class="col-xs-4">
+							<h1>تجربة الخط باللغة العربية, أبحد هوز حطي كلمن</h1>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<!-- FOOTER -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1 text-center">
+						<hr class="small">
+						<p class="text-muted">Copyright &copy; Abdulrahman Zaiter 2016</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
 </html>
