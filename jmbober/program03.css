@@ -57,23 +57,31 @@ h1, h2, h3, h4 {
 }
 
 #cardSlots, #cardPile {
-  width: 910px;
+  
   height: 120px;
   padding: 20px;
   border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
+   -moz-border-radius: 10px; /*rounds corners */
+  -webkit-border-radius: 10px; /*rounds corners */
   border-radius: 10px;
   -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
 }
 
+#cardSlots {
+  width: 730px;
+}
+
+#cardPile {
+width: 910px;
+}
+
 /* Individual cards and slots */
 
-#cardSlots div, #cardPile div {
+#cardSlots div, #cardPile div { 
   float: left;
-  width: 58px;
+  width: 58px; 
   height: 78px;
   padding: 10px;
   padding-top: 40px;
@@ -85,6 +93,7 @@ h1, h2, h3, h4 {
   margin: 0 0 0 10px;
   background: #fff;
 }
+
 
 #cardSlots div:first-child, #cardPile div:first-child {
   margin-left: 0;
@@ -101,7 +110,7 @@ h1, h2, h3, h4 {
 #cardPile div {
   background: #666;
   color: #fff;
-  font-size: 50px;
+  font-size: 30px;
   text-shadow: 0 0 3px #000;
 }
 
@@ -113,16 +122,17 @@ h1, h2, h3, h4 {
 
 /* Individually coloured cards */
 
-#card1.correct { background: red; }
-#card2.correct { background: brown; }
-#card3.correct { background: orange; }
-#card4.correct { background: yellow; }
-#card5.correct { background: green; }
-#card6.correct { background: cyan; }
-#card7.correct { background: blue; }
-#card8.correct { background: indigo; }
-#card9.correct { background: purple; }
-#card10.correct { background: violet; }
+#card1.correct { background: #ff9999; }
+#card2.correct { background: #ff8080; }
+#card3.correct { background: #ff6666; }
+#card4.correct { background: #ff4d4d; }
+#card5.correct { background: #ff3333; }
+#card6.correct { background: #ff1a1a; }
+#card7.correct { background: #ff0000; }
+#card8.correct { background: #b30000; }
+#card9.correct { background: #800000; }
+#card10.correct{ background: #660000; }
+
 
 
 /* "You did it!" message */
@@ -144,3 +154,19 @@ h1, h2, h3, h4 {
   padding: 20px;
 }
 
+#restart{
+  margin: 50px auto 0 auto;
+  width: 130px;
+  height: 50px;
+  font-size: 20px;
+  font-family: "Georgia", serif;
+  padding: 10px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px; /*rounds corners */
+  -webkit-border-radius: 10px; /*rounds corners */
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  
+}
