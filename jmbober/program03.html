@@ -1,8 +1,42 @@
 <!doctype html>
 <html lang="en">
+<!-- 
+filename  : program03.html
+author    : Jennifer Bober
+date      : 2016-06-14
+email     : jmbober@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~jmbober/cis255/jmbober/program03.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program03 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+      
+external code used in this file: 
+			Adapted from http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html
+
+program structure (design):
+	<head>: 
+	links, metadata, javascript
+	<body>: 
+  title box
+  card pile box
+  card slot box
+  restart button
+  
+	
+ -->
 <head>
 
-<title>A jQuery Drag-and-Drop Schedule Thingy</title>
+<title>A jQuery Drag-and-Drop Schedule Designer</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="program03.css">
 
@@ -15,17 +49,10 @@ $( init );
 
 function init() {
 
-  // Hide the success message
-  $('#successMessage').hide();
-  $('#successMessage').css( {
-    left: '580px',
-    top: '250px',
-    width: 0,
-    height: 0
-  } );
+
 
   // Reset the game
-  correctCards = 0;
+
   $('#cardPile').html( '' );
   $('#cardSlots').html( '' );
 
@@ -62,11 +89,10 @@ function init() {
 function handleCardDrop( event, ui ) {
  
   var cardcourse = ui.draggable.data( 'course' ); //Creates a variable for the "course" value of "ui" (the card we're attempting to drop)
-  var slotcourse = cardcourse; //Changed this line so that slotcourse and cardcourse automatically match, therefore allowing any card to be dropped anywhere
+  var slotcourse = cardcourse; //Changed this line so that slotcourse and cardcourse automatically match, therefore making the following if statement true in any case 
 
   //When a card is dropped onto a slot
-  // change the card colour, position it directly on top of the slot, and prevent it being dragged
-  // again
+  // change the card colour, position it directly on top of the slot, and prevent it being dragged again
 
   if ( slotcourse == cardcourse ) {
     ui.draggable.addClass( 'correct' );
@@ -80,16 +106,7 @@ function handleCardDrop( event, ui ) {
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
 
-  if ( correctCards == 10 ) {
-    $('#successMessage').show();
-    $('#successMessage').animate( {
-      left: '380px',
-      top: '200px',
-      width: '400px',
-      height: '100px',
-      opacity: 1
-    } );
-  }
+ 
 
 }
 
@@ -98,6 +115,7 @@ function handleCardDrop( event, ui ) {
 </head>
 <body>
 
+<!-- title box -->
 <div class="wideBox">
   <h1>Create Your SVSU Schedule!</h1>
   <h2>Drag and drop classes into preferred slots</h2>
@@ -107,11 +125,6 @@ function handleCardDrop( event, ui ) {
 
   <div id="cardPile"> </div>
   <div id="cardSlots"> </div>
-
-  <div id="successMessage">
-    <h2>You did it!</h2>
-    <button onclick="init()">Play Again</button>
-  </div>
   
   <div>
     <button id="restart" onclick="init()">Restart</button>
@@ -119,10 +132,6 @@ function handleCardDrop( event, ui ) {
 
 </div>
 
-<!-- <div class="wideBox">
-  <p>&copy; Elated.com | <a href="http://www.elated.com/articles/drag-and-drop-with-jquery-your-essential-guide/">Back to Tutorial</a></p>
-  <p style="font-size: .8em; line-height: 1.5em;"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" rel="dc:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.elated.com/" property="cc:attributionName" rel="cc:attributionURL">http://www.elated.com/</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
-</div> -->
 
 </body>
 </html>
