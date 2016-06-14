@@ -17,13 +17,24 @@ copyright : GNU General Public License (http://www.gnu.org/licenses/)
 			This program is distributed in the hope that it will be useful,
 			but WITHOUT ANY WARRANTY; without even the implied warranty of
 			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+program structure: 
+	<html> holds all of code within</html>
+	<head> holding meta tag and script tags </head>
+	<script> holds all of the javascript within program </script>
+	<body> contains div's for heading and boxes </body>
+program diagram:
+	-create card pile with classes
+	-create card slots with semesters
+	-reset the page with classes in pile and semesters in slots
+	-create the array of classes
+	-make cards draggable (using div's)
 external code used in this file: 
 			http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html
 ------------------------------------------------------------------------- -->
 <html lang="en">
 <head>
 
-<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<title>A jQuery Drag-and-Drop Course Planner</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="Dragdropdemo.css">
 
@@ -35,37 +46,14 @@ external code used in this file:
 	$(init);
 	
 	function init() {
-		  // Hide the success message
-		  $('#successMessage').hide();
-		  $('#successMessage').css( {
-			left: '580px',
-			top: '250px',
-			width: 0,
-			height: 0
-		  });
-
-		  // Reset the game
+		  // Reset the cards
 		  cardContains = 0;
 		  $('#cardPile').html( '' );
 		  $('#cardSlots').html( '' );
 
 		  // Create the pile of shuffled cards
 		  var numbers = ['CS 105', 'CS 116','CS 146', 'CS 216', 'CS 245', 'CIS 255', 'CIS 333', 'CIS 355', 'CS 333', 'CS 490' ];
-		     /*
-			<h1>jQuery sortable connectWith</h1>
-				<div id="left">
-				<h2>Available now</h2>
-				<ul id="classes">
-					<li id='2'>CS 105</li>
-					<li id='3'>CS 116</li>
-					<li id='5'>CS 146</li>
-					<li id='6'>CS 216</li>
-					<li id='7'>CS 245</li>
-					<li id='11'>CIS 255</li>
-					<li id='12'>CIS 355</li>
-					<li id='12'>CS 333</li>
-					<li id='12'>CS 490</li></ul>
-			*/
+		    
 		  for (var i = 0; i < 10; i++) {
 			$('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
 			  containment: '#content',
@@ -76,20 +64,6 @@ external code used in this file:
 			$("card+numbers[i]").css("background-color", "blue");
 		  }
 
-		  /*
-		  <div id="right">
-			<h2>Out of stock</h2>
-			<ul id="semesters">
-				<li id='1'>Fall 16</li>
-				<li id='4'>Winter 17</li>
-				<li id='8'>Fall 17</li>
-				<li id='9'>Winter 18</li>
-				<li id='10'>Fall 18</li>
-				<li id='13'>Winter 19</li>
-				<li id='14'>Fall 19</li>
-				<li id='15'>Winter 20</li></ul>
-		  */
-		  
 		  // Create the card slots
 		  var words = [ 'Fall 16', 'Winter 17', 'Fall 17', 'Winter 18', 'Fall 18', 'Winter 19', 'Fall 19', 'Winter 20' ];
 		  for (var i = 1; i <= 8; i++) {
@@ -99,38 +73,12 @@ external code used in this file:
 			  drop: handleCardDrop
 			});
 		  }
-
 	}
 
 	function handleCardDrop( event, ui ) {
-	  var slotNumber = $(this).data( 'number' );
-	  var cardNumber = ui.draggable.data( 'number' );
-
-	  // If the card was dropped to the correct slot,
-	  // change the card colour, position it directly
-	  // on top of the slot, and prevent it being dragged
-	  // again
-
-
-		//ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+		var slotNumber = $(this).data( 'number' );
+		var cardNumber = ui.draggable.data( 'number' );
 		ui.draggable.draggable( 'option', 'revert', false );
-		cardContains++;
-	 //} 
-	  
-	  // If all the cards have been placed correctly then display a message
-	  // and reset the cards for another go
-
-	  if ( cardContains == 10 ) {
-			$('#successMessage').show();
-			$('#successMessage').animate( {
-			  left: '380px',
-			  top: '200px',
-			  width: '400px',
-			  height: '100px',
-			  opacity: 1
-			});
-	  }
-
 	}
 
 </script>
@@ -139,19 +87,14 @@ external code used in this file:
 <body>
 
 	<div class="wideBox">
-	  <h1>Drag-and-Drop with jQuery: Your Guide to Awesome</h1>
-	  <h2>A Class List Game</h2>
+	  <h1>Drag-and-Drop Courses: Your Guide to Awesome</h1>
+	  <h2>A Class List Planner</h2>
 	</div>
 
 	<div id="content">
 
 	  <div id="cardPile"> </div>
 	  <div id="cardSlots"> </div>
-
-	  <div id="successMessage">
-		<h2>Are You Sure ....</h2>
-		<button onclick="init()">Let's Try This Again</button>
-	  </div>
 
 	</div>
 
