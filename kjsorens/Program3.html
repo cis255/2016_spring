@@ -1,11 +1,11 @@
 <!doctype html>
-<!-- from: http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html -->
+<!-- Original Game: http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html -->
 <html lang="en">
 <head>
 
-<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<title>Program 3</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<link rel="stylesheet" type="text/css" href="http://csis.svsu.edu/~skstockm/cis255/skstockm/dragstyle.css">
+<link rel="stylesheet" type="text/css" href="Program3.css">
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
@@ -31,9 +31,8 @@ function init() {
   $('#cardSlots').html( '' );
 
   // Create the pile of shuffled cards
-  //var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-  var numbers = ['CS105', 'CS116', 'CS216', 'CS316', 'CIS255', 'CIS355', 'MATH300', 'ENG111', 'ENG112', 'RPW304'];
-  numbers.sort( function() { return Math.random() - .5 } );
+  var numbers = [ 'CS 105', 'CS 116', 'CS 146', 'CS 216', 'CS 245', 'CIS 255', 'CIS 333', 'CIS 355', 'CIS 366', 'CIS 386'];
+
 
   for ( var i=0; i<10; i++ ) {
     $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
@@ -45,8 +44,8 @@ function init() {
   }
 
   // Create the card slots
-  var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
-  for ( var i=1; i<=10; i++ ) {
+  var words = [ 'FALL 16', 'WINTER 17', 'FALL 17', 'WINTER 18', 'FALL 18', 'WINTER 19', 'FALL 19', 'WINTER 20'];
+  for ( var i=1; i<=8; i++ ) {
     $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
       hoverClass: 'hovered',
@@ -65,15 +64,15 @@ function handleCardDrop( event, ui ) {
   // on top of the slot, and prevent it being dragged
   // again
 
-  if ( slotNumber == cardNumber ) {
-    ui.draggable.addClass( 'correct' );
-    ui.draggable.draggable( 'disable' );
-    $(this).droppable( 'disable' );
-    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+//	if ( slotNumber == cardNumber ) {
+	ui.draggable.addClass( 'correct' );
+//	ui.draggable.draggable( 'disable' );
+//	$(this).droppable( 'disable' );
+//	ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
     ui.draggable.draggable( 'option', 'revert', false );
-    correctCards++;
-  } 
-  
+	correctCards++;
+//  } 
+
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
 
@@ -96,8 +95,9 @@ function handleCardDrop( event, ui ) {
 <body>
 
 <div class="wideBox">
-  <h1>Drag-and-Drop with jQuery: Your Essential Guide</h1>
-  <h2>Course Schedule</h2>
+  <h1>CSIS Drag-and-Drop with jQuery: Program 3</h1>
+  <h2>Kyle Sorenson
+  </h2>
 </div>
 
 <div id="content">
@@ -106,7 +106,7 @@ function handleCardDrop( event, ui ) {
   <div id="cardSlots"> </div>
 
   <div id="successMessage">
-    <h2>You did it!</h2>
+    <h2>Your schedule is set!</h2>
     <button onclick="init()">Play Again</button>
   </div>
 
@@ -119,3 +119,4 @@ function handleCardDrop( event, ui ) {
 
 </body>
 </html>
+

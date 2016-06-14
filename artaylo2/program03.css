@@ -1,4 +1,3 @@
-/* Taken from 
 /* Add some margin to the page and set a default font and colour */
 
 body {
@@ -31,14 +30,14 @@ h1, h2, h3, h4 {
   text-align: center;
   margin: 70px;
   padding: 10px;
-  background: #ebedf2;
+  background: red;
   border: 1px solid #333;
 }
 
 .wideBox h1 {
   font-weight: bold;
   margin: 20px;
-  color: #666;
+  color: white;
   font-size: 1.5em;
 }
 
@@ -46,14 +45,14 @@ h1, h2, h3, h4 {
 
 #cardSlots {
   margin: 50px auto 0 auto;
-  background: #ddf;
+  background: black;
 }
 
 /* The initial pile of unsorted cards */
 
 #cardPile {
   margin: 0 auto;
-  background: #ffd;
+  background: black;
 }
 
 #cardSlots, #cardPile {
@@ -73,7 +72,7 @@ h1, h2, h3, h4 {
 
 #cardSlots div, #cardPile div {
   float: left;
-  width: 58px;
+  width: 80px;
   height: 78px;
   padding: 10px;
   padding-top: 40px;
@@ -91,7 +90,7 @@ h1, h2, h3, h4 {
 }
 
 #cardSlots div.hovered {
-  background: #aaa;
+  background: red;
 }
 
 #cardSlots div {
@@ -99,9 +98,9 @@ h1, h2, h3, h4 {
 }
 
 #cardPile div {
-  background: #666;
+  background: red;
   color: #fff;
-  font-size: 50px;
+  font-size: 45px;
   text-shadow: 0 0 3px #000;
 }
 
@@ -111,21 +110,10 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
 }
 
-/* Individually coloured cards */
-
-#card1.correct { background: red; }
-#card2.correct { background: brown; }
-#card3.correct { background: orange; }
-#card4.correct { background: yellow; }
-#card5.correct { background: green; }
-#card6.correct { background: cyan; }
-#card7.correct { background: blue; }
-#card8.correct { background: indigo; }
-#card9.correct { background: purple; }
-#card10.correct { background: violet; }
 
 
-/* "You did it!" message */
+
+/* completion message */
 #successMessage {
   position: absolute;
   left: 580px;
@@ -133,7 +121,7 @@ h1, h2, h3, h4 {
   width: 0;
   height: 0;
   z-index: 100;
-  background: #dfd;
+  background: red;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
