@@ -1,11 +1,9 @@
-<!-- fonts from google-->>
+/* fonts from google */
 h1 {
  font-family: 'Allerta', Helvetica, Arial, sans-serif;
  font-size: 50px;
  line-height: 55px;
 }
-
- <!-- fonts from google-->>
 p {
  font-family: 'Crimson Text', Georgia, Times, serif;
  font-size: 16px;
@@ -20,6 +18,7 @@ h3{
    }
 a:link{
          color:hotpink;
+		 
        }
 a:visited{
            color:orange;

@@ -1,0 +1,38 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1> Program 02 - Course Planner </h1>
+		<table border="1">
+			<tr>
+				<td>
+					<h2>Courses Taken</h2>
+					<textarea id="coursesTaken" rows="10" cols="50" placeholder="CS 105, CS 116, CIS 255, ..."></textarea><br />
+					<button type='submit' value='Submit' onclick="scheduleSubmit();">Submit</button>
+				</td>
+				<td>
+					<h2>Courses for Degree</h2>
+					<form action="">
+						<input id="cscourses" type="radio" name="degree" value="cs" onclick="major()";>CS</input><br />
+						<input id="ciscourses" type="radio" name="degree" value="cis" onclick="major()";>CIS</input><br />
+					</form>
+					<p>Edit if desired</p>
+					<textarea id="allCoursesNeeded" rows="10" cols="50"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2>Courses Available for Registration</h2>
+					<select id="availableCourses" rows="10" cols="50"></select>
+				</td>
+				<td>
+					<h2>Courses Not Yet Available</h2>
+					<textarea id="neededButNotEligible" rows="10" cols="50" readonly></textarea>
+				</td>
+			</tr>
+		</table>
+		<p id="id01"></p>
+		<select id="id02"></select>
+		<script src="coursePlanner.js"></script>
+	</body>
+</html>

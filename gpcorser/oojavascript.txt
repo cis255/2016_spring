@@ -1,0 +1,23 @@
+01:50 JavaScript Objects
+02:36 Objects in Objects
+04:12 Constructor Functions
+05:58 instanceof
+06:28 Passing Objects to Functions
+08:09 Prototypes
+09:34 Adding Properties to Objects
+10:44 List Properties in Objects
+11:38 hasOwnProperty
+12:42 Add Properties to Built in Objects
+14:31 Private Properties
+18:01 Getters / Setters
+21:20 defineGetter / defineSetter
+24:38 defineProperty
+27:07 Constructor Function Getters / Setters
+29:40 Inheritance
+37:13 Intermediate Function Inheritance
+39:14 Call Parent Functions
+41:51 ECMAScript 6
+47:31 Singleton Pattern
+49:32 Factory Pattern
+52:53 Decorator Pattern
+54:52 Observer Pattern

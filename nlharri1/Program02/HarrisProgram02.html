@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+ <!--  
+ filename  : HarrisProgram02.html 
+ author    : Nathan Harris 
+ date      : 06/07/2016 
+ email     : nlharri1@svsu.edu 
+ course    : CIS-255 
+ link      : http://csis.svsu.edu/~nlharri1/cis255/nlharri1/program2/HarrisProgram02.html 
+ backup    : https://github.com/cis255/cis255 
+ purpose   : This program is an API that shows students what classes they have taken, all courses in major,
+			 eligable courses, and non-eligable courses.
+ 
+ copyright : GNU General Public License (http://www.gnu.org/licenses/) 
+ 			This program is free software: you can redistribute it and/or modify 
+ 			it under the terms of the GNU General Public License as published by 
+ 			the Free Software Foundation, either version 3 of the License, or 
+ 			(at your option) any later version. 
+ 			This program is distributed in the hope that it will be useful, 
+ 			but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ 			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.    
+ external code used in this file:  
+ 			HarrisProgram02.js <--This is Zaiters js file with minor alterations.  I have been super busy with my internshhip, 
+								  two classes, getting ready for my sisters wedding, and jury duty.  I tried working it out but I just didn't have time 
+								  get it working properly.  The tooling around I did helped me understand it better
+								  as did learning how Zaiters works.
+ 
+ 			Prof George Corser function
+ 			Cole Roys CS, CIS arrays. 
+			bootstrap CDN 
+ 
+ program structure (design): 
+ 	<head>  
+ 		Meta Data 
+ 		Title 
+ 		Bootstrap CDN
+ 	<body>  
+ 		Page Name
+ 		Major Selection Radio Button
+		Top Row:
+			Courses Taken Input and Submit Button
+			Courses Available for Major
+		Bottom Row:
+ 			Drop Box of Eligible Courses 
+			Courses Not Yet Eligible For
+ --> 
+
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ 	<meta name="copyright" content="Nathan Harris"> 
+ 	<meta name="author" content="Nathan Harris"> 
+ 	<meta name="description" content="Program 02"> 
+	<title>Harris Program 02</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>Harris Program 02: SVSU API</h1>
+					<br />
+					<form action="">
+					<h4>1.Choose your degree</h4>
+					<input type="radio" name="degree" onClick="degreeToggle('CS')" value="cs"> CS
+					<input type="radio" name="degree" onClick="degreeToggle('CIS')" value="cis"> CIS
+				</form>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h2>2. Courses Taken So Far</h2>
+				<p>Enter courses taken so far, separated by commas</p>
+				<textarea id="coursesTaken" rows="10" cols="40" ></textarea>
+				<br />
+				<br />
+				<button onClick="submit()" >Submit Courses</button>
+			</div>
+			<div class="col-md-6">
+				<h2>3. All Courses Needed for Degree</h2>					
+				<textarea id="allCoursesNeeded" rows="10" cols="40" readOnly></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h2>4. Courses Needed, But Not Taken, and Eligible for Registration</h2>
+				<p>Courses needed for degree, but not yet taken, and all prereqs taken</p>
+				<select id="id02"></select>
+		    </div>
+			<div class="col-md-6">
+				<h2>5. Courses Needed But Not Yet Eligible for Registration</h2>
+				<p>Courses needed for degree, but not yet taken, and NOT all prereqs taken</p>
+				<textarea id="coursesNotEligible" rows="10" cols="40" readOnly></textarea> 
+			</div>
+		</div>		
+	</div>
+	<script type="text/javascript" src="HarrisProgram02.js"></script>
+</body>
+</html>
