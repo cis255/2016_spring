@@ -16,17 +16,40 @@
 		</script>
 		<script>			
 			<!-- javascript solution: creates new elements with attributes -->
-			var xmlhttp = new XMLHttpRequest();
-			var url = "https://api.svsu.edu/courses?prefix=CS";
+			//var xmlhttp = new XMLHttpRequest();
+			//var url = "https://api.svsu.edu/courses?prefix=CS";
+			// Initialize array of URLs
+			coursePrefixes = ["CS","CIS","MATH","COMM","RPW","PHIL","ACCT","ECON","LAW","MGT","MKT"];
 
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					var myArr = JSON.parse(xmlhttp.responseText);
-					myFunction(myArr);
-				}
+			// Initialize array of HTTP Requests
+			var requests = new Array(coursePrefixes.length);
+			
+			allCoursesArr = [];
+			
+			for(var i = 0; i < coursePrefixes.length; i++){
+				requests[i] = new XMLHttpRequest();
+				// 3. Specify Callback Function
+				requests[i].onreadystatechange = function(index) {
+					return function(){
+							if (requests[index].readyState == 4 && requests[index].status == 200) {
+								var myArr = JSON.parse(requests[index].responseText);
+								//myFunction(myArr);
+								for(var j=0;j<myArr.courses.length;j++){
+									pushIntoDefinedArr(myArr,j); // calling another function to push into courses array, just because of scoping issues.
+								}
+						}
+					}
+				}(i);
+				
+				var url = "https://api.svsu.edu/courses?prefix=" + coursePrefixes[i];
+				// 4. Execute Request
+				requests[i].open("GET", url, true);
+				requests[i].send();
+			}
+			
+			function pushIntoDefinedArr(arr,index){
+				allCoursesArr.push(arr.courses[index]);
 			};
-			xmlhttp.open("GET", url, true);
-			xmlhttp.send();
 
 			function myFunction(arr) {
 				var out = "";
@@ -59,7 +82,7 @@
 					<input type=="text">
 				</td>
 				<td><h2>Courses for Degree</h2>
-					<p>Edit, if descired</p>
+					<p>Edit, if desired</p>
 					<textarea id="allCoursesNeeded" rows="10" cols="20"></textarea>
 				</td>
 			</tr>
