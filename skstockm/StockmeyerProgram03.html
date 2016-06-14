@@ -3,7 +3,10 @@
 <html lang="en">
 <head>
 
-<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<!--favricon-->
+<link rel='icon' href='https://www.svsu.edu/media/writingcenter/svsu%20thumbnail.jpg' type='image/jpg' / >
+
+<title>Program 03: jQuery Drag-and-Drop</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="http://csis.svsu.edu/~skstockm/cis255/skstockm/dragstyle.css">
 
@@ -39,14 +42,16 @@ function init() {
     $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#content',
       stack: '#cardPile div',
-      cursor: 'move',
+      //cursor: 'move',
       revert: true
     } );
   }
 
   // Create the card slots
-  var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
-  for ( var i=1; i<=10; i++ ) {
+  var words = [ 'Fall <br /> Year 1', 'Winter <br /> Year 1', 'Fall <br /> Year 2', 'Winter <br /> Year 2',
+				'Fall <br /> Year 3', 'Winter <br /> Year 3', 'Fall <br /> Year 4', 'Winter <br /> Year 4'];
+
+  for ( var i=1; i<=8; i++ ) {
     $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
       hoverClass: 'hovered',
@@ -65,19 +70,21 @@ function handleCardDrop( event, ui ) {
   // on top of the slot, and prevent it being dragged
   // again
 
-  if ( slotNumber == cardNumber ) {
+  
+  //if ( slotNumber == cardNumber ) {
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
     $(this).droppable( 'disable' );
     ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
-  } 
+  //} 
   
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
 
-  if ( correctCards == 10 ) {
+  
+  if ( correctCards == 8 ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
       left: '380px',
@@ -96,18 +103,19 @@ function handleCardDrop( event, ui ) {
 <body>
 
 <div class="wideBox">
-  <h1>Drag-and-Drop with jQuery: Your Essential Guide</h1>
+  <h1>Program 03: Drag-and-Drop with jQuery</h1>
   <h2>Course Schedule</h2>
 </div>
 
 <div id="content">
 
   <div id="cardPile"> </div>
+  <div id="years"></div>
   <div id="cardSlots"> </div>
 
   <div id="successMessage">
     <h2>You did it!</h2>
-    <button onclick="init()">Play Again</button>
+    <button onclick="init()">Try Again</button>
   </div>
 
 </div>
