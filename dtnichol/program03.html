@@ -49,7 +49,7 @@ program structure (design):
 <html lang="en">
 	<head>
 
-		<title>A jQuery Drag-and-Drop Number Cards Game</title>
+		<title>Program 3</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 			<link rel="stylesheet" type="text/css" href="program03.css">
 
@@ -63,26 +63,32 @@ $( init );
 
 function init() {
 
+  // Reset the game
+  $('#courses').html( '' );
+  $('#Semestercourses').html( '' );
+  
  
+
+
 	
  
  
 
-  // Create the pile of courses
-  var courseNumbers = [ "CS 116", "CS 105", "Math 245", "CS 216", "CIS 255", "CIS 355", "CIS 311", "CIS 333", "CIS 366", "CIS 424"];
-
-
+  // Create the div of courses
+ var courseNumbers = [ "CS 116", "CS 105", "Math 245", "CS 216", "CIS 255", "CIS 355", "CIS 311", "CIS 333", "CIS 366", "CIS 424"];
+  
+  
   for ( var i=0; i<10; i++ ) {
-    $('<div>' + courseNumbers[i] + '</div>').data( 'number', courseNumbers[i] ).attr( 'id', 'course'+ courseNumbers[i] ).appendTo( '#courses' ).draggable( {
+    $('<div>' + courseNumbers[i] + '</div>').data( 'number', courseNumbers[i] ).attr( 'id', 'number'+ courseNumbers[i] ).appendTo( '#courses' ).draggable( {
       containment: '#content',
       stack: '#courses div',
       cursor: 'move',
-	  	
+
     } );
   }
   
  
-  
+  //Handles the drag and drop of the courses
 
 $('.drop').droppable({
     tolerance: 'fit',
@@ -99,7 +105,7 @@ $('.drag').droppable({
     greedy: true,
     tolerance: 'touch',
     drop: function(event,ui){
-        ui.draggable.draggable('option','revert',true);
+        ui.draggable.draggable('option','revert',true).css("background-color", "green");
     }
 });
 
@@ -121,23 +127,24 @@ $('.drag').droppable({
 					<body>
 						<div id="background" ><img class="stretch" src="cardinal.png"/></div>
 						<div class="wideBox">
-							<h1>Drag-and-Drop with jQuery: Your Essential Guide</h1>
-							<h2>A Number Cards Game</h2>
+							<h1>Drag-and-Drop with jQuery</h1>
+							
 						</div>
-
-						<div id="content" class="drag">
+							
+						<div id="content">
 						<h1>Drag and Drop your courses into the semesters you choose</h1>
+						
+						<!-- resets the courses back into the starting box-->
+							<div><button onclick="init()" style="width:150px; height:25px">Reset Courses</button></div>
+						<!--Has all of the semester boxes and the Course box done with css to get the alignment and colors. Also hsa the drag and drop classes that you the javascript/jquery-->	
 							<div class="row" id="courses">
-								
-								<div id="courses" class="drop"> </div>
+								<div id="courses" class="drag"> </div>
 							</div>
 							<div>
-								<!--button type="button" class="btn btn-default btn-lg" onclick="previousPos">Reset</button-->
-								
 									<div class="row" id="Semesters">
-										<div class="col-xs-6" >
+										<div class="col-xs-6">
 											<h2>Fall 2016</h2>
-											<div id="Semestercourses" placeholder="Fall 2017" class="drop"></div>
+											<div id="Semestercourses"  class="drop"></div>
 										</div>
 									</div>
 									
@@ -145,71 +152,58 @@ $('.drag').droppable({
 									<div class="row" id="Semesters">
 										<div class="col-xs-6">
 											<h2>Winter 2017</h2>
-											<div id="Semestercourses" placeholder="Fall 2017" class="drop"></div>
+											<div id="Semestercourses"  class="drop"></div>
 										</div>
 									</div>
 									
 									<div class="row" id="Semesters">
 										<div class="col-xs-6">
 											<h2>Fall 2017</h2>
-											<div id="Semestercourses" placeholder="Fall 2017" class="drop"></div>
+											<div id="Semestercourses"  class="drop"></div>
 										</div>
 									</div>
 									
 									<div class="row" id="Semesters">
 										<div class="col-xs-6">
 											<h2>Winter 2018</h2>
-											<div id="Semestercourses" placeholder="Fall 2017" class="drop"></div>
+											<div id="Semestercourses"  class="drop"></div>
 										</div>
 									</div>
 									
 									<div class="row" id="Semesters">
 										<div class="col-xs-6">
 											<h2>Fall 2018</h2>
-											<div id="Semestercourses" placeholder="Fall 2017" class="drop"></div>
+											<div id="Semestercourses"  class="drop"></div>
 										</div>
 									</div>
 									
 									<div class="row" id="Semesters">
 										<div class="col-xs-6">
 											<h2>Winter 2019</h2>
-											<div id="Semestercourses" placeholder="Fall 2017" class="drop"></div>
+											<div id="Semestercourses"  class="drop"></div>
 										</div>
 									</div>
 									
 									<div class="row" id="Semesters">
 										<div class="col-xs-6">
 											<h2>Fall 2019</h2>
-											<div id="Semestercourses" placeholder="Fall 2017" class="drop"></div>
+											<div id="Semestercourses"  class="drop"></div>
 										</div>
 									</div>
 									
 									<div class="row" id="Semesters">
 										<div class="col-xs-6">
 											<h2>Winter 2020</h2>
-											<div id="Semestercourses" placeholder="Fall 2017" class="drop"></div>
+											<div id="Semestercourses"  class="drop"></div>
 										</div>
 									</div>
 									
 								
-											<!--div id="cardSlots"></div>
-											<div id="cardSlots"></div>
-											<div id="cardSlots"></div>
-											<div id="cardSlots"></div>
-											<div id="cardSlots"></div>
-											<div id="cardSlots"></div>
-											<div id="cardSlots"></div-->
-							<!--<div id="successMessage">
-							<!--	<h2>You did it!</h2>
-							<!--	<button onclick="init()">Play Again</button>
-							<!--</div-->
-
+											
+							
 						</div>
 
-						<div class="wideBox">
-							<p>&copy; Elated.com | <a href="http://www.elated.com/articles/drag-and-drop-with-jquery-your-essential-guide/">Back to Tutorial</a></p>
-							<p style="font-size: .8em; line-height: 1.5em;"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" rel="dc:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.elated.com/" property="cc:attributionName" rel="cc:attributionURL">http://www.elated.com/</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
-						</div>
+						
 
 					</body>
 				</html>
