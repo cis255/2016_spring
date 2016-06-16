@@ -70,9 +70,23 @@ h1, h2, h3, h4 {
 
 /* Individual cards and slots */
 
-#cardSlots div, #cardPile div {
+#cardPile div {
   float: left;
   width: 58px;
+  height: 78px;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+  background: #fff;
+}
+#cardSlots div {
+  float: left;
+  width: 81px;
   height: 78px;
   padding: 10px;
   padding-top: 40px;
@@ -94,14 +108,15 @@ h1, h2, h3, h4 {
 }
 
 #cardSlots div {
-  border-style: dashed;
+  border-style: dotted;
 }
 
 #cardPile div {
-  background: #666;
-  color: #fff;
-  font-size: 50px;
+  background: #c0fff4;
+  color: #bf0d0d;
+  font-size: 18px;
   text-shadow: 0 0 3px #000;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 #cardPile div.ui-draggable-dragging {

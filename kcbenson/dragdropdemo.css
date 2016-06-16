@@ -1,21 +1,18 @@
-/*Code copied from http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/style.css */
+/*Code adapted from http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/style.css */
 /* Add some margin to the page and set a default font and colour */
-
 body {
   margin: 30px;
-  font-family: "Georgia", serif;
-  line-height: 1.8em;
-  color: #333;
+  font-family: 'Lobster Two', cursive;
+  line-height: 2.5em;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/82/22/c8/8222c89104a92c9d69caf17857320183.jpg");
 }
 
 /* Give headings their own font */
-
 h1, h2, h3, h4 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: 'Forum', cursive;
 }
 
 /* Main content area */
-
 #content {
   margin: 80px 70px;
   text-align: center;
@@ -25,35 +22,36 @@ h1, h2, h3, h4 {
 }
 
 /* Header/footer boxes */
-
 .wideBox {
   clear: both;
   text-align: center;
   margin: 70px;
   padding: 10px;
-  background: #ebedf2;
+  background: #7fffd4;
   border: 1px solid #333;
+  border-radius: 50px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
 }
 
 .wideBox h1 {
   font-weight: bold;
   margin: 20px;
   color: #666;
-  font-size: 1.5em;
+  font-size: 50px;
 }
 
 /* Slots for final card positions */
-
 #cardSlots {
   margin: 50px auto 0 auto;
-  background: #ddf;
+  background: #fff0f5;
 }
 
 /* The initial pile of unsorted cards */
-
 #cardPile {
   margin: 0 auto;
-  background: #ffd;
+  background: #e6e6fa;
 }
 
 #cardSlots, #cardPile {
@@ -70,7 +68,6 @@ h1, h2, h3, h4 {
 }
 
 /* Individual cards and slots */
-
 #cardSlots div, #cardPile div {
   float: left;
   width: 58px;
@@ -101,7 +98,7 @@ h1, h2, h3, h4 {
 #cardPile div {
   background: #666;
   color: #fff;
-  font-size: 50px;
+  font-size: 20px;
   text-shadow: 0 0 3px #000;
 }
 
@@ -111,29 +108,16 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
 }
 
-/* Individually coloured cards */
 
-#card1.correct { background: red; }
-#card2.correct { background: brown; }
-#card3.correct { background: orange; }
-#card4.correct { background: yellow; }
-#card5.correct { background: green; }
-#card6.correct { background: cyan; }
-#card7.correct { background: blue; }
-#card8.correct { background: indigo; }
-#card9.correct { background: purple; }
-#card10.correct { background: violet; }
-
-
-/* "You did it!" message */
+/* "All planned!" message */
 #successMessage {
   position: absolute;
-  left: 580px;
+  left: center;
   top: 250px;
   width: 0;
   height: 0;
   z-index: 100;
-  background: #dfd;
+  background: #fffaf0;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -143,4 +127,3 @@ h1, h2, h3, h4 {
   box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
   padding: 20px;
 }
-

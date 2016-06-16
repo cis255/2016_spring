@@ -5,7 +5,7 @@ body {
   margin: 30px;
   font-family: "Georgia", serif;
   line-height: 1.8em;
-  color: #333;
+  color: #0000FF;
 }
 
 /* Give headings their own font */
@@ -32,7 +32,7 @@ h1, h2, h3, h4 {
   margin: 70px;
   padding: 10px;
   background: #ebedf2;
-  border: 1px solid #333;
+  border: 1px solid #0000FF;
 }
 
 .wideBox h1 {
@@ -46,14 +46,14 @@ h1, h2, h3, h4 {
 
 #cardSlots {
   margin: 50px auto 0 auto;
-  background: #ddf;
+  background: #33CC99;
 }
 
 /* The initial pile of unsorted cards */
 
 #cardPile {
   margin: 0 auto;
-  background: #ffd;
+  background: #FFCC99;
 }
 
 #cardSlots {
@@ -96,14 +96,14 @@ h1, h2, h3, h4 {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   margin: 0 0 0 15px;
-  background: #fff;
+  background: #C80000;
 }
 
 #cardSlots div {
   float: left;
   width: 9%;
   height: 90%;
-  padding: 10px;
+  padding: 20px;
   padding-top: 20px;
   padding-bottom: 0;
   border: 2px solid #333;

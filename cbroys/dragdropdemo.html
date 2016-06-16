@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 
-<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<title>A jQuery Drag-and-Drop CS Class Scheduler</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="dragdropdemo.css">
 
@@ -44,7 +44,7 @@ function init() {
   }
 
   // Create the card slots
-  var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
+  var words = [ 'FA2016', 'WI2017', 'FA2017', 'WI2018', 'FA2018', 'WI2019', 'FA2019', 'WI2020', 'FA2020', 'WI2021' ];
   for ( var i=1; i<=10; i++ ) {
     $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',

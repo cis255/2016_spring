@@ -1,0 +1,136 @@
+	
+			var xmlhttp = new XMLHttpRequest();
+			var xmlhttp2 = new XMLHttpRequest();
+			var xmlhttp3 = new XMLHttpRequest();
+			var xmlhttp4 = new XMLHttpRequest();
+			var xmlhttp5 = new XMLHttpRequest();
+			var xmlhttp6 = new XMLHttpRequest();
+			var xmlhttp7 = new XMLHttpRequest();
+			var xmlhttp8 = new XMLHttpRequest();
+			var xmlhttp9 = new XMLHttpRequest();
+			var xmlhttp10 = new XMLHttpRequest();
+			var xmlhttp11 = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS";
+			var url2 = "https://api.svsu.edu/courses?prefix=CIS";
+			var url3 = "https://api.svsu.edu/courses?prefix=MATH";
+			var url4 = "https://api.svsu.edu/courses?prefix=RPW";
+			var url5 = "https://api.svsu.edu/courses?prefix=ECON";
+			var url6 = "https://api.svsu.edu/courses?prefix=LAW";
+			var url7 = "https://api.svsu.edu/courses?prefix=ACCT";
+			var url8 = "https://api.svsu.edu/courses?prefix=MGT";
+			var url9 = "https://api.svsu.edu/courses?prefix=MKT";
+			var url10 = "https://api.svsu.edu/courses?prefix=COMM";
+			var url11 = "https://api.svsu.edu/courses?prefix=PHIL";
+
+
+function populateSelect(){
+					/*
+					xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						var myArr = JSON.parse(xmlhttp.responseText);
+						myFunction(myArr);
+					}
+					};
+					xmlhttp.open("GET", url, true);
+					xmlhttp.send();
+			
+					xmlhttp2.onreadystatechange = function() {
+					if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+						var myArr2 = JSON.parse(xmlhttp2.responseText);
+						myFunction(myArr2);
+					}
+					};
+					xmlhttp2.open("GET", url2, true);
+					xmlhttp2.send();
+			
+					xmlhttp3.onreadystatechange = function() {
+					if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200) {
+						var myArr3 = JSON.parse(xmlhttp3.responseText);
+						myFunction(myArr3);
+					}
+					};
+					xmlhttp3.open("GET", url3, true);
+					xmlhttp3.send();
+			
+					xmlhttp4.onreadystatechange = function() {
+					if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200) {
+						var myArr4 = JSON.parse(xmlhttp4.responseText);
+						myFunction(myArr4);
+					}
+					};
+					xmlhttp4.open("GET", url4, true);
+					xmlhttp4.send();
+					
+					xmlhttp10.onreadystatechange = function() {
+					if (xmlhttp10.readyState == 4 && xmlhttp10.status == 200) {
+						var myArr10 = JSON.parse(xmlhttp4.responseText);
+						myFunction(myArr10);
+					}
+					};
+					xmlhttp10.open("GET", url10, true);
+					xmlhttp10.send();
+					*/
+				}
+				
+				//If The CS Radio is Checked Populate the CIS Curriculum
+				if(document.getElementById('degree2').checked)
+				{
+					//first remove all dropdown options.
+					removeOptions(document.getElementById("id02"));
+					
+					populateSelect();
+					
+					xmlhttp5.onreadystatechange = function() {
+						if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200) {
+							var myArr5 = JSON.parse(xmlhttp5.responseText);
+							myFunction(myArr5);
+						}
+					};
+					xmlhttp5.open("GET", url5, true);
+					xmlhttp5.send();
+
+					xmlhttp6.onreadystatechange = function() {
+						if (xmlhttp6.readyState == 4 && xmlhttp6.status == 200) {
+							var myArr6 = JSON.parse(xmlhttp6.responseText);
+							myFunction(myArr6);
+						}
+					};
+					xmlhttp6.open("GET", url6, true);
+					xmlhttp6.send();
+
+					xmlhttp7.onreadystatechange = function() {
+						if (xmlhttp7.readyState == 4 && xmlhttp7.status == 200) {
+							var myArr7 = JSON.parse(xmlhttp7.responseText);
+							myFunction(myArr7);
+						}
+					};
+					xmlhttp7.open("GET", url7, true);
+					xmlhttp7.send();	
+				
+					xmlhttp8.onreadystatechange = function() {
+						if (xmlhttp8.readyState == 4 && xmlhttp8.status == 200) {
+							var myArr8 = JSON.parse(xmlhttp8.responseText);
+							myFunction(myArr8);
+						}
+					};
+					xmlhttp8.open("GET", url8, true);
+					xmlhttp8.send();
+				
+					xmlhttp9.onreadystatechange = function() {
+						if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200) {
+							var myArr9 = JSON.parse(xmlhttp9.responseText);
+							myFunction(myArr9);
+						}
+					};
+					xmlhttp9.open("GET", url9, true);
+					xmlhttp9.send();
+					
+					xmlhttp11.onreadystatechange = function() {
+						if (xmlhttp11.readyState == 4 && xmlhttp11.status == 200) {
+							var myArr11 = JSON.parse(xmlhttp11.responseText);
+							myFunction(myArr11);
+						}
+					};
+					xmlhttp11.open("GET", url11, true);
+					xmlhttp11.send();
+				}

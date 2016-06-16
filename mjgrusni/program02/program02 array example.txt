@@ -1,0 +1,19 @@
+var houseObject = {"houses":
+		[	{
+				"address" : "123 Fourth St",
+				"style"	  : "colonial"
+			},
+			{
+				"address" : "246 Fifth St.",
+				"style"	  : "ranch"
+			},
+			{
+				"address" : "1 Second Ave.",
+				"style"	  : "ranch"
+			}
+		]
+};
+
+--------------------
+var house1address = housesObject.houses[0].address
+		+ " (" + houseObject.houses[0].style + ")";
