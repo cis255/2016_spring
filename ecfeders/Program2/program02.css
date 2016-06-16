@@ -1,0 +1,21 @@
+body{
+	color:red;
+	margin: auto;
+    width: 45%;
+    padding: 10px;
+	<!--Gradient From http://uigradients.com/#Decent!-->
+	background: #000000; 
+	background: -webkit-linear-gradient(to left, #000080 , #e53935);
+	background: linear-gradient(to left, #e53935 , #000080);
+	
+}
+td {
+	background-color: navy;
+}
+
+h1{
+	color: red;
+	margin: 100px;
+}
+
+

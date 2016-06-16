@@ -1,0 +1,15 @@
+table{
+	font-size: .8em;
+	font-family: Arial, Helvetica, sans-serif;
+	border-top: 4px solid #DCA806;
+	border-bottom: 1px solid aqua;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+thead th{
+	background-color: #CACACA;
+}
+td{
+	padding: 10pt;
+}

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 
-<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<title>Alsamin's Program 3:A jQuery Drag-and-Drop Number Cards Game</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="dragdropdemo.css">
 
@@ -31,11 +31,11 @@ function init() {
   $('#cardSlots').html( '' );
 
   // Create the pile of shuffled cards
-  var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-  numbers.sort( function() { return Math.random() - .5 } );
+  var classes = [ 'CS105', 'CS146', 'CS116', 'CS216', 'CIS255', 'CIS355', 'CIS301', 'CIS311', 'CIS422', 'CIS424' ];
+  //numbers.sort( function() { return Math.random() - .5 } );
 
   for ( var i=0; i<10; i++ ) {
-    $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
+    $('<div>' + classes[i] + '</div>').data( 'number', classes[i] ).attr( 'id', 'card'+classes[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#content',
       stack: '#cardPile div',
       cursor: 'move',
@@ -44,8 +44,8 @@ function init() {
   }
 
   // Create the card slots
-  var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
-  for ( var i=1; i<=10; i++ ) {
+  var words = [ 'year 1 winter', 'year 1 fall', 'year 2 winter', 'year 2 fall', 'year 3 winter', 'year 3 fall', 'year 4 winter', 'year 4 fall' ];
+  for ( var i=1; i<=8; i++ ) {
     $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
       hoverClass: 'hovered',
@@ -64,14 +64,14 @@ function handleCardDrop( event, ui ) {
   // on top of the slot, and prevent it being dragged
   // again
 
-  if ( slotNumber == cardNumber ) {
+  //if ( slotNumber == cardNumber ) {
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
     $(this).droppable( 'disable' );
     ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
-  } 
+  //} 
   
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
@@ -95,8 +95,8 @@ function handleCardDrop( event, ui ) {
 <body>
 
 <div class="wideBox">
-  <h1>Drag-and-Drop with jQuery: Your Essential Guide</h1>
-  <h2>A Number Cards Game</h2>
+  <h1>Program 3</h1>
+  <h2>JQ: Drag and Drop Courses</h2>
 </div>
 
 <div id="content">

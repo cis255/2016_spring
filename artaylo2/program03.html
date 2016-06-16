@@ -1,0 +1,144 @@
+<!doctype html>
+<!-- 
+filename  : program03.html
+author    : Andy Taylor
+date      : 2016-06-13
+email     : artaylo2@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~azaiter/cis255/artaylo2/program03.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program03 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			none
+program structure:
+	<head>
+		script to create course cards and slots to be dragged to. 
+	<body>
+		div for course cards
+		div for course card slots
+		div for hidden completion message
+		link for self code review
+
+ -->
+<html lang="en">
+<head>
+
+<title>SVSU Course Planner</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="program03.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript">
+
+var correctCards = 0;
+$( init );
+
+function init() {
+
+  // Hide the completion message
+  $('#successMessage').hide();
+  $('#successMessage').css( {
+    left: '580px',
+    top: '250px',
+    width: 0,
+    height: 0
+  } );
+
+  // Reset the schedule
+  correctCards = 0;
+  $('#cardPile').html( '' );
+  $('#cardSlots').html( '' );
+
+  // Create the pile of shuffled courses, changed from numbers to courses
+  var numbers = [ "CIS 255", "CS 105", "CS 116", "CS 216", "CS 245", "CS 146", "CS 316", "CS 331", ];
+  numbers.sort( function() { return Math.random() - .5 } );
+
+  for ( var i=0; i<8; i++ ) {
+    $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+  }
+
+  // Create the course slots, changed from numbers to semesters.
+  var words = [ 'Fall 2016', 'Winter 2017', 'Fall 2017', 'Winter 2018', 'Fall 2018', 'Winter 2019', 'Fall 2019', 'Winter 2020' ];
+  for ( var i=1; i<=8; i++ ) {
+    $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+  }
+
+}
+
+function handleCardDrop( event, ui ) {
+  var slotNumber = $(this).data( 'number' );
+  var cardNumber = ui.draggable.data( 'number' );
+
+ 
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+    correctCards++;
+
+  
+ 
+  
+  // If all the cards have been placed then display a message
+  // and reset the cards for another go
+
+  if ( correctCards == 8 ) {
+    $('#successMessage').show();
+    $('#successMessage').animate( {
+      left: '380px',
+      top: '200px',
+      width: '400px',
+      height: '100px',
+      opacity: 1
+    } );
+  }
+
+}
+
+</script>
+
+</head>
+<body>
+
+<div class="wideBox">
+  <h1>Program 3</h1>
+  <h2>SVSU Course Planner</h2>
+</div>
+
+<div id="content">
+
+  <div id="cardPile"> </div>
+  <div id="cardSlots"> </div>
+
+  <div id="successMessage">
+    <h2>You're now set up for success at SVSU!</h2>
+    <button onclick="init()">Edit schedule. </button>
+  </div>
+
+</div>
+<a href="program3codereview.html">Code Review</a>
+
+</body>
+</html>
+

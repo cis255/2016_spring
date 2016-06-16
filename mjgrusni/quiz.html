@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+<p id="demo">zippy
+</p> 
+<p id="demo2">
+</p> 
+<p>hello</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+<input id="celsius" type="text"/><br />
+<input id="fahrenheit" type="text"/><br />
+<input id="kelvin" type="text"/><br />
+
+<script>
+$("*p *:contains('hello')").innerHTML="bye";
+</script>
+
+<script>
+$("#celsius").keyup(function() {
+  $("#fahrenheit").val(this.value * 1.8 + 32);
+  $("#kelvin").val((this.value + 273.15).toFixed(2));
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("body").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+<script> 
+document.getElementById("demo2").innerHTML
+= document.getElementById("demo").innerHTML + 2; 
+</script> 
+
+<script> 
+function movie(title, director) 
+{ 
+this.print = function movieToString() 
+{ 
+return("title: "+title+", director: "+director+"<br/>"); 
+} 
+} 
+var aliens = new movie("aliens","cameron"); 
+document.write(aliens.print()); 
+</script> 
+
+</body> 
+</html>

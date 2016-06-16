@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- 
+filename  : Program2.html
+author    : Kyle Sorenson
+date      : 2016-05-10
+email     : kjsorens@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~kjsorens/cis255/kjsorens/Program2.html
+backup    : https://github.com/cis255/cis255
+purpose   : This is a custom SVSU API for CS and CIS majors.
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			Abdulrahman Zaiter
+			Prof George Corser 
+			Bootstrap
+			Stackoverflow.com
+program structure (design):
+	<head>: 
+		TAB TITLE
+		FAVICON
+		BOOTSTRAP 
+		CSS
+	<body>: 
+		User inputs courses that have been taken already
+		User chooses between CS and CIS using radio button
+		Textbox will display all the classes needed for CS or CIS degree
+		Submit button will calculate the output
+		Left side below submit will display courses needed and eligible for registration
+		Right side below submit will display courses needed but not eligible for registration
+		
+		
+ -->
+<html>
+
+<head>
+    <!-- TAB TITLE -->
+    <title>Kyle Sorenson Program 2: SVSU API</title>
+    <!-- FAVICON -->
+    <link rel="icon" href="http://www.svsu.edu/favicon.ico" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- CSS Style -->
+    <style>
+        h1 {
+            color: white;
+        }
+        
+        #table {
+            background-color: white;
+        }
+        
+        .stretch {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #background {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            -o-filter: blur(3px);
+            -ms-filter: blur(3px);
+            filter: blur(3px);
+        }
+        
+        .transparent-input {
+            width: 75%;
+            background-color: rgba(0, 0, 0, 0);
+        }
+        
+        .textShadow {
+            text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.5);
+        }
+        
+        .textShadowTop {
+            color: rgba(0, 0, 0, .6);
+            text-shadow: rgba(0, 0, 0, .2) 2px 6px 5px, rgba(255, 255, 255, .4) 0 -4px 30p
+        }
+        
+        .boxShadow {
+            -webkit-box-shadow: 0px 0px 19px 2px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 0px 0px 19px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 0px 19px 2px rgba(0, 0, 0, 0.4);
+        }
+        
+        ::-webkit-input-placeholder {
+            font-family: @font-primary;
+            color: white;
+            font-size: 14px;
+        }
+        
+        :-moz-placeholder {
+            /* Firefox 18- */
+            font-family: @font-primary;
+            color: white;
+            font-size: 14px;
+        }
+        
+        ::-moz-placeholder {
+            /* Firefox 19+ */
+            font-family: @font-primary;
+            color: white;
+            font-size: 14px;
+        }
+        
+        :-ms-input-placeholder {
+            font-family: @font-primary;
+            color: white;
+            font-size: 14px;
+        }
+  
+    </style>
+</head>
+
+<body>
+    <!-- Stretched Background -->
+    <div id="background"><img src="bg.png" /></div>
+
+    <!-- Components Container -->
+    <div class="container-fluid textShadow" align="center">
+
+        <h1 class="transparent-input boxShadow" align="center"> Program 02: SVSU API</h1>
+
+        <h2>Courses Taken</h2>
+        <p>Enter courses separated by commas:</p>
+        <textarea class="transparent-input boxShadow" id="coursesTaken" rows="7" cols="50" placeholder="CS 105, CS 116, CIS 255, ..."></textarea>
+
+        <h2>Courses for Degree</h2>
+        <form name="selectCourse">
+            <div class="radio-inline">
+                <label><input type="radio" id = "radioCS" name="degree" onclick="courseClickHandler('CS');" value="cs">CS</label>
+            </div>
+            <div class="radio-inline">
+                <label><input type="radio" id = "radioCIS" name="degree" onclick="courseClickHandler('CIS');" value="cis">CIS</label>
+            </div>
+        </form>
+        <textarea class="transparent-input boxShadow" id="allCoursesNeeded" rows="7" cols="40"></textarea>
+    </div>
+
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-default btn-lg" style="display: block; margin: 0 auto;" onclick="scheduleSubmit();">
+			Submit
+			</button>
+    </div>
+    </div>
+
+    <div class="row" align="center">
+        <div class="col-xs-6">
+            <h2>Courses Needed, But Not Taken, and Eligible for Registration</h2>
+            <p>Courses needed for degree, but not yet taken, and all prereqs taken</p>
+            <select size="12" class="transparent-input boxShadow" multiple class="form-control" id="id02"></select>
+        </div>
+        <div class="col-xs-6">
+            <h2>Courses Needed But Not Yet Eligible for Registration</h2>
+            <p>Courses needed for degree, but not yet taken, and NOT all prereqs taken</p>
+            <textarea class="transparent-input boxShadow" id="neededButNotEligible" rows="10" cols="40" readonly></textarea>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- Program2 Javascript -->
+    <script type="text/javascript" src="Program2api.js"></script>
+
+</body>
+
+</html>

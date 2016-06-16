@@ -1,0 +1,149 @@
+<!doctype html>
+<!-- 
+filename  : program3.html
+author    : Cole Roys
+date      : 2016-05-10
+email     : cbroys@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~cbroys/cis255/cbroys/project03/program3.html
+backup    : https://github.com/cis255/cis255
+purpose   : To find classes still needed for graduation from CS and CIS degree path.
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			None
+external code references in this file: 
+			Prof George Corser for API, XML requests, prereq, and dropdown menu functions.
+			Zaiter for sorting array data.
+			Jennifer Bobber for Radio Button Functionality.
+			bootstrap css and components.
+			
+program structure (design):
+	<head>: 
+		Meta Data
+		TAB TITLE
+		jQuery
+		CSS
+	<body>: 
+		header for the program on the webpage,
+		card slot call to arrange the class cards,
+		popup to show that the task is complete,
+		footer for copyright.
+		
+ -->
+<!-- from: http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html-->
+<html lang="en">
+<head>
+
+<title>Program 3: Class Drag and Drop</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="program3.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript">
+
+	var correctCards = 0;
+	$(init);
+	
+	function init() {
+		  // Hide the success message
+		  $('#successMessage').hide();
+		  $('#successMessage').css( {
+			left: '580px',
+			top: '250px',
+			width: 0,
+			height: 0
+		  });
+
+		  // Reset the game
+		  cardContains = 0;
+		  $('#cardPile').html( '' );
+		  $('#cardSlots').html( '' );
+
+		  // Create the pile of shuffled cards
+		  var numbers = ['CS 105', 'CS 116','CS 146', 'CS 216', 'CS 245', 'CIS 255', 'CIS 333', 'CIS 355', 'CS 333', 'CS 490' ];
+		  
+
+		  for (var i = 0; i < 10; i++) {
+			$('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
+			  containment: '#content',
+			  stack: '#cardPile div',
+			  cursor: 'move',
+			  revert: true
+			});
+		  }
+
+		  // Create the card slots (Credit to William)
+		  var words = [ 'FA 2016', 'WI 2017', 'FA 2017', 'WI 2018', 'FA 2018', 'WI 2019', 'FA 2019', 'WI 2020' ];
+		  for (var i = 0; i <= 8; i++) {
+			$('<div>' + words[i] + '</div>').data( 'number', i ).attr( 'id', words[i] ).appendTo( '#cardSlots' ).droppable( {
+			  accept: '#cardPile div',
+			  hoverClass: 'hovered',
+			  drop: handleCardDrop
+			});
+		  }
+
+	}
+
+	function handleCardDrop( event, ui ) {
+	  var slotNumber = $(this).data( 'number' );
+	  var cardNumber = ui.draggable.data( 'number' );
+
+	  // If the card was dropped to the correct slot,
+	  // change the card colour, position it directly
+	  // on top of the slot, and prevent it being dragged
+	  // again
+		
+		ui.draggable.draggable( 'option', 'revert', false );
+		cardContains++;
+	  
+	  // If all the cards have been placed correctly then display a message
+	  // and reset the cards for another go
+
+	  if ( cardContains == 10 ) {
+			$('#successMessage').show();
+			$('#successMessage').animate( {
+			  left: '380px',
+			  top: '200px',
+			  width: '400px',
+			  height: '100px',
+			  opacity: 1
+			});
+	  }
+
+	}
+
+</script>
+
+</head>
+<body>
+
+	<div class="widebox">
+		<h2 align="center">Program 3 - Course Scheduler</h2>
+		<h5 align="center">Cole Roys</h5>
+	</div>
+	<div id="content">
+
+	  <div id="cardPile"> </div>
+	  <div id="cardSlots"> </div>
+
+	  <div id="successMessage">
+		<h2>Good Luck with Learning!</h2>
+		<button onclick="init()">Try Again</button>
+	  </div>
+
+	</div>
+	
+	<div class="widebox">
+		<h6 align="center">Copyright &copy; Cole Roys 2016</h6>
+	</div>
+
+</body>
+</html>
