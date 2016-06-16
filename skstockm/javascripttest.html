@@ -1,0 +1,165 @@
+<html>
+<head>
+  <script>
+  //comments: similar to C++
+  //primitive data type:number
+  //a = 5;
+  //var b = 6;
+  //d = 0;
+  
+  //primitive data type:object (ex. string)
+  //s = "Hello";
+  //console.log(s);
+  
+  //primitive data type: undefined
+  //console.log(u);
+  
+  //primitive data type: null (object)
+  //l = null;
+  //console.log(l);
+  
+  //primitive data type: boolean
+  //b = true;
+  //f = false;
+  //console.log(b);
+  
+  //unusual application of "or" ( || )
+  //console.log (l || a); //displays 5
+  
+  //if( l || a) console.log("prints " + a); //prints 5
+  //if(l || b) console.log("prints " + b);//prints true
+  //if(l || f) console.log("prints " + f);//wont print "falsey"
+  //if(l || d) console.log("prints " + d);//falsey when var is 0
+  
+  //javascript Object
+  var jobject = {
+    name: "Jummy Joe",
+	age: 20,
+	address: "123 Fourth Street",
+	function1: function () {return 15;},
+	array1: [1, 2, 3, 4, 5]
+  }
+  console.log(jobject);
+  
+  //first class function
+  f1 = function() {return 5;};
+  console.log(f1()); //5
+  console.log(f1); //function() {return 5;};
+  console.log(jobject.function1); //function () {return 15;}
+  console.log(jobject.function1());// 15
+  
+  //Arrays
+  array2 = [2, 4, 6, 5];
+  array3 = new Array(3, 6, 9, "asd");
+  console.log(jobject.array1[0]); //prints first element in array1
+  console.log(array2);
+  console.log(array3);
+  
+  
+  
+  var z = 9;
+    function zippydoo(){
+	  var el = document.getElementById("id01");
+	  el.innerHTML = "ZippyDoo!";
+	 
+	  var newP = document.createElement("SPAN");
+	  newP.innerHTML = "SpanTest";
+
+	  document.getElementById("id02").appendChild(newP);
+	}
+    function zippy(){
+	  var x = 5;
+	  y = 6;
+	  if (z >= 9)alert('not an emergency');
+	  for (var i=0; i<10; i++)
+	    document.write("zippydee" + i + "<br />");
+	  // functions (see this function!)
+	  console.log("Put Messages Here!") //when you inspect
+	  //d= new Date(2016,02,02);  //January is 00
+	  //1 + Number((5 * Math.random()).toFixed())    //for a dice
+    }
+	
+	//try-catch-finally
+	//from slide 41
+	try { //throws first error doesnt care about other error
+	   var x =-1;
+	   if(x < 0)
+	     throw "smallerThanZeroError";
+	   var y = 101;
+	   
+	   if(y > 100)
+	     throw "greaterThan100Error";
+	} 
+	catch(error) {
+	   alert (error + " was thrown");  
+	}
+	finally { //even tho there was error this will still execute
+	   console.log("value of x: " + x);
+	}
+	k = 12 /0;
+	console.log(k); //says it is infinity
+	//will stop at first error
+	//console.log(j);
+	
+	array4 = ["CS 101", "CS 102", "CS 103"];
+	console.log(array4);
+	console.log(array4.concat("CS 104")); //adds element to end of array
+	s2 = "CS 105, CS 106, CS 107";
+	console.log(array4.concat(s2.split(", ")));
+	
+	function loadscript () {
+	  //from slide74
+	  var commentTag = document.getElementById("specificTag");
+	  commentTag.style.backgroundColor = "#FFFF00";
+	  commentTag.style.borderWidth = "3px";
+	  
+	  //from slide 80
+	  var greetingBox = document.getElementById('gmorn');
+	  //old way//greetingBox.onclick = alert("Good Morning");
+      greetingBox.addEventListener("click", function(){
+	    alert("Good Morning") }, false);
+		
+	  document.getElementById("firstname").onfocus = function(e){
+	    var firstnamelabel = document.getElementById("fnl");
+		firstnamelabel.style.backgroundColor = "#FFFF00";
+		firstnamelabel.style.borderWidth = "3px";
+	  };
+	  
+	  document.getElementById("firstname").onblur = function(e){  //unfocus
+	    var firstnamelabel = document.getElementById("fnl");
+		firstnamelabel.style.backgroundColor = "#FFFFFF";
+		firstnamelabel.style.borderWidth = "3px";
+	  };
+	  
+	  document.getElementById("form01").onsubmit = function(e){  //submit only used on forms 
+	    var nameValue = document.getElementById("firstname").value;
+		var firstnamelabel = document.getElementById("fnl");
+		if(nameValue == null || nameValue == "") {
+		  e.preventDefault(); //the field was empty so it stops it from submitting
+		  firstnamelabel.style.backgroundColor = "#FF0000";
+		  document.getElementById("firstname").focus();
+		}
+	  };
+	}
+
+	console.log("End of Script"); //didnt print because it had error with j
+  </script>
+</head>
+<body id="body01" onload="loadscript()">
+  <h1 onclick="zippy()">Alert</h1>
+  <button onclick="zippydoo()">Change Paragraph</button>
+  <p id="id01">This is a paragraph</p>
+  <p id="id02">This is a paragraph</p>
+  <p id="specificTag">This is a specific paragraph</p>
+  <p id="gmorn">Click me</p>
+  
+  <form id="form01" action="junk.html" method="GET">
+    <label id="fnl" for="firstname">First Name</label>
+    <input name="firstname" id="firstname" type="text" placeholder="Jane"><br />
+    <label for="address">Address</label>
+    <input name="address" id="address" type="text" placeholder="123 Fourth Street">
+	<button type="submit" value="Submit">Submit</button>
+	</form>
+  
+</body>
+</html>

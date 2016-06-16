@@ -1,0 +1,151 @@
+/* Copied from http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html*/ /*(Credit to William)*/
+/* Add some margin to the page and set a default font and colour */
+
+body {
+  margin: 30px;
+  font-family: "Georgia", serif;
+  line-height: 1.8em;
+  color: #333;
+}
+
+/* Give headings their own font */
+
+h1, h2, h3, h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main content area */
+
+#content {
+  margin: 10px 8px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Slots for final card positions */
+
+#semesterCells {
+  margin: 60px auto 0 auto;
+  background: #00f;
+}
+
+/* The initial list of classes */
+
+#courseList {
+  width: 5px;
+  height: 60px;
+  margin: 0 auto;
+  background: #f00;
+}
+
+#semesterCells {
+  width: 80%;
+  height: 200px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-right: 0%;
+  padding-left: 4.5%;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+#courseList {
+  width: 80%;
+  height: 110px;
+  padding-left: 5%;
+  padding-right: 0%;
+  padding-bottom: 5px;
+  padding-top: 27px;
+  border: 2px solid #333;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+/* Individual cards and slots */
+
+#courseList div {
+  float: left;
+  width: 6%;
+  height: 30%;
+  padding: 14.5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border: 2px solid #333;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 0 0 15px;
+  background: #fff;
+  font-size: 80%
+}
+
+#semesterCells div {
+  float: left;
+  width: 9%;
+  height: 100%;
+  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin: 0 0 0 10px;
+  background: #fff;
+  font-size: 75%
+}
+
+#semesterCells div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}
+
+#semesterCells div.hovered {
+  background: #aaa;
+}
+
+#semesterCells div {
+  border-style: solid;
+}
+
+#courses div {
+  background: #666;
+  color: #fff;
+  font-size: 15px;
+  text-shadow: 0 0 3px #000;
+}
+
+#courses div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+/* "You did it!" message */
+#successMessage {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: #dfd;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+}

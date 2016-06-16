@@ -1,0 +1,171 @@
+/* taken from:http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/style.css*/
+
+/* Add some margin to the page and set a default font and colour */
+#background {
+			width: 100%; 
+			height: 100%; 
+			position: fixed; 
+			left: 0px; 
+			top: 0px; 
+			z-index: -1;
+			-webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+		}
+body {
+  margin: 30px;
+  font-family: "Georgia", serif;
+  line-height: 1.8em;
+  color: #333;
+}
+
+/* Give headings their own font */
+
+h1, h2, h3, h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main content area */
+
+#content {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  
+}
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  font-size: 1.5em;
+}
+
+/* Slots for final card positions */
+
+#Semestercourses{
+	display: inline-block;
+	margin-left: 50px;
+	
+  margin: 10px;
+  padding: 10px;
+  
+  background: #fff;
+}
+ #Semesters{
+	display: inline-block;
+	margin-left: 50px;
+	
+  margin: 10px;
+  padding: 10px;
+  
+  
+}
+
+/* The initial pile of unsorted cards */
+
+#courses {
+	
+  margin: 0 auto;
+  background: #ffd;
+}
+
+#Semestercourses, #Fall2017 {
+	border-collapse:collapse;
+  width: 250px;
+  height: 120px;
+  padding: 20px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+   
+}
+#courses {
+		border-collapse:collapse;
+  width: 500px;
+  height: 120px;
+  padding: 20px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+	
+}
+
+
+
+	
+/* Individual cards and slots */
+
+#Semestercourses div, #courses div {
+  text-align: center-center;
+  float: left;
+  width: 150px;
+  height: 25px;
+  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+  background: #fff;
+  
+}
+
+#Semestercourses div:first-child, #courses div:first-child, #Fall2017 div:first-child {
+  margin-left: 0 auto;
+}
+
+#Semestercourses div.hovered {
+  background: #aaa;
+}
+
+#Semestercourses div {
+  border-style: dashed;
+}
+
+#courses div {
+  background: #666;
+  color: #fff;
+  font-size: 15px;
+  text-shadow: 0 0 3px #000;
+  cursor: move;
+}
+
+#courses div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  
+}
+
+
+
+
+
+

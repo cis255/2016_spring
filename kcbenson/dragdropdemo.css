@@ -1,0 +1,129 @@
+/*Code adapted from http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/style.css */
+/* Add some margin to the page and set a default font and colour */
+body {
+  margin: 30px;
+  font-family: 'Lobster Two', cursive;
+  line-height: 2.5em;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/82/22/c8/8222c89104a92c9d69caf17857320183.jpg");
+}
+
+/* Give headings their own font */
+h1, h2, h3, h4 {
+  font-family: 'Forum', cursive;
+}
+
+/* Main content area */
+#content {
+  margin: 80px 70px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Header/footer boxes */
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  background: #7fffd4;
+  border: 1px solid #333;
+  border-radius: 50px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  font-size: 50px;
+}
+
+/* Slots for final card positions */
+#cardSlots {
+  margin: 50px auto 0 auto;
+  background: #fff0f5;
+}
+
+/* The initial pile of unsorted cards */
+#cardPile {
+  margin: 0 auto;
+  background: #e6e6fa;
+}
+
+#cardSlots, #cardPile {
+  width: 910px;
+  height: 120px;
+  padding: 20px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+/* Individual cards and slots */
+#cardSlots div, #cardPile div {
+  float: left;
+  width: 58px;
+  height: 78px;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+  background: #fff;
+}
+
+#cardSlots div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}
+
+#cardSlots div.hovered {
+  background: #aaa;
+}
+
+#cardSlots div {
+  border-style: dashed;
+}
+
+#cardPile div {
+  background: #666;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 0 0 3px #000;
+}
+
+#cardPile div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+
+/* "All planned!" message */
+#successMessage {
+  position: absolute;
+  left: center;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: #fffaf0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+}
