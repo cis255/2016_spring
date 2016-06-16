@@ -1,0 +1,38 @@
+<html>
+<head>
+<script>
+    // comments: similar to C++
+    var z = 8; 
+	function zippydoo () {
+	    var el = document.getElementById("id01");
+		el.innerHTML = "ZippyDoo!";
+		var newP = document.createElement("p");
+		el.appendChild(newP);
+		newP.appendChild("ZippyZippyZippy");
+	}
+    function zippydee () {
+	    // variable
+	    var x = 5;
+		y = 6;
+		// conditionals
+		if (z > 9) alert('not an emergency');
+		// loops
+
+		for (var i=0; i<10; i++) 
+			document.write("zippydee" + i + "<br />");
+
+		// functions (see this function)
+		console.log("Put Messages Here");
+		
+		
+		
+		
+	};;;;;
+</script>
+</head>
+<body>
+   <h1 onclick="zippydee();">Alert</h1>
+   <button onclick="zippydoo();">Change Paragraph</button>
+   <p id="id01">This is a paragraph</p>
+</body>
+</html>

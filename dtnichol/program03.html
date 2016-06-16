@@ -1,0 +1,211 @@
+<!doctype html>
+<!-- 
+filename  : program03.html
+author    : Derek Nichols
+date      : 2016-05-10
+email     : dtnichol@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~dtnichol/cis255/dtnichol/program03/program03.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program02 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			None
+external code references in this file: 
+			Prof George Corser "prereqs,myFunction" functions.
+			Cole Roys CS, CIS arrays.
+			bootstrap css and components.
+			Abdulrahman Zaiter for layout and javascript
+program structure (design):
+	<head>: 
+		Meta Data
+		TAB TITLE
+		Bootstrap
+		CSS
+	<body>: 
+		Defined fluid container that includes:
+			User Input Row Container: 
+				-This Row has two columns:
+					- First is to input user courses that are taken so far in a textarea. 
+					- Second input is textarea for All Courses Needed for Degree, it has two radio buttons CS,CIS. When you click one of them, the box will automatically be filled with default CS or CIS degree courses needed to graduate.
+					- A submit button that will intialize a JS script to calculate the output on the second row.
+			Output Row Container:
+				-This Row has two columns (Read only):
+					- First column is a multi select menu that will include courses that are eligible to be taken and available to register. it will be filled after submit button being clicked.
+					- Second column is a textarea that has the courses that are not eligible to register from SVSU API.
+		
+ -->
+
+<!-- from: http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html -->
+<html lang="en">
+	<head>
+
+		<title>Program 3</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+			<link rel="stylesheet" type="text/css" href="program03.css">
+
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+				<script type="text/javascript">
+
+
+	var courseNumbers = 0;
+$( init );
+
+function init() {
+
+  // Reset the game
+  $('#courses').html( '' );
+  $('#Semestercourses').html( '' );
+  
+ 
+
+
+	
+ 
+ 
+
+  // Create the div of courses
+ var courseNumbers = [ "CS 116", "CS 105", "Math 245", "CS 216", "CIS 255", "CIS 355", "CIS 311", "CIS 333", "CIS 366", "CIS 424"];
+  
+  
+  for ( var i=0; i<10; i++ ) {
+    $('<div>' + courseNumbers[i] + '</div>').data( 'number', courseNumbers[i] ).attr( 'id', 'number'+ courseNumbers[i] ).appendTo( '#courses' ).draggable( {
+      containment: '#content',
+      stack: '#courses div',
+      cursor: 'move',
+
+    } );
+  }
+  
+ 
+  //Handles the drag and drop of the courses
+
+$('.drop').droppable({
+    tolerance: 'fit',
+});
+
+$('.drag').draggable({
+    revert: 'invalid',
+    stop: function(){
+        $(this).draggable('option','revert','invalid');
+    }
+});
+
+$('.drag').droppable({
+    greedy: true,
+    tolerance: 'touch',
+    drop: function(event,ui){
+        ui.draggable.draggable('option','revert',true).css("background-color", "green");
+    }
+});
+
+
+ 
+   
+ 
+ 
+ }
+
+
+
+
+
+ 
+				</script>
+
+					</head>
+					<body>
+						<div id="background" ><img class="stretch" src="cardinal.png"/></div>
+						<div class="wideBox">
+							<h1>Drag-and-Drop with jQuery</h1>
+							
+						</div>
+							
+						<div id="content">
+						<h1>Drag and Drop your courses into the semesters you choose</h1>
+						
+						<!-- resets the courses back into the starting box-->
+							<div><button onclick="init()" style="width:150px; height:25px">Reset Courses</button></div>
+						<!--Has all of the semester boxes and the Course box done with css to get the alignment and colors. Also hsa the drag and drop classes that you the javascript/jquery-->	
+							<div class="row" id="courses">
+								<div id="courses" class="drag"> </div>
+							</div>
+							<div>
+									<div class="row" id="Semesters">
+										<div class="col-xs-6">
+											<h2>Fall 2016</h2>
+											<div id="Semestercourses"  class="drop"></div>
+										</div>
+									</div>
+									
+									
+									<div class="row" id="Semesters">
+										<div class="col-xs-6">
+											<h2>Winter 2017</h2>
+											<div id="Semestercourses"  class="drop"></div>
+										</div>
+									</div>
+									
+									<div class="row" id="Semesters">
+										<div class="col-xs-6">
+											<h2>Fall 2017</h2>
+											<div id="Semestercourses"  class="drop"></div>
+										</div>
+									</div>
+									
+									<div class="row" id="Semesters">
+										<div class="col-xs-6">
+											<h2>Winter 2018</h2>
+											<div id="Semestercourses"  class="drop"></div>
+										</div>
+									</div>
+									
+									<div class="row" id="Semesters">
+										<div class="col-xs-6">
+											<h2>Fall 2018</h2>
+											<div id="Semestercourses"  class="drop"></div>
+										</div>
+									</div>
+									
+									<div class="row" id="Semesters">
+										<div class="col-xs-6">
+											<h2>Winter 2019</h2>
+											<div id="Semestercourses"  class="drop"></div>
+										</div>
+									</div>
+									
+									<div class="row" id="Semesters">
+										<div class="col-xs-6">
+											<h2>Fall 2019</h2>
+											<div id="Semestercourses"  class="drop"></div>
+										</div>
+									</div>
+									
+									<div class="row" id="Semesters">
+										<div class="col-xs-6">
+											<h2>Winter 2020</h2>
+											<div id="Semestercourses"  class="drop"></div>
+										</div>
+									</div>
+									
+								
+											
+							
+						</div>
+
+						
+
+					</body>
+				</html>
+
+				

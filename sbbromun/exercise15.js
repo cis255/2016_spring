@@ -77,3 +77,8 @@ function convert() {
 	console.log($("#Celsius").val())
 	return 0;
 };
+$(document).ready(function(){
+    $("body").click(function(){
+        $(this).hide();
+    });
+});

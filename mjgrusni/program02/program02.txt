@@ -1,0 +1,19 @@
+https://api.svsu.edu/courses?prefix=cs
+1. Load HTML
+	head:
+	body:
+2. If radio_button clicked: Populate Box 2
+2. If submit_button clicked:
+	-. Initialize array of URLs (all prefixes) (size N)
+	-. Initialize array of HTTP requests (size N)
+	a. Get JSON object from API using AJAX (LOOP thru N prefixes)
+		1. Create HTTP Request [prefix: i]
+		2. Initialize URL[i]
+		3. Specify Callback Function
+			If ready(4) and success(200)
+				a. Parse response into JSON
+				b.
+		4. Execute Request
+	b. Populate Box 3
+	c. Populate Box 4
+
