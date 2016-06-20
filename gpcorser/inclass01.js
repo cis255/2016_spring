@@ -1,9 +1,58 @@
 $(document).ready(function() {
 	$("#readyMessage").text("Ready.");
-	$("#timeDiv").load("currentTime.php");
+	$(".zippydee").text("zippydoo.");
 	
+	console.log($(".zippydonut").html());
+	console.log($("body").html());
+	
+	$("#div1").html("<p>Howdy</p>");
+	console.log($("#div1").html());
+	console.log($("#div1 p").html());
+	
+	console.log($("#v1").val());
+	
+	$("#input1").on("change", function(){
+		alert("The input field was changed to: " + $("#input1").val());
+	});
+	
+	// slide 44: listing 15.8
+	
+	// pure JavaScript way
+	var jsLink = document.createElement("a");
+	jsLink.href = "http://www.funwebdev.com";
+	jsLink.innerHTML = "JavaScriptWay";
+	jsLink.title = "JS";
+	
+	console.log(jsLink);
+	
+	// jQuery way
+	var jQueryLink = $("<a href='http://funwebdev.com' title= 'jQuery'>jQueryWay</a>");
+	
+	console.log(jQueryLink);
+	
+	// jQuery long-form way
+	var jQueryVerboseLink = $("<a></a>");
+	jQueryVerboseLink.attr("href",'http://funwebdev.com');
+	jQueryVerboseLink.attr("title","jQuery verbose");
+	jQueryVerboseLink.html("Verbose");
+
+	console.log(jQueryVerboseLink);
+	
+	$("#div2").append(jsLink);
+	$("#div2").append("<br />");
+	$("#div2").append(jQueryLink);
+	$("#div2").append("<br />");
+	$("#div2").append(jQueryVerboseLink);
+	$("#div2").append("<br />");
+	
+	$("a").wrap("<div class='galleryLink'/>");
+	
+
+	$("#timeDiv").load("currentTime.php");
+	//$("#timeDiv").load("http://api.svsu.edu/courses?prefix=CIS&courseNumber=255");
+
 	// example GET request
-	$.get("currentTime.php", function (data,textStatus,jsxhr) {
+	var jqxhr = $.get("currentTime.php", function (data,textStatus,jsxhr) {
 		if (textStatus == "success") {
 			console.log("success: " + data);
 		}
@@ -13,6 +62,47 @@ $(document).ready(function() {
 		console.log("done.");
 	});
 	
+	//var jqxhr = $.get("currentTime.php");
+	console.log(jqxhr.statusCode());
+	console.log(jqxhr.statusCode());
+	//var jqxhr = $.post("currentTime.php");
+	//console.log(jqxhr.status);
+	
+	// example AJAX request
+	var jqxhr = $.ajax(
+		{
+			url   : "currentTime.php",
+			data  : "zippy",
+			async : true, 
+			type  : "POST"
+		}
+	);
+	
+	console.log(jqxhr.statusCode());
+	
+	$("#p1").click(function(){
+		$(this).hide();
+		$("#timeDiv").hide(3000);
+		$(".zippydee").fadeToggle(3000);
+	});
+	
+	$(".zippydonut").click(function(){
+		$("#p1").show();
+		$("#timeDiv").show(3000);
+		$(".zippydee").fadeToggle(3000);
+	});
+	
+	$("#timeDiv").click(function() {
+		$("#timeDiv").css("position", "relative");
+		$("#timeDiv").animate(
+			{
+				left: 300, 
+				opacity: .5,
+				'font-size': "22px",
+				width: 300
+			}, 2000, "swing", function(){alert("Done!");});
+	});
+
 });
 
 /* Backbone section requires "publish.php" file not provided! 

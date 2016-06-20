@@ -1,6 +1,8 @@
 /* Add some margin to the page and set a default font and colour */
 /* from: http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html */
 body {
+  background-image: url("http://img03.deviantart.net/8a7d/i/2010/178/e/6/red_and_white_fireworks_by_cokebottleglasses.jpg");
+  background-size: cover;
   margin: 30px;
   font-family: "Georgia", serif;
   line-height: 1.8em;
@@ -10,7 +12,7 @@ body {
 /* Give headings their own font */
 
 h1, h2, h3, h4 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: "Georgia", serif;
 }
 
 /* Main content area */
@@ -30,33 +32,49 @@ h1, h2, h3, h4 {
   text-align: center;
   margin: 70px;
   padding: 10px;
-  background: #ebedf2;
+  background: white;
   border: 1px solid #333;
 }
 
-.wideBox h1 {
+.wideBox h1, h2 {
   font-weight: bold;
   margin: 20px;
-  color: #666;
+  color: #990000;
   font-size: 1.5em;
+  font-family: "Georgia", serif;
 }
 
 /* Slots for final card positions */
 
 #cardSlots {
   margin: 50px auto 0 auto;
-  background: #ddf;
+  background: #91d5ff;
 }
 
 /* The initial pile of unsorted cards */
 
 #cardPile {
   margin: 0 auto;
-  background: #ffd;
+  background: #00416A;
+  cursor: move;
 }
 
-#cardSlots, #cardPile {
-  width: 910px;
+#cardSlots {
+  width: 830px;
+  height: 120px;
+  padding: 20px;
+  cursor: default;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+#cardPile {
+  width: 1035px;
   height: 120px;
   padding: 20px;
   border: 2px solid #333;
@@ -70,9 +88,24 @@ h1, h2, h3, h4 {
 
 /* Individual cards and slots */
 
-#cardSlots div, #cardPile div {
+#cardSlots div{
   float: left;
-  width: 58px;
+  width: 70px;
+  height: 78px;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+  background: #fff;
+} 
+
+#cardPile div {
+  float: left;
+  width: 70px;
   height: 78px;
   padding: 10px;
   padding-top: 40px;
@@ -90,7 +123,7 @@ h1, h2, h3, h4 {
 }
 
 #cardSlots div.hovered {
-  background: #aaa;
+  background: red;
 }
 
 #cardSlots div {
@@ -100,11 +133,12 @@ h1, h2, h3, h4 {
 #cardPile div {
   background: #666;
   color: #fff;
-  font-size: 50px;
+  font-size: 98%;
   text-shadow: 0 0 3px #000;
 }
 
 #cardPile div.ui-draggable-dragging {
+  background-color: #990000;
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
@@ -132,7 +166,7 @@ h1, h2, h3, h4 {
   width: 0;
   height: 0;
   z-index: 100;
-  background: #dfd;
+  background: #FFF4CC;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;

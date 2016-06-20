@@ -1,0 +1,25 @@
+.title {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+}
+
+.title h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  font-size: 1.5em;
+}
+
+#droptarget {
+    float: left; 
+    width: 200px; 
+    height: 35px;
+    margin: 55px;
+    margin-top: 155px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}

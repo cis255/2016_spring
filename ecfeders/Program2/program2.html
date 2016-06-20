@@ -1,0 +1,426 @@
+<!-- 
+filename  : program2.html
+author    : Erik Federspiel
+date      : 2016-06-1
+email     : ecfeders@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~ecfeders/cis255/ecfeders/Program2/program2.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program02 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			Code labeled in Comments From 
+				-Abdulrahman Zaiter
+				- Dr. Corser
+external code references in this file: 
+			Prof George Corser "prereqs,myFunction" functions.
+			Abdulrahman Zaiter Pre-Req Array
+			Dr. Corser Api function and check pre-req
+program structure (design):
+	<head>: 
+		Meta Data
+		CSS
+	<body>: 
+		<script>
+			First script to declare pre-req array
+			populate the select bar based on the degree
+			set up function to use to check pre-req
+		</script>
+		<html>
+			Table with two rows two columns
+			Table set up with titles, input text, input buttons, and text areas
+		<html>
+		<script>
+			Script to populate Curriculum text area
+			Use schedule submit function to do the magic of populating eligible,
+			and available classes and not eligible.
+			This function is from Abdulrahmna Zaiter
+		</script>
+
+
+ -->
+<html>
+	<script>
+			// prequisite list from Abdulrahman Zaiter
+				prereqs = [
+					{course: "CIS 355", prereq: "CIS 255", prereq2: "CS 216", prereq3: "", prereq4: ""},
+					{course: "CS 245", prereq: "CS 116", prereq2: "MATH 140", prereq3: "", prereq4: ""},
+					{course: "MATH 161", prereq: "MATH 140", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "MATH 223", prereq: "MATH 161", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "MATH 300", prereq: "MATH 161", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "RPW 304", prereq: "ENGL 111", prereq2: "ENGL 212", prereq3: "", prereq4: ""},
+					{course: "PHIL 205A!", prereq: "ENGL 111", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "PHIL 210B", prereq: "ENGL 111", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 146", prereq: "CS 105", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 216", prereq: "CS 116", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 316", prereq: "CS 216", prereq2: "MATH 300", prereq3: "", prereq4: ""},
+					{course: "CS 331", prereq: "CS 216", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 401", prereq: "CS 331", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 411", prereq: "CS 216", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 446", prereq: "CS 331", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 451", prereq: "CS 316", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 461", prereq: "CS 316", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 255", prereq: "CS 116", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 357", prereq: "CS 216", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 301", prereq: "CS 146", prereq2: "CS 216", prereq3: "CS 245", prereq4: ""},
+					{course: "CIS 311", prereq: "CS 146", prereq2: "CS 216", prereq3: "", prereq4: ""},
+					{course: "CIS 333", prereq: "CS 216", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 333", prereq: "CS 216", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 366", prereq: "CS 245", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 386", prereq: "CS 216", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 422", prereq: "CIS 311", prereq2: "CIS 366", prereq3: "CIS 386", prereq4: ""},
+					{course: "CIS 424", prereq: "CIS 422", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 421", prereq: "CIS 355", prereq2: "CIS 357", prereq3: "CS 401", prereq4: "CS 411"},
+					{course: "CS 471", prereq: "CS 421", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 345", prereq: "CS 216", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 403", prereq: "CIS 355", prereq2: "CS 401", prereq3: "", prereq4: ""},
+					{course: "CS 431", prereq: "CS 331", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 476", prereq: "CS 316", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 482", prereq: "CS 216", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 490", prereq: "CS 421", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 371", prereq: "CS 216", prereq2: "CS 245", prereq3: "", prereq4: ""},
+					{course: "CIS 425", prereq: "CIS 311", prereq2: "CS 245", prereq3: "", prereq4: ""},
+					{course: "CIS 486", prereq: "CIS 386", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CIS 486", prereq: "CIS 386", prereq2: "", prereq3: "", prereq4: ""},
+					{course: "CS 116", prereq: "CS 105", prereq2: "", prereq3: "", prereq4: ""}
+				];
+
+			
+			//An array that holds courses prefixes to be used in URL variable in a loop
+			coursesPrefixesCS = ["CS","CIS","MATH","COMM","RPW"];
+			coursesPrefixesCIS = ["CS","CIS","MATH","COMM","RPW","PHIL","ACCT","ECON","LAW","MGT","MKT"];
+			
+			//request array that holds requests same as courses prefixes size.
+			requestsCS = new Array(coursesPrefixesCS.length);
+			requestsCIS = new Array(coursesPrefixesCIS.length);
+		
+		//Function From Professor Corser that populates the select bar 
+		//From the api
+		function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+				}
+			}
+			
+			
+		// return true is all prereqs taken, false otherwise -- credits to professor Corser
+		//Refernced Abdulrahman Zaiter
+		function prereqsTaken (taken,course) {
+			var retval = true; // assume true that prereq for course has been taken
+			for (var i=0; i < prereqs.length; i++) { // loop through all course prereqs
+				if (prereqs[i].course == course) { // if course is in prereqs list
+					if ( (taken.indexOf(prereqs[i].prereq) == -1)  // if the first prereq is NOT in the taken list
+					|| ((taken.indexOf(prereqs[i].prereq2) == -1) && (prereqs[i].prereq2 != "")) 
+					|| ((taken.indexOf(prereqs[i].prereq3) == -1) && (prereqs[i].prereq3 != "")) 
+					|| ((taken.indexOf(prereqs[i].prereq4) == -1) && (prereqs[i].prereq4 != ""))
+					)
+				{ 
+						retval = false; // then set retval to false
+						break; // bounce out of loop
+				}
+			}
+		}
+	return retval;
+};
+			
+		</script>
+	<head>
+		<!-- CSS !-->
+		<link href="program02.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- Title !-->
+		<h1> Program 02: SVSU API </h1>
+		<table border = 4>
+			<tr>
+				<td> 
+					<!-- First Column, First Row, Title, Input text bar, and button !-->
+					<h2>Courses Taken</h2> 
+					<p> Enter Course And Click Submit: CS 105</p>
+					<form>
+						<input type="text" id="courseAdd"/>
+						<br></br>
+						<input id="addCoursetoArray" value="Save Course Taken" type="button" onclick="addCourse();" />
+					</form>
+					
+				</td>
+				<td> 
+					<!-- First row, Second Column - Title, two radio buttons, and text area !-->
+					<h2>Courses For Degree</h2>
+					<form>
+						<input type="radio" id="degree1" name="degree" value="cs" onchange="populateRadioText()">Computer Science
+						<input type="radio" id="degree2" name="degree" value="cis"  onchange="populateRadioText()">Computer Information System
+					</form>
+					<p>Edit, if Desired</p>
+					<textarea id="allCoursesNeeded" rows="10" cols="40"></textarea>
+				</td>
+			</tr>
+				<td> 
+					<!-- Second Row, Second Column, Title, select bar populate with Api, and input button !-->
+					<h2>Courses Available for Registration</h2>
+					<p> courses not taken, but Pre-Reqs met </p>
+					
+					<p id="id01"></p>
+					<select id="id02"></select>
+					<br></br>
+					<input id="seeAvailable" value="See Courses Avaiable/Not Available" type="button" onclick="scheduleSubmit();" />
+				</td>
+				<td> 
+					<!-- Second Row, Second Column - Title, and text area !-->
+					<h2>Courses Not yet Available</h2>
+					<p> Pre-Reqs Not Met </p>
+					<textarea id="notElgible" rows="10" cols="40"></textarea>
+				</td>
+			<tr>
+			
+			</tr>
+		</table>
+		
+		<script>
+			//Populate the Courses In degree depending on radio button
+			function populateRadioText(){
+				// courses for CS
+				cs = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245", "MATH 161",
+				"MATH 223", "COMM 105A", "RPW 304", "PHIL 205A!", "PHIL 210B", "CS 146",
+				"CS 316", "CS 331", "CS 401", "CS 411", "CS 421", "CS 446", "CS 451", "CS 461"
+				, "CS 471", "CIS 255", "CIS 355", "CIS 357", "CIS 311", "CS 345", "CS 403",
+				"CS 431", "CS 476", "CS 482", "CS 490"];
+
+				// courses for CIS
+				cis = ["CS 245", "MATH 120B", "COMM 105A", "RPW 304", "ACCT 213",
+				"ECON 221", "LAW 308", "MGT 321", "MKT 331", "PHIL 205A!", "PHIL 210B",
+				"CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CIS 301", "CIS 311",
+				"CIS 333", "CIS 355", "CIS 366", "CIS 386", "CIS 386", "CIS 422", "CS 345",
+				"CIS 357", "CIS 371", "CIS 425", "CIS 486", "CIS 490"];
+				
+				//All Course Array
+				allCoursesArr = [];
+				
+				//Insert Cs Courses into Text Area id="allCoursesNeeded"
+				var allCourses = document.getElementById("allCoursesNeeded");
+				var allCoursesText = "";
+				
+				//Populate text area based on radio button checked
+				if(document.getElementById('degree1').checked){
+					for(var i = 0; i < cs.length; i++) 
+					allCoursesText += cs[i] + ", ";
+					allCourses.innerHTML = allCoursesText;
+					
+					removeOptions(document.getElementById("id02"));
+					csRequests();
+				}
+				else if(document.getElementById('degree2').checked)
+				{
+					for(var i = 0; i < cis.length; i++) 
+					allCoursesText += cis[i] + ", ";
+					allCourses.innerHTML = allCoursesText;
+					
+					removeOptions(document.getElementById("id02"));
+					cisRequests();
+				}
+			}
+			
+			// Addd courses to all course array
+			function pushIntoDefinedArr(arr,index)
+				{
+					//add courses to all course array
+					allCoursesArr.push(arr.courses[index]);
+				};
+			
+			//Populate the select bar with the courses available for Computer Science Majors
+			function csRequests(){
+				for(var i = 0; i < coursesPrefixesCS.length; i++)
+				{
+					requestsCS[i] = new XMLHttpRequest();
+					var url = "https://api.svsu.edu/courses?prefix=" + coursesPrefixesCS[i];
+					requestsCS[i].onreadystatechange = function(index) {
+						return function(){
+							if(requestsCS[index].readyState == 4 && requestsCS[index].status == 200){
+								var myArr = JSON.parse(requestsCS[index].responseText);
+								myFunction(myArr);
+								for(var j=0;j<myArr.courses.length;j++)
+								{
+									pushIntoDefinedArr(myArr,j);
+								}
+									
+							}
+						}
+					}(i);
+					
+					requestsCS[i].open("GET", url, true);
+					requestsCS[i].send();
+				}
+			}
+				
+			//Populate the select bar with the courses available for Computer Information System Majors
+			function cisRequests(){
+				for(var i = 0; i < coursesPrefixesCIS.length; i++)
+				{
+					requestsCIS[i] = new XMLHttpRequest();
+					var url = "https://api.svsu.edu/courses?prefix=" + coursesPrefixesCIS[i];
+					requestsCIS[i].onreadystatechange = function(index) {
+						return function(){
+							if(requestsCIS[index].readyState == 4 && requestsCIS[index].status == 200){
+								var myArr = JSON.parse(requestsCIS[index].responseText);
+								myFunction(myArr);
+								for(var j=0;j<myArr.courses.length;j++)
+								{
+									pushIntoDefinedArr(myArr,j);
+								}
+							}
+						}
+					}(i);
+						
+					requestsCIS[i].open("GET", url, true);
+					requestsCIS[i].send();
+				}
+			}
+			
+			// function to remove options from selectbox, good for clearing options after clicking submit.
+				function removeOptions(selectbox)
+				{
+					var i;
+					for(i=selectbox.options.length-1;i>=0;i--)
+					{
+						selectbox.remove(i);
+					}
+				}
+			
+			// Add the users course taken to an array to reference
+			function addCourse() {
+					
+					courseArray = [];
+					var course = document.getElementById("courseAdd");
+					courseArray.push(course.value);
+					document.getElementById('courseAdd').value = "";
+				};
+				
+			// function that See Available Classes Button
+			// Function Code From Abdulrahman Zaiter, modified slightly to fit my previous code
+			function scheduleSubmit()
+			{
+				//first remove all dropdown options.
+				removeOptions(document.getElementById("id02"));
+				//assign variables to needed elements.
+				taken = courseArray.toString();
+				coursesForGraduationCS = cs.toString();
+				coursesForGraduationCIS = cis.toString();
+				//make arrays for courses that are eligible and aren't.
+				coursesEligible = [];
+				coursesNotEligible = [];
+				
+				//If the computer science degree is checked
+				if(document.getElementById('degree1').checked){
+					//fill's courses that are eligible and aren't arrays.
+					for(var j = 0; j < cs.length; j++)
+					{
+					//if prereqs are met and the course not in taken array
+					if(prereqsTaken(taken,cs[j]) && courseArray.indexOf(cs[j]) == -1)
+					{
+						//push to elgible courses
+						coursesEligible.push(cs[j]);
+					}
+					else
+					{
+						//push to not elgible
+						coursesNotEligible.push(cs[j]);
+					}
+				}
+			}
+			//if the cis degree is checked
+			else if(document.getElementById('degree2').checked){
+				//for loop to fill courses that are eligible and aren't arrays.
+				for(var j = 0; j < cis.length; j++)
+				{
+					//if prereqs are met and the course not in taken array
+					if(prereqsTaken(taken,cis[j]) && courseArray.indexOf(cis[j]) == -1)
+					{
+						//push to elgible courses
+						coursesEligible.push(cis[j]);
+					}
+					else
+					{
+						//push to not elgible
+						coursesNotEligible.push(cis[j]);
+					}
+				}
+			}
+		
+			//declaring array to hold elgible and offered courses
+			coursesEligibleJsonArr = [];
+			// for loop to add the courses that are eligiable and available for registeration.
+			for(var z=0;z<coursesEligible.length;z++)
+			{
+				for(var a=0;a<allCoursesArr.length;a++)
+				{
+					// if course eligible to be taken available in the Api, push to elgible
+					if((allCoursesArr[a].prefix + " " + allCoursesArr[a].courseNumber) == coursesEligible[z])
+					{
+						//push to array to populate select bar
+						coursesEligibleJsonArr.push(allCoursesArr[a]);
+					}
+				}
+			}
+	
+			//for loop to populate the select bar. Code: prof Corser
+			for(var i = 0; i < coursesEligibleJsonArr.length; i++) {
+				var newP = document.createElement("option");
+				var newText 
+					= document.createTextNode(
+					coursesEligibleJsonArr[i].prefix + " " 
+					+ coursesEligibleJsonArr[i].courseNumber + " " 
+					+ coursesEligibleJsonArr[i].term + " " 
+					+ coursesEligibleJsonArr[i].meetingTimes[0].days + " " 
+					+ coursesEligibleJsonArr[i].meetingTimes[0].startTime + " " 
+					+ coursesEligibleJsonArr[i].instructors[0].name); 
+				document.getElementById("id02").appendChild(newP);
+				newP.appendChild(newText);
+			}
+	
+			//Courses Not elgible
+			var coursesNotEligibleElement = document.getElementById("notElgible");
+			var coursesNotEligibleText = "";
+			
+			for(var i=0; i<coursesNotEligible.length; i++) 
+			{
+				// if the course is in coursesNotEligible array and not in taken array, then add it to text
+				if(courseArray.indexOf(coursesNotEligible[i]) == -1)
+				{
+					if ( i != (coursesNotEligible.length-1) )
+					{
+						coursesNotEligibleText += coursesNotEligible[i] + ", ";
+					}
+					else
+					{
+						coursesNotEligibleText += coursesNotEligible[i];
+					}
+				}
+			}
+			
+			// Show in the text area
+			coursesNotEligibleElement.innerHTML = coursesNotEligibleText;
+		}
+		</script>
+	</body>
+</html>
