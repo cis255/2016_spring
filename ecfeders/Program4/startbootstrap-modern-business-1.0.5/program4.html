@@ -1,0 +1,336 @@
+<!-- 
+filename  : program4.html
+author    : Erik Federspiel
+date      : 2016-06-1
+email     : ecfeders@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~ecfeders/cis255/ecfeders/Program2/program2.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program02 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			Code labeled in Comments From 
+				
+external code references in this file: 
+			http://www.jqwidgets.com/jquery-widgets-documentation/documentation/jqxrating/jquery-rating-getting-started.htm?search=
+			www.charts.org
+program structure (design):
+	<head>: 
+		Meta Data
+		Title
+		links to CSS
+	<body>: 
+		<script>
+			First script to declare pre-req array
+			populate the select bar based on the degree
+			set up function to use to check pre-req
+		</script>
+		<html>
+			Template used from external website used above
+			Added widgets and charts to the website
+		<html>
+		<script>
+			Have links to js downloaded from external sites and one created by myself
+			
+		</script>
+
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta Data !-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<!-- Title for the tab bar !-->
+    <title>Modern Business - Program 4</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+		<!-- BOOTSTRAP -->
+	<!-- from: https://www.bootstrapcdn.com/ -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- http://www.jqwidgets.com/jquery-widgets-documentation/documentation/jqxrating/jquery-rating-getting-started.htm?search= !-->
+	<!-- Styles from the url above !-->
+	<link type="text/css" rel="Stylesheet" href="../../jqwidgets/styles/jqx.base.css" />
+    <link type="text/css" rel="Stylesheet" href="../../jqwidgets/styles/jqx.summer.css" />
+</head>
+
+<body>
+	<!-- Most of the html is from a bootstrap template!-->
+	<!-- http://startbootstrap.com/template-overviews/modern-business/ !-->
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="program4.html">Crown Landscaping</a>
+				<img src="../Crown.jpg" id="pic">
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+         
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="full-width.html">Full Width Page</a>
+                            </li>
+                            <li>
+                                <a href="sidebar.html">Sidebar Page</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="404.html">404</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html">Pricing Table</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+				<!-- These are the pictures added to the slide show!-->
+                <div class="fill" style="background-image:url('../pic2.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Yard 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('../pic3.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Yard 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('../pic4.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Yard 3</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Crown Landscaping
+                </h1>
+			</div>
+		</div>
+		
+		<div class="row">
+		<!-- This is the widget for the calendar !-->
+		<!-- This is from Class Example We did!-->
+		<!-- From: http://www.jqwidgets.com/jquery-widgets-documentation/documentation/jqxrating/jquery-rating-getting-started.htm?search=-->
+		<div class="col-lg-4">
+				<div id='jqxcalendar'></div>
+			</div>
+			<!-- This is the html for the chart !-->
+			<!-- This is from Class Example We did!-->
+			<div class="col-lg-4">
+				<canvas id="myChart" width="400" height="400"></canvas>
+			</div>
+			
+			<!-- This part of the html creates the weather window using Yahoo Api !-->
+			<!-- This is from Class Example We did!-->
+			<div class="col-lg-4">
+				 <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i> Weather</h4>
+                    </div>
+					<div id="find">
+						<div class="form-group">
+							<input type="edit" placeholder="Location" id="loc">
+							<button class="btn btn-default" onclick="getWeather();">Find</button>
+						</div>
+					</div>
+					<div id="found">
+						<p><span id="location"></span></p>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<small><em><a href="javascript:showSearch();">&larr; change location</a></em></small>
+					</div>
+					<div id="error">
+						<p>Location not found</p>
+					</div><br>
+					<div id="jqxWidget"></div>
+                </div>
+			</div>
+		</div>
+		
+		<!-- This creates the input date and time widget code is from!-->
+		<!-- http://www.jqwidgets.com/jquery-widgets-documentation/documentation/jqxrating/jquery-rating-getting-started.htm?search=!-->
+		<div class="row">
+			<div class="col-lg-4">
+				<div id='jqxdatetimeinput'></div>
+				<div style="margin-top: 10px;">
+					<input id="getDateButton" type="button" value="Get Date"/>
+					<input id="setDateButton" type="button" value="Set Date"/>
+				</div>
+			</div>
+			
+			<!-- This is a widget from the website above !-->
+			<!-- This widget is for rating with stars -->
+			<div class="col-lg-4">
+				<div style='margin-top: 10px;'>
+				<div style='float: left;'>
+					Rating:</div>
+				<div style='float: left;' id='rate'>
+			    <div id='jqxRating'></div>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- This creates a widget for a horizantal chart from the website above -->
+		<div class="row">
+			<div class="col-lg-4">
+				<div id="jqxBulletChart"></div>
+			</div>
+		</div>
+			 <!-- Portfolio Section -->
+			 	<!-- This is from The template with my images added!-->
+		<!-- From: http://www.jqwidgets.com/jquery-widgets-documentation/documentation/jqxrating/jquery-rating-getting-started.htm?search=-->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Crown Landscaping</h2>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="../pic2.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="../pic3.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="../pic4.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+		
+	</div>
+
+
+      
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+	 </script>
+	 
+	 	<!-- JQUERY -->
+	<!-- load jquery before bootstrap -->
+	<!-- from: https://code.jquery.com/ -->
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap !-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	<!-- CIS-255 TEMPLATE FUNCTIONS -->
+	<!-- from: http://csis.svsu.edu/~gpcorser/cis255/gpcorser/template.js -->
+	<script src="js/chart.js"></script>
+	
+	<!-- This access the charts from the folders downlaoded from !-->
+	<!-- http://www.chartjs.org/ !-->
+	<script src="../../Chart.js-master/dist/Chart.js"></script>
+	
+	<!-- Wather js from class !-->
+	<script type="text/javascript" src="js/weather1.js"></script>
+	
+	<!-- Scripts are from: !-->
+	<!-- http://www.jqwidgets.com/jquery-widgets-documentation/documentation/jqxrating/jquery-rating-getting-started.htm?search= !-->
+    <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxbulletchart.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxtooltip.js"></script>
+	<script type="text/javascript" src="../../jqwidgets/jqxdatetimeinput.js"></script>
+	<script type="text/javascript" src="../../jqwidgets/jqxcalendar.js"></script>
+	<script type="text/javascript" src="../../jqwidgets/globalization/globalize.js"></script>
+	<script type="text/javascript" src="../../jqwidgets/jqxbuttons.js"></script>
+	 <script type="text/javascript" src="../../jqwidgets/jqxrating.js"></script>
+
+</body>
+
+</html>
