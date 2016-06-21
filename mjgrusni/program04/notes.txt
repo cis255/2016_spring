@@ -1,0 +1,8 @@
+http://www.jqwidgets.com/
+
+
+
+weather widget (see inclass03):
+	1. weather.js
+	2. add required elements to HTML
+	3. css styling for hiding error text (embedded in HTML)
