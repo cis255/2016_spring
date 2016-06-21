@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 
+  <!-- 
 filename  : program04.html
 author    : Jennifer Bober
 date      : 2016-06-21
@@ -36,24 +36,24 @@ program structure (design):
 
  -->
 
-<head>
+  <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
 
     <title>Program04</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet"/>
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,11 +61,11 @@ program structure (design):
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    
-    
+
+
+
     <script src="../Chart.js-master/dist/Chart.js"></script>
-    
+
     <link rel="stylesheet" href="../jqwidgets/styles/jqx.base.css" type="text/css"/>
     <script type="text/javascript" src="../scripts/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="../jqwidgets/jqxcore.js"></script>
@@ -74,223 +74,225 @@ program structure (design):
     <script type="text/javascript" src="../jqwidgets/globalization/globalize.js"></script>
 
     <script type = "text/javascript" src="../weather.js"> </script>
-    
-    <script src="program04.js"> </script>
-</head>
 
-<body>
+    <script src="program04.js"> </script>
+  </head>
+
+  <body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-item.html">Single Portfolio Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="blog-home-1.html">Blog Home 1</a>
-                            </li>
-                            <li>
-                                <a href="blog-home-2.html">Blog Home 2</a>
-                            </li>
-                            <li>
-                                <a href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="full-width.html">Full Width Page</a>
-                            </li>
-                            <li>
-                                <a href="sidebar.html">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href="faq.html">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="404.html">404</a>
-                            </li>
-                            <li>
-                                <a href="pricing.html">Pricing Table</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Start Bootstrap</a>
         </div>
-        <!-- /.container -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>
+              <a href="services.html">Services</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="portfolio-1-col.html">1 Column Portfolio</a>
+                </li>
+                <li>
+                  <a href="portfolio-2-col.html">2 Column Portfolio</a>
+                </li>
+                <li>
+                  <a href="portfolio-3-col.html">3 Column Portfolio</a>
+                </li>
+                <li>
+                  <a href="portfolio-4-col.html">4 Column Portfolio</a>
+                </li>
+                <li>
+                  <a href="portfolio-item.html">Single Portfolio Item</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="blog-home-1.html">Blog Home 1</a>
+                </li>
+                <li>
+                  <a href="blog-home-2.html">Blog Home 2</a>
+                </li>
+                <li>
+                  <a href="blog-post.html">Blog Post</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="full-width.html">Full Width Page</a>
+                </li>
+                <li>
+                  <a href="sidebar.html">Sidebar Page</a>
+                </li>
+                <li>
+                  <a href="faq.html">FAQ</a>
+                </li>
+                <li>
+                  <a href="404.html">404</a>
+                </li>
+                <li>
+                  <a href="pricing.html">Pricing Table</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
     </nav>
 
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url(https://3b0ad08da0832cf37cf5-435f6e4c96078b01f281ebf62986b022.ssl.cf3.rackcdn.com/articles/content/Bringing-Your-Kitten-Home_f968d7e4-043a-4260-b717-d88bd8ab3b6c.jpg);"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('https://3b0ad08da0832cf37cf5-435f6e4c96078b01f281ebf62986b022.ssl.cf3.rackcdn.com/articles/content/How-old-is-my-cat-in-human-years_0af22fe2-0f4a-4b24-821f-695be0d18cee.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://www.mooseyscountrygarden.com/cat-dog-pictures/catmint-cat-white.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="fill" style="background-image:url(https://3b0ad08da0832cf37cf5-435f6e4c96078b01f281ebf62986b022.ssl.cf3.rackcdn.com/articles/content/Bringing-Your-Kitten-Home_f968d7e4-043a-4260-b717-d88bd8ab3b6c.jpg);"></div>
+          <div class="carousel-caption">
+            <h2></h2>
+          </div>
         </div>
+        <div class="item">
+          <div class="fill" style="background-image:url('https://3b0ad08da0832cf37cf5-435f6e4c96078b01f281ebf62986b022.ssl.cf3.rackcdn.com/articles/content/How-old-is-my-cat-in-human-years_0af22fe2-0f4a-4b24-821f-695be0d18cee.jpg');"></div>
+          <div class="carousel-caption">
+            <h2></h2>
+          </div>
+        </div>
+        <div class="item">
+          <div class="fill" style="background-image:url('http://www.mooseyscountrygarden.com/cat-dog-pictures/catmint-cat-white.jpg');"></div>
+          <div class="carousel-caption">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+      </a>
     </header>
 
     <!-- Page Content -->
     <div class="container">
 
-        <!-- Widgets -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
+      <!-- Widgets -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">
                     Cats are cool :D
-                </h1>
-            </div>
-               
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap Calendar</h4>
-                    </div>
-                    
-                    <div class="panel-body">
-                       <div id='jqxcalendar'>
-                       </div>
-                <!--    <a href="#" class="btn btn-default">Learn More</a> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i>Chart</h4>
-                    </div>
-                    <div class="panel-body">
-                        <canvas id="myChart" ></canvas>
-                        <!-- <a href="#" class="btn btn-default">Learn More</a> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-compass"></i> Weather</h4>
-              </div>
-              <div id="find">
-                <div class="form-group">
-                  <input type="edit" placeholder="Location" id="loc"/>
-                  <button class="btn btn-default" onclick="getWeather();">Find</button>
-                </div>
-              </div>
+          </h1>
+        </div>
 
-              <div id="found">
-                <p><span id="location"></span></p>
-                <p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
-                <small><em><a href="javascript:showSearch();">&larr; change location</a></em></small>
-              </div>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4><i class="fa fa-fw fa-check"></i> Bootstrap Calendar</h4>
+            </div>
 
-              <div id="error">
-                <p>Location not found</p>
-              </div><br>
-              <div id="jqxWidget"></div>
+            <div class="panel-body">
+              <div id='jqxcalendar'>
+              </div>
+              <!--    <a href="#" class="btn btn-default">Learn More</a> -->
             </div>
           </div>
         </div>
-        <!-- /.row -->
-
-        <!-- Pictures -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">More pictures of cats</h2>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4><i class="fa fa-fw fa-gift"></i>Chart</h4>
             </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-portfolio img-hover" src="http://az616578.vo.msecnd.net/files/2016/03/06/635928929152148181986976021_5507692-cat-m.jpg" height="225px" width="350px" alt="">
-                </a>
+            <div class="panel-body">
+              <canvas id="myChart" ></canvas>
+              <!-- <a href="#" class="btn btn-default">Learn More</a> -->
             </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-portfolio img-hover" src="http://www.momswhothink.com/images/stories/baby-names/female-cat-names.jpg" height="225px" width="350px" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://carltonvet.com.au/sites/default/files/styles/large/public/images/article/cats.jpg" height="225px" width="350px"alt="">
-                </a>
-            </div>
-            
+          </div>
         </div>
-        <!-- /.row -->
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4><i class="fa fa-fw fa-compass"></i> Weather</h4>
+            </div>
+            <div id="find">
+              <div class="form-group">
+                <input type="edit" placeholder="Location" id="loc"/>
+                <button class="btn btn-default" onclick="getWeather();">Find</button>
+              </div>
+            </div>
+
+            <div id="found">
+              <p><span id="location"></span></p>
+              <p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+              <small><em><a href="javascript:showSearch();">&larr; change location</a></em></small>
+            </div>
+
+            <div id="error">
+              <p>Location not found</p>
+            </div>
+          </br>
+          <div id="jqxWidget">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Pictures -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="page-header">More pictures of cats</h2>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <a href="portfolio-item.html">
+          <img class="img-portfolio img-hover" src="http://az616578.vo.msecnd.net/files/2016/03/06/635928929152148181986976021_5507692-cat-m.jpg" height="225px" width="350px" alt=""/>
+        </a>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <a href="portfolio-item.html">
+          <img class="img-portfolio img-hover" src="http://www.momswhothink.com/images/stories/baby-names/female-cat-names.jpg" height="225px" width="350px" alt=""/>
+        </a>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <a href="portfolio-item.html">
+          <img class="img-responsive img-portfolio img-hover" src="http://carltonvet.com.au/sites/default/files/styles/large/public/images/article/cats.jpg" height="225px" width="350px"alt=""/>
+        </a>
+      </div>
+
+    </div>
+    <!-- /.row -->
 
 
     <!-- jQuery -->
@@ -306,6 +308,6 @@ program structure (design):
     })
     </script>
 
-</body>
+  </body>
 
 </html>
