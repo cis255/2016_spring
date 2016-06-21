@@ -1,0 +1,19 @@
+<doctype html>
+<!-- demonstrate AngularJS -->
+<html ng-app="app2" ng-init="person = {fname: 'Jaelyn', lname: 'Clipper'};
+    capitals = [{city: 'Montgomery', state: 'Alabama'}, {city: 'Juneau', state: 'Alaska'}, {city: 'Phoenix', state: 'Arizona'} ]">
+<head>
+	<title>Angular Demo 2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+</head>
+
+<body>
+	<h4 ng-controller="ctrl1">First Random Number: {{randomNum1}}</h4>
+	<h4 ng-controller="ctrl1">First Random Number: {{randomNum2}}</h4>
+	
+	<h4 ng-controller="badMood">I'm feelin.... {{bad}}</h4>
+	<h4 ng-controller="goodMood">I'm feelin.... {{good}}</h4>
+	
+	<script src="angularDemo.js"></script>
+</body>
+</html>

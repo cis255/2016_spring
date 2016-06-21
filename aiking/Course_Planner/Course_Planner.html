@@ -1,4 +1,31 @@
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
+<!-- ------------------------------------------------------------------------
+filename  : Course_Planner.html
+author    : Alexander King
+date      : 2016-05-26
+email     : aiking@svsu.edu
+course    : CIS-255
+link      : csis.svsu.edu/~gpcorser/cis255/aiking/Course_Planner/Course_Planner.html
+backup    : github.com/cis255/cis255
+purpose   : Main HTML file for program 2, course planner.
+
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			None.
+program structure:
+	<head> metadata
+	<body> Header, div 1, div2, div3, div4, footer.
+		The last part of <body> is the copyright notice. 
+		
+Diagram	 : cis255/aiking/Course_Planner/diagram.html
+------------------------------------------------------------------------- --> 
 <html>
 	<head>
 		<meta name="copyright" content="Alexander King">
@@ -13,16 +40,19 @@
 	<body>
 		<div class="header">CSIS Course Planner</div>
 		<div class="content">
+			<!-- Selection of major -->
 			<form action="">
 				<input type="radio" name="major" value="CIS" onclick="cisRequired()"><abbr title="Computer Information Systems">CIS</abbr></input>
 				<input type="radio" name="major" value="CS" onclick="csRequired()"><abbr title="Computer Science">CS</abbr></input>
 			</form>
 			<p></p>
+			<!-- Button that should allow the program to run and find courses. -->
 			<button onclick="determineCourses()">SUBMIT</button>
 			<p></p>
 			
 			<table id="wrapper" align="center">
 				<tr>
+					<!-- Classes that have already been taken go here. -->
 					<td><div class="takenList"><div id="divHeader">Classes Taken</div>
 						Enter classes already taken here, separated by a comma:
 						<textarea name="takenListing" class="taken" placeholder="CS 105, CS 116, etc."></textarea>
@@ -30,6 +60,7 @@
 					
 					<td></td>
 					
+					<!-- Classes that are required for the major go here. -->
 					<td><div class="requiredList"><div id="divHeader">Required Classes</div>
 						List can be edited by user:
 						<textarea name="reqListing" class="taken" id="reqPrint" placeholder="Select major..."></textarea>
@@ -39,12 +70,14 @@
 				<tr></tr>
 				
 				<tr>
+					<!-- This section is for classes that the student can take. -->
 					<td><div class="canTakeList"><div id="divHeader">Eligible for Registration</div>
 						<p id="id01"></p>
 					</div></td>
 					
 				<td></td>
 					
+					<!-- This section is for classes the student can not yet take. -->
 					<td><div class="cantTakeList"><div id="divHeader">Not Eligible for Registration</div>
 						<p id="id02"></p>
 					</div></td>
