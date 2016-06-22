@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!doctype html>
+<!-- 
+filename  : program04.html
+author    : Andy Taylor
+date      : 2016-06-21
+email     : artaylo2@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~artaylo2/cis255/artaylo2/program03.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program03 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			bootstrap modern business template - http://startbootstrap.com/template-overviews/modern-business/
+			jwidgets - http://www.jqwidgets.com/
+			chart - http://www.chartjs.org/
+			
+program structure:
+	<head>
+		meta
+		links to external code
+		navbar
+		header carousel
+		calendar 
+		chart 
+		weather
+		
+
+ -->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Modern Business - Start Bootstrap Template</title>
+	<!-- JQUERY -->
+		<!-- load jquery before bootstrap -->
+		<!-- from: https://code.jquery.com/ -->
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+	
+	
+	<script src="program04.js"></script>
+ 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- weather -->
+	<script type="text/javascript" src="../weather.js"></script>
+		<style type="text/css">
+			#found { display: none; }	
+			#error { color: red; display: none; }
+		</style>
+	
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="program04.html">Bay City</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-item.html">Single Portfolio Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="blog-home-1.html">Blog Home 1</a>
+                            </li>
+                            <li>
+                                <a href="blog-home-2.html">Blog Home 2</a>
+                            </li>
+                            <li>
+                                <a href="blog-post.html">Blog Post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="full-width.html">Full Width Page</a>
+                            </li>
+                            <li>
+                                <a href="sidebar.html">Sidebar Page</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="404.html">404</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html">Pricing Table</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('https://i.ytimg.com/vi/FCh3Q7dAbwE/maxresdefault.jpg')";></div>
+                <div class="carousel-caption">
+                    <h2>East Side Bay City, MI</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://www.davidsonbuildingco.com/wp-content/themes/Davidson/img/back2.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Davidson Building</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://media.mlive.com/news/baycity_impact/photo/cuyahoga-bay-city-3c7d053d95022072.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Saginaw River</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome to Bay City
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i>Calendar</h4>
+                    </div>
+                    <div class="panel-body"> 	<!--------------------- calendar div --------------------------->         						 
+						<div id='calendar'></div>
+						<div id='log'></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-gift"></i> Chart</h4>
+                    </div>
+                    <div class="panel-body">
+						<div id="chart">
+							<canvas id="myChart" width="400" height="400"></canvas> <!-- chart ------------->
+						</div> <!-- chart div -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i>Weather</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i> Weather</h4>
+                    </div>
+					<div id="find">
+						<div class="form-group">
+							<input type="edit" placeholder="Location" id="loc">
+							<button class="btn btn-default" onclick="getWeather();">Find</button>
+						</div>
+					</div>
+					<div id="found">
+						<p><span id="location"></span></p>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<small><em><a href="javascript:showSearch();">&larr; change location</a></em></small>
+					</div>
+					<div id="error">
+						<p>Location not found</p>
+					</div><br>
+					<div id="jqxWidget"></div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Portfolio Heading</h2>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://lh6.ggpht.com/bw-torrPLFB81cptK76_elZClcAUsVfzw29hf-QMvEJV-9IA0ZwBdesGjphYBxJnVVWIhoC12o-YnQCz2bu8ZUk=s700" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://image.mlive.com/home/mlive-media/width620/img/news/baycity_impact/photo/17466220-mmmain.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://dunlopsdowntown.com/wp-content/uploads/2014/01/baycitymichagin.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        
+        <!-- /.row -->
+
+        <hr>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Andy Taylor 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<script src="../Chart.js-master/dist/Chart.js"></script>
+	
+	<link rel="stylesheet" href="../jqwidgets/styles/jqx.base.css" type="text/css"/>
+	<script type="text/javascript" src="../scripts/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxcore.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxdatetimeinput.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxcalendar.js"></script>
+	<script type="text/javascript" src="../jqwidgets/globalization/globalize.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+		$('.carousel').carousel({
+			interval: 5000 //changes the speed
+		})
+	</script>
+	
+	
+
+</body>
+
+</html>

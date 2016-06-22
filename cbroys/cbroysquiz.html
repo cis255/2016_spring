@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!-- ------------------------------------------------------------------------
+filename  : cbroysquiz.html
+author    : Cole Roys
+date      : 2016-06-21
+email     : cbroys@svsu.edu
+course    : CIS-255
+link      : csis.svsu.edu/~cbroys/cis255/cbroys/cbroys.html
+backup    : github.com/cis255/cis255
+purpose   : quiz using input boxes and output boxes 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			cbroysquiz.js
+------------------------------------------------------------------------- -->
+
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="cbroysquiz.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+<p id="readyMessage">Waiting ...</p>
+<h2>Input ...</h2>
+<!-- Area where text gets input -->
+<textarea id="textinput" rows="4" cols="50" value="input">
+
+</textarea>
+
+<br />
+
+<!-- button to submit the elements into an array for sorting -->
+<button type="submit" value="Submit" onclick="bubbleSort()">Submit</button>
+
+<br />
+<h2>Output ...</h2>
+<!-- prints the sorted array -->
+<textarea id="textoutput" rows="4" cols="50"></textarea>
+
+</body>
+</html>

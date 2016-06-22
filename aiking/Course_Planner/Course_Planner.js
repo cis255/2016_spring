@@ -1,3 +1,25 @@
+/* ------------------------------------------------------------------------
+filename  : Course_Planner.js
+author    : Alexander King
+date      : 2016-05-26
+email     : aiking@svsu.edu
+course    : CIS-255
+link      : csis.svsu.edu/~gpcorser/cis255/aiking/Course_Planner/Course_Planner.js
+backup    : github.com/cis255/cis255
+purpose   : Contains javasript data for Course_Planner.html
+
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			George Corser's jsontest data, class lists from Cole Roys
+------------------------------------------------------------------------- */
+
 			var coursePrefixes = ["CS","CIS","MATH","COMM","RPW","PHIL","ACCT","ECON","LAW","MGT","MKT"];
 			// Initialize array of http requests
 			var requests = new Array(coursePrefixes.length);
@@ -25,7 +47,7 @@
 		}
 			
 			function cisRequired() {
-				// courses for CIS
+				// courses for CIS, borrow from Cole Roys
 				var cisReqCourses = ["CS 245", "MATH 120B", "COMM 105A", "RPW 304", "ACCT 213",
 				"ECON 221", "LAW 308", "MGT 321", "MKT 331", "PHIL 205A!", "PHIL 210B",
 				"CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CIS 301", "CIS 311",
@@ -36,7 +58,7 @@
 			}
 			
 			function csRequired() {
-				// courses for CS
+				// courses for CS, borrowed from Cole Roys
 				var csReqCourses = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245", "MATH 161",
 				"MATH 223", "COMM 105A", "RPW 304", "PHIL 205A!", "PHIL 210B", "CS 146",
 				"CS 316", "CS 331", "CS 401", "CS 411", "CS 421", "CS 446", "CS 451", "CS 461"
@@ -46,11 +68,13 @@
 				document.getElementById("reqPrint").innerHTML = csReqCourses;
 				}
 			
+			// This is where the functions of the button will go.
 			function determineCourses() {
 				
 
 			}
 			
+			// This is for determining pre-req courses.
 			function preReq() {
 				
 			}
@@ -59,6 +83,7 @@
 				var out = "";
 				var i;
 				for(i = 0; i < arr.courses.length; i++) {
+					// These remove any classes that are not part of the CIS or CS major.
 					if (arr.courses[i].prefix == "COMM" && arr.courses[i].courseNumber != "105A")
 						{continue;}
 					if (arr.courses[i].prefix == "RPW" && arr.courses[i].courseNumber != "304")
@@ -100,6 +125,7 @@
 				var out = "";
 				var i;
 				for(i = 0; i < arr.courses.length; i++) {
+					// These remove any classes that are not part of the CIS or CS major.
 					if (arr.courses[i].prefix == "COMM" && arr.courses[i].courseNumber != "105A")
 						{continue;}
 					if (arr.courses[i].prefix == "RPW" && arr.courses[i].courseNumber != "304")
