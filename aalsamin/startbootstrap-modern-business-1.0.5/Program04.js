@@ -1,5 +1,3 @@
-//no conflict function allows the chart and calendar to work 
-//without interfering with each other-credit to Erika McLean
 var $jq = jQuery.noConflict();
 
 //Ready Function
@@ -47,12 +45,11 @@ $jq(document).ready(function() {
 		});
 	} // end function defineChart()
 	
-	//Create chart
+	//Creating chart
 	var id = "myChart";
-	//defineChart(id, 'doughnut') ;
 	defineChart(id, 'doughnut') ;
 
-	//Create Calendar
+	//Creating Calendar
 	$jq("#jqxcalendar").jqxCalendar({ width: '250px', height: '250px' });
 
 	
