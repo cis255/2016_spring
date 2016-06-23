@@ -49,6 +49,64 @@ $(document).ready(function() {
 	var id = "myChart";
 	defineChart(id, 'doughnut') ;
 	
+	// create data table
+	$("#dataTable").jqxDataTable(
+            {
+                altRows: true,
+                sortable: true,
+                columns: [
+                  { text: 'First Name', dataField: 'First Name', width: 100 },
+                  { text: 'Last Name', dataField: 'Last Name', width: 100 },
+                  { text: 'Product', dataField: 'Product', width: 180 },
+                  { text: 'Unit Price', dataField: 'Price', width: 90, align: 'right', cellsAlign: 'right', cellsFormat: 'c2' },
+                  { text: 'Quantity', dataField: 'Quantity', width: 80, align: 'right', cellsAlign: 'right' }
+                ]
+            });
+	
+	// create list box
+	var source = [
+    "Affogato",
+    "Americano",
+    "Bicerin",
+    "Breve",
+    "Café Bombón",
+    "Café au lait",
+    "Caffé Corretto",
+    "Café Crema",
+    "Caffé Latte",
+	];
+
+    // Create a jqxListBox
+    $("#jqxlistbox").jqxListBox({ source: source, width: '200px', height: '200px' });
+
+    // disable the sixth item.
+    $("#jqxlistbox").jqxListBox('disableAt', 5);
+
+    // bind to 'select' event.
+    $('#jqxlistbox').bind('select', function (event) {
+        var args = event.args;
+        var item = $('#jqxlistbox').jqxListBox('getItem', args.index);
+        $("#eventlog").html('Selected: ' + item.label);
+    });
+
+    $("#button").jqxButton();
+    $("#button").click(function () {
+        var item = $('#jqxlistbox').jqxListBox('getSelectedItem');
+        if (item != null) {
+            alert(item.label);
+        }
+    });
+	
+	// Create jqxNumberInput
+	$("#numericInput").jqxNumberInput({ width: '250px', height: '25px' });
+	
+	// bind to the valuechanged event.
+	$('#numericInput').bind('valuechanged', function (event) {
+		var value = event.args.value;
+		$('#log').html('Value: ' + value);
+		
+	});
+	
 	
 		
 });

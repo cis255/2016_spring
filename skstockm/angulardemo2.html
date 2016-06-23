@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- demonstrate AngularJS -->
+<!--ng means its going to be angular-->
+<html ng-app="app2">
+	<head>
+		<style>
+		[ng\:cloak], [ng-cloak], .ng-cloak{
+			display: none;
+		}
+		</style>
+		<title>Angular Demo 2</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script src="angulardemo2.js"></script>
+	</head>
+	<body>
+	
+	<a href="angulardemo.html">Angular Demo 1</a>
+	
+	<h4 ng-controller="ctrl1">First Random Number: {{randomNum1}}</h4>
+	<h4 ng-controller="ctrl1">Second Random Number: {{randomNum2}}</h4>
+
+	<h4 ng-controller="badMood">I'm feeling.... {{bad}}</h4>
+	<h4 ng-controller="goodMood">I'm feeling.... {{good}}</h4>
+	
+	</body>
+</html>

@@ -1,4 +1,56 @@
 <!DOCTYPE html>
+<!doctype html>
+<!-- 
+filename  : program04.html
+author    : Andy Taylor
+date      : 2016-06-21
+email     : artaylo2@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~artaylo2/cis255/artaylo2/program03.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program03 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			bootstrap modern business template - http://startbootstrap.com/template-overviews/modern-business/
+			jwidgets - http://www.jqwidgets.com/
+			chart - http://www.chartjs.org/
+			
+program structure:
+	<head>
+		meta
+		links to external code
+	</head>
+	<body>
+		navbar
+		header carousel
+		calendar 
+		chart 
+		weather
+		list box
+		portfolio section/photos
+		data table widget
+		number selector
+		
+	</body>
+	<footer>
+	</footer>
+	<script>
+	
+	</script>
+		
+		
+		
+
+ -->
 <html lang="en">
 
 <head>
@@ -56,7 +108,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="program04.html">Bay City</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -143,21 +195,21 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('https://i.ytimg.com/vi/2AVqxPAs094/maxresdefault.jpg')";></div>
+                <div class="fill" style="background-image:url('https://i.ytimg.com/vi/FCh3Q7dAbwE/maxresdefault.jpg')";></div>
                 <div class="carousel-caption">
-                    <h2>we dem boyz</h2>
+                    <h2>East Side Bay City, MI</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('https://coubsecure-a.akamaihd.net/get/b114/p/coub/simple/cw_timeline_pic/22f44b7ad42/1219d6f092bb9fa0c6639/big_1462324584_image.jpg');"></div>
+                <div class="fill" style="background-image:url('http://www.davidsonbuildingco.com/wp-content/themes/Davidson/img/back2.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Dat Boi</h2>
+                    <h2>Davidson Building</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('http://media.mlive.com/news/baycity_impact/photo/cuyahoga-bay-city-3c7d053d95022072.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 3</h2>
+                    <h2>Saginaw River</h2>
                 </div>
             </div>
         </div>
@@ -178,7 +230,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Welcome to Modern Business
+                    Welcome to Bay City
                 </h1>
             </div>
             <div class="col-md-4">
@@ -186,28 +238,36 @@
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-check"></i>Calendar</h4>
                     </div>
-                    <div class="panel-body"> 	<!--------------------- calendar div --------------------------->         						 
+					<!--------------------------------------------------- calendar div ------------------------------------------>
+					<!--------------------------------------------------- - - - - - - - ----------------------------------------->
+                    <div class="panel-body"> 	         						 
 						<div id='calendar'></div>
 						<div id='log'></div>
+						
                     </div>
                 </div>
             </div>
+			
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
+                        <h4><i class="fa fa-fw fa-gift"></i> Chart</h4>
                     </div>
                     <div class="panel-body">
+					<!--------------------------------------------------- chart ------------------------------------------->
+					<!--------------------------------------------------- - - - ------------------------------------------->
 						<div id="chart">
-							<canvas id="myChart" width="400" height="400"></canvas> <!-- chart ------------->
+							<canvas id="myChart" width="400" height="400"></canvas>
 						</div> <!-- chart div -->
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
+				<!------------------------------------------------------ weather ------------------------------------->
+				<!------------------------------------------------------ - - - - ------------------------------------->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                        <h4><i class="fa fa-fw fa-compass"></i>Weather</h4>
                     </div>
                     <div class="panel-body">
                         <div class="panel panel-default">
@@ -231,6 +291,13 @@
 					<div id="jqxWidget"></div>
                 </div>
                     </div>
+					<!---------------------------List Box------------------>
+					<!--------------------------- - - - - ----------------->
+					<div id='jqxlistbox'></div>
+						<div style="margin-top: 10px;">
+						<input id="button" type="button" value="Get Selected Item" />
+						<div id="eventlog"></div>
+					</div>
                 </div>
             </div>
         </div>
@@ -243,74 +310,154 @@
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="http://lh6.ggpht.com/bw-torrPLFB81cptK76_elZClcAUsVfzw29hf-QMvEJV-9IA0ZwBdesGjphYBxJnVVWIhoC12o-YnQCz2bu8ZUk=s700" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="http://image.mlive.com/home/mlive-media/width620/img/news/baycity_impact/photo/17466220-mmmain.jpg" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="http://dunlopsdowntown.com/wp-content/uploads/2014/01/baycitymichagin.jpg" alt="">
                 </a>
             </div>
         </div>
+		<!------------------------------------------data table ---------------------->
+		<!--------------------------------------------------------------------------->
+		<div id='dataTable'>
+			<table id="dataTable" border="1">
+			<thead>
+				<tr>
+					<th align="left">First Name</th>
+					<th align="left">Last Name</th>
+					<th align="left">Product</th>
+					<th align="right">Price</th>
+					<th align="right">Quantity</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Ian</td>
+					<td>Devling</td>
+					<td>Espresso Truffle</td>
+					<td>$1.75</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>Nancy</td>
+					<td>Wilson</td>
+					<td>Cappuccino</td>
+					<td>$5.00</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Cheryl</td>
+					<td>Nodier</td>
+					<td>Caffe Americano</td>
+					<td>$2.50</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>Martin</td>
+					<td>Saavedra</td>
+					<td>Caramel Latte</td>
+					<td>$3.80</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>Guylene</td>
+					<td>Bjorn</td>
+					<td>Green Tea</td>
+					<td>$1.50</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>Andrew</td>
+					<td>Burke</td>
+					<td>Caffe Espresso</td>
+					<td>$3.00</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Regina</td>
+					<td>Murphy</td>
+					<td>White Chocolate Mocha</td>
+					<td>$3.60</td>
+					<td>6</td>
+				</tr>
+				<tr>
+					<td>Michael</td>
+					<td>Murphy</td>
+					<td>Caramel Latte</td>
+					<td>$3.80</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Petra</td>
+					<td>Bein</td>
+					<td>Caffe Americano</td>
+					<td>$2.50</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>Nancy</td>
+					<td>Nodier</td>
+					<td>Caffe Latte</td>
+					<td>$4.50</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>Peter</td>
+					<td>Devling</td>
+					<td>Green Tea</td>
+					<td>$1.50</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>Beate</td>
+					<td>Saylor</td>
+					<td>Espresso con Panna</td>
+					<td>$3.25</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Shelley</td>
+					<td>Nodier</td>
+					<td>Peppermint Mocha Twist</td>
+					<td>$4.00</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>Nancy</td>
+					<td>Murphy</td>
+					<td>Peppermint Mocha Twist</td>
+					<td>$4.00</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>Lars</td>
+					<td>Wilson</td>
+					<td>Caffe Espresso</td>
+					<td>$3.00</td>
+					<td>11</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		<!----------------------------number input----------------------->
+		<!---------------------------- - - - - - - ---------------------->
+		<div id='numericInput'></div>
+		<div id='log'></div>
+		
+		</div>
         <!-- /.row -->
 
-        <!-- Features Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Modern Business Features</h2>
-            </div>
-            <div class="col-md-6">
-                <p>The Modern Business template by Start Bootstrap includes:</p>
-                <ul>
-                    <li><strong>Bootstrap v3.2.0</strong>
-                    </li>
-                    <li>jQuery v1.11.0</li>
-                    <li>Font Awesome v4.1.0</li>
-                    <li>Working PHP contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
-                    <li>17 HTML pages</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-            </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/700x450" alt="">
-            </div>
-        </div>
+        
         <!-- /.row -->
 
         <hr>
-
-        <!-- Call to Action Section -->
-        <div class="well">
-            <div class="row">
-                <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-                </div>
-                <div class="col-md-4">
-                    <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
-                </div>
-            </div>
-        </div>
 
         <hr>
 
@@ -318,7 +465,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Andy Taylor 2016</p>
                 </div>
             </div>
         </footer>
@@ -334,12 +481,25 @@
 	
 	<script src="../Chart.js-master/dist/Chart.js"></script>
 	
+	<!------------ jqwidget scripts ------------------>
+	<!------------- - - - - - - - - ------------------>
 	<link rel="stylesheet" href="../jqwidgets/styles/jqx.base.css" type="text/css"/>
 	<script type="text/javascript" src="../scripts/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="../jqwidgets/jqxcore.js"></script>
 	<script type="text/javascript" src="../jqwidgets/jqxdatetimeinput.js"></script>
 	<script type="text/javascript" src="../jqwidgets/jqxcalendar.js"></script>
 	<script type="text/javascript" src="../jqwidgets/globalization/globalize.js"></script>
+	
+	<script type="text/javascript" src="../jqwidgets/jqxdata.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxbuttons.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxscrollbar.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxlistbox.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxdropdownlist.js"></script>
+	
+	<script type="text/javascript" src="../jqwidgets/jqxnumberinput.js"></script>
+	
+	<script type="text/javascript" src="../jqwidgets/jqxdatatable.js"></script>
+	
     <!-- Script to Activate the Carousel -->
     <script>
 		$('.carousel').carousel({

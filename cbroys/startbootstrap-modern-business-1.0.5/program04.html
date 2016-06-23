@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<!-- ------------------------------------------------------------------------
+filename  : program04.html
+author    : Cole Roys
+date      : 2016-06-21
+email     : cbroys@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~cbroys/cis255/cbroys/startbootstrap-modern-business-1.0.5/program04.html#
+backup    : github.com/cis255/cis255
+purpose   : This file serves as a demo for the interaction features in jQuery and widgets with jqx
+
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+            
+external code used in this file: 
+			widgets from http://www.jqwidgets.com/
+			
+program structure : 
+	<head> 	metadata
+    		stylesheet
+            jQuery calls
+            Homebrew code and jsChart calls
+	
+    <body>	navbar
+    		carousel
+            main container
+            
+            Required Widgets
+            	calendar
+                chart
+                weather
+                
+            Extra Credit Widgets
+                slider
+                splitter
+                menu
+            
+            donut images
+            
+            old bootstrap template elements
+            copyright
+                
+------------------------------------------------------------------------- -->
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Website with Widgets">
+    <meta name="author" content="Cole Roys">
+
+    <title>Cole Roys - Program04</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Calls for Program04 -->
+        
+   		<!-- JQUERY -->
+		<!-- load jquery before bootstrap -->
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
+
+		<!-- BOOTSTRAP -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		
+		<!-- CIS-255 TEMPLATE/HOMEBREW FUNCTIONS -->
+		<script src="inClass03.js"></script>
+        <script src="Chart.js-master/dist/Chart.js"></script>
+		
+		
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Donut Boy!</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('donuts1.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Lovely Donuts!</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('donuts2.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>So Many Donuts! <(^^,)></h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('donuts3.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Donuts R Da Best!</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    My Widgets!
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-calendar"></i> jqxCalendar (Widget 1)</h4>
+                    </div>
+                    <div class="panel-body">
+                    
+                    	<!-- ~~~~~~~~~~~~~~~~~~~~ Calendar Widget ~~~~~~~~~~~~~~~~~~~~ -->
+                        <script type="text/javascript">
+							$(document).ready(function () {
+								$("#jqxcalendar").jqxCalendar({ width: '250px', height: '250px' });
+							});
+						</script>
+                      	<div id="jqxcalendar" style="margin-left:auto;margin-right:auto;"></div>
+                    	<!-- ~~~~~~~~~~~~~~~~~~~~ Calendar Widget End ~~~~~~~~~~~~~~~~~~~~ -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-line-chart"></i> jsCharts (Widget 2)</h4>
+                    </div>
+                    <div class="panel-body">
+                    
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ Polar Area Chart Widget ~~~~~~~~~~~~~~~~~~~~ -->
+            			<canvas id="myChart" width="400" height="400"></canvas>
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ End of Chart Widget ~~~~~~~~~~~~~~~~~~~~ -->
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="align:center">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="margin-bottom:20px;">
+                        <h4><i class="fa fa-fw fa-compass"></i> Weather (Widget 3)</h4>
+                    </div>
+                    
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ Weather Widget ~~~~~~~~~~~~~~~~~~~~ -->
+					<!-- Adapted from http://www.svsu.edu/~adarenas/cis255/lesson24/index.html -->
+                    <div id="find" style="padding-left:10px;">
+                        <div class="form-group">
+                            <input type="edit" placeholder="Location" id="loc" value="New York, NY">
+                        <button class="btn btn-default" onclick="getWeather();">Find</button>
+                        </div>
+                    </div>
+                    
+                    <div id="found" style="padding-left:10px;">
+                        <p><span id="location"></span></p>
+                        <p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+                        <small><em><a href="javascript:showSearch();">&larr; change location</a></em></small>
+                    </div>
+                    
+                    <div id="error" style="padding-left:10px;">
+                        <p>Location not found</p>
+                    </div><br>
+                    <div id="jqxWidget"></div>
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ End of Weather Widget ~~~~~~~~~~~~~~~~~~~~ -->
+                    
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- /.row2 -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Extra Credit Widgets!
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-star-half-o"></i> jqxSlider (Widget 4)</h4>
+                    </div>
+                    
+					<!-- ~~~~~~~~~~~~~~~~~~~~ Slider Widget ~~~~~~~~~~~~~~~~~~~~ -->
+					<div class="panel-body">
+					<p>Here's a Slider!</p>
+					  <script type="text/javascript">
+						  $(document).ready(function () {
+							  $("#jqxslider").jqxSlider({ theme: 'summer', value: 7 });
+						  });
+					  </script>  
+					  <div id='jqxslider'></div>
+					</div>
+					
+					<!-- ~~~~~~~~~~~~~~~~~~~~ End of Slider Widget ~~~~~~~~~~~~~~~~~~~~ -->
+					
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-columns"></i> jqxSplitter (Widget 5)</h4>
+                    </div>
+                    
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ Splitter Widget ~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class="panel-body" style="overflow:hidden;">
+                    <p>Prefer Frosted or Powdered?</p> 
+                    <script type="text/javascript">
+						$(document).ready(function () {
+							$("#jqxSplitter").jqxSplitter();
+						});
+					</script>
+                        <div id="jqxSplitter" style="min-width:100%;">
+                            <div style="background-image:url(sliderDonut1.jpg);width:100%;"></div>
+                            <div style="background-image:url(sliderDonut2.jpg);width:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ~~~~~~~~~~~~~~~~~~~~ End of Splitter Widget ~~~~~~~~~~~~~~~~~~~~ -->
+            
+            </div>
+            <div class="col-md-4" style="align:center">
+              	<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-list"></i> jqxMenu (Widget 6)</h4>
+                    </div>
+                    
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ Menu Widget ~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class="panel-body" style="overflow:hidden;">
+						<script type="text/javascript">
+                            $(document).ready(function () {
+                                // Create a jqxMenu
+                                $("#jqxMenu").jqxMenu({ width: '220', mode: 'vertical'});
+                            });
+                        </script>
+                        <div id="jqxWidget">
+                            <div id="jqxMenu">
+                                <ul>
+                                    <li><a href="#">Donut Place</a></li>
+                                    <li>About Donut Boy!
+                                        <ul>
+                                            <li><a href="#">Up bringings</a></li>
+                                            <li><a href="#">Master Baker</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>Things Donut boy will Bake!
+                                    </li>
+                                    <li>Products
+                                        <ul>
+                                            <li><a href="#">New</a>
+                                                <ul>
+                                                    <li><a href="#">Sooper Dooper Jelly Donut!</a></li>
+                                                    <li><a href="#">Cocaine Powdered Donut!</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Popular</a>
+                                                <ul>
+                                                    <li><a href="#">Donut Dipped in Acid!</a></li>
+                                                    <li><a href="#">Donut Covered in Bavarian Creme!</a></li>
+                                                </ul>
+                                            </li>
+                                         </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ~~~~~~~~~~~~~~~~~~~~ End of Menu Widget ~~~~~~~~~~~~~~~~~~~~ -->
+                    
+                </div>
+             </div>
+        </div>
+		
+        <!-- Portfolio Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Lots of Varieties!</h2>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#">
+                    <img class="img-responsive img-portfolio img-hover" src="http://www.partstown.com/about-us/wp-content/uploads/2014/06/shutterstock_136289852-700x450.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#">
+                    <img class="img-responsive img-portfolio img-hover" src="http://1w02o12eat3r32ua4r1svxoi.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/IMG_8492.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#">
+                    <img class="img-responsive img-portfolio img-hover" src="http://cdn2.totallythebomb.com/wp-content/uploads/2015/02/fried-biscuit-doughnut-holes.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#">
+                    <img class="img-responsive img-portfolio img-hover" src="http://1w02o12eat3r32ua4r1svxoi.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/IMG_8469.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#">
+                    <img class="img-responsive img-portfolio img-hover" src="http://www.kobukcoffee.com/wp-content/gallery/baked-goods/doughnuts2.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#">
+                    <img class="img-responsive img-portfolio img-hover" src="http://happyintlv.net/wp-content/uploads/2015/11/ahbis_ahmoshlam_2015.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">The Modern Bakery!</h2>
+            </div>
+            <div class="col-md-6">
+                <p>Where the Magic Happens!</p>
+                <ul>
+                    <li><strong>Bootstrap v3.2.0</strong>
+                    </li>
+                    <li>jQuery v1.11.0</li>
+                    <li>Font Awesome v4.1.0</li>
+                    <li>Working PHP contact form with validation</li>
+                    <li>Unstyled page elements for easy customization</li>
+                    <li>17 HTML pages</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="http://1w02o12eat3r32ua4r1svxoi.wpengine.netdna-cdn.com/wp-content/uploads/2015/04/IMG_8484.jpg" alt="">
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Donut Boy 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+    
+    <!-- from jQx -->
+        <link rel="stylesheet" href="jqwidgets-ver4.1.2/jqwidgets/styles/jqx.base.css" type="text/css"/>
+		<link rel="stylesheet" href="jqwidgets-ver4.1.2/jqwidgets/styles/site.css" type="text/css"/>
+		<link rel="stylesheet" href="jqwidgets-ver4.1.2/jqwidgets/styles/jqx.apireference.css" type="text/css"/>
+		<link rel="stylesheet" href="jqwidgets-ver4.1.2/jqwidgets/styles/jqx.summer.css" type="text/css"/>
+		<script type="text/javascript" src="jqwidgets-ver4.1.2/scripts/format.js"></script>
+		<script type="text/javascript" src="jqwidgets-ver4.1.2/scripts/toggle.js"></script>
+		<script type="text/javascript" src="jqwidgets-ver4.1.2/scripts/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/jqxcore.js"></script>
+		<script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/jqxslider.js"></script>
+        <script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/jqxdatetimeinput.js"></script>
+        <script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/jqxcalendar.js"></script>
+        <script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/globalization/globalize.js"></script>
+        <script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/jqxrating.js"></script>
+        <script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/jqxbuttons.js"></script>
+		<script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/jqxsplitter.js"></script>
+        <script type="text/javascript" src="jqwidgets-ver4.1.2/jqwidgets/jqxmenu.js"></script>
+
+</body>
+
+</html>
