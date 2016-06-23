@@ -1,11 +1,13 @@
 /* Copied from http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html*/
 /* Add some margin to the page and set a default font and colour */
 
+
 body {
+  background-image: url("http://www.indianlancer.com/themes/site_theme/img/bg/5.jpg");
   margin: 30px;
   font-family: "Georgia", serif;
   line-height: 1.8em;
-  color: #333;
+  color: #0000FF;
 }
 
 /* Give headings their own font */
@@ -26,13 +28,13 @@ h1, h2, h3, h4 {
 
 /* Header/footer boxes */
 
-.wideBox {
+.wideBox1 {
   clear: both;
   text-align: center;
-  margin: 70px;
-  padding: 10px;
+  margin: 100px;
+  padding: 1px;
   background: #ebedf2;
-  border: 1px solid #333;
+  border: 1px solid #0000FF;
 }
 
 .wideBox h1 {
@@ -46,20 +48,20 @@ h1, h2, h3, h4 {
 
 #cardSlots {
   margin: 50px auto 0 auto;
-  background: #ddf;
+  background: #33CC99;
 }
 
 /* The initial pile of unsorted cards */
 
 #cardPile {
   margin: 0 auto;
-  background: #ffd;
+  background: #FFCC99;
 }
 
 #cardSlots {
   width: 95%;
-  height: 260px;
-  padding: 3%;
+  height: 220px;
+  padding: 2%;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -71,12 +73,12 @@ h1, h2, h3, h4 {
 
 #cardPile {
   width: 95%;
-  height: 80px;
+  height: 90px;
   padding: 3%;
   border: 2px solid #333;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
   -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
@@ -87,7 +89,7 @@ h1, h2, h3, h4 {
 #cardPile div {
   float: left;
   width: 6%;
-  height: 30%;
+  height: 35%;
   padding: 10px;
   padding-top: 3px;
   padding-bottom: 0;
@@ -95,15 +97,15 @@ h1, h2, h3, h4 {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  margin: 0 0 0 15px;
-  background: #fff;
+  margin: 0 0 0 16px;
+  background: #FF9900;
 }
 
 #cardSlots div {
   float: left;
-  width: 9%;
+  width: 7%;
   height: 90%;
-  padding: 10px;
+  padding: 20px;
   padding-top: 20px;
   padding-bottom: 0;
   border: 2px solid #333;
@@ -119,7 +121,7 @@ h1, h2, h3, h4 {
 }
 
 #cardSlots div.hovered {
-  background: #aaa;
+  background: #FF99FF;
 }
 
 #cardSlots div {

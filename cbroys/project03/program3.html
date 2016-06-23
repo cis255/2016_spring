@@ -19,9 +19,7 @@ copyright : GNU General Public License (http://www.gnu.org/licenses/)
 external code used in this file: 
 			None
 external code references in this file: 
-			Prof George Corser for API, XML requests, prereq, and dropdown menu functions.
-			Zaiter for sorting array data.
-			Jennifer Bobber for Radio Button Functionality.
+			http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html
 			bootstrap css and components.
 			
 program structure (design):
@@ -68,7 +66,7 @@ program structure (design):
 		  $('#cardSlots').html( '' );
 
 		  // Create the pile of shuffled cards
-		  var numbers = ['CS 105', 'CS 116','CS 146', 'CS 216', 'CS 245', 'CIS 255', 'CIS 333', 'CIS 355', 'CS 333', 'CS 490' ];
+		  var numbers = ['CS 105', 'CS 116','CS 146', 'CS 216', 'CS 245', 'CS 461', 'CS 401', 'CS 411', 'CS 331', 'CS 490' ];
 		  
 
 		  for (var i = 0; i < 10; i++) {
@@ -80,7 +78,7 @@ program structure (design):
 			});
 		  }
 
-		  // Create the card slots (Credit to William)
+		  // Create the card slots
 		  var words = [ 'FA 2016', 'WI 2017', 'FA 2017', 'WI 2018', 'FA 2018', 'WI 2019', 'FA 2019', 'WI 2020' ];
 		  for (var i = 0; i <= 8; i++) {
 			$('<div>' + words[i] + '</div>').data( 'number', i ).attr( 'id', words[i] ).appendTo( '#cardSlots' ).droppable( {
@@ -110,9 +108,9 @@ program structure (design):
 	  if ( cardContains == 10 ) {
 			$('#successMessage').show();
 			$('#successMessage').animate( {
-			  left: '380px',
-			  top: '200px',
-			  width: '400px',
+			  left: '20%',
+			  top: '20%',
+			  width: '60%',
 			  height: '100px',
 			  opacity: 1
 			});
@@ -124,15 +122,16 @@ program structure (design):
 
 </head>
 <body>
+	<div id="background" ><img class="stretch" src="Abstract red Background.jpg"/></div>
 
 	<div class="widebox">
 		<h2 align="center">Program 3 - Course Scheduler</h2>
 		<h5 align="center">Cole Roys</h5>
 	</div>
-	<div id="content">
+	<div id="content" align="center">
 
-	  <div id="cardPile"> </div>
-	  <div id="cardSlots"> </div>
+	  <div id="cardPile" align="center"> </div>
+	  <div id="cardSlots" align="center"> </div>
 
 	  <div id="successMessage">
 		<h2>Good Luck with Learning!</h2>

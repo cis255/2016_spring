@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<!-- 
+filename  : program03.html
+author    : Jennifer Bober
+date      : 2016-06-14
+email     : jmbober@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~jmbober/cis255/jmbober/program03.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program03 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+      
+external code used in this file: 
+			Adapted from http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html
+
+program structure (design):
+	<head>: 
+	links, metadata, javascript
+	<body>: 
+  title box
+  card pile box
+  card slot box
+  restart button
+  
+	
+ -->
+<head>
+
+<title>A jQuery Drag-and-Drop Schedule Designer</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="program03.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript">
+
+var correctCards = 0;
+$( init );
+
+function init() {
+
+
+
+  // Reset the game
+
+  $('#cardPile').html( '' );
+  $('#cardSlots').html( '' );
+
+  // Create the pile of shuffled cards
+  var courses = [ 'CS 105', 'CS 116', 'CS 216', 'CS 316', 'CIS 255', 'CIS 355', 'CS 331', 'CS 146', 'CS 245', 'CS 357'];
+  courses.sort( function() { return Math.random() - .5 } );
+
+  for ( var i=0; i<10; i++ ) {
+    //Creates a div (a card) with courses[i] as text
+    //sets it's data to be its class, 
+    //sets its id to cardCS 105 (for example) 
+    //appends it to the element with id of #cardPile
+    $('<div>' + courses[i] + '</div>').data('course', courses[i]).attr( 'id', 'card'+(i+1) ).appendTo( '#cardPile' ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+  }
+
+  // Create the card slots
+  var words = [ 'Winter 2016', 'Fall 2016', 'Winter 2017', 'Fall 2017', 'Winter 2018', 'Fall 2018', 'Winter 2019', 'Fall 2019',  ];
+  for ( var i=0; i<8; i++ ) {
+    //Creates a div (a card slot) with words[i] as text
+    $('<div>' + words[i] + '</div>').appendTo( '#cardSlots' ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+  }
+
+}
+
+function handleCardDrop( event, ui ) {
+ 
+  var cardcourse = ui.draggable.data( 'course' ); //Creates a variable for the "course" value of "ui" (the card we're attempting to drop)
+  var slotcourse = cardcourse; //Changed this line so that slotcourse and cardcourse automatically match, therefore making the following if statement true in any case 
+
+  //When a card is dropped onto a slot
+  // change the card colour, position it directly on top of the slot, and prevent it being dragged again
+
+  if ( slotcourse == cardcourse ) {
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+   // correctCards++;
+  } 
+  
+  // If all the cards have been placed correctly then display a message
+  // and reset the cards for another go
+
+ 
+
+}
+
+</script>
+
+</head>
+<body>
+
+<!-- title box -->
+<div class="wideBox">
+  <h1>Create Your SVSU Schedule!</h1>
+  <h2>Drag and drop classes into preferred slots</h2>
+</div>
+
+<div id="content">
+
+  <div id="cardPile"> </div>
+  <div id="cardSlots"> </div>
+  
+  <div>
+    <button id="restart" onclick="init()">Restart</button>
+  </div>
+
+</div>
+
+
+</body>
+</html>
+

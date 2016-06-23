@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<Script>
+		//primative data types
+			a = 5;
+			var z = 0;
+			var n = 6;
+			var m = -1;
+			
+			s = "Hello";
+			console.log(s);
+			
+			l = null;
+			
+			console.log(l);
+			typeof(l);
+			
+			b = true;
+			f = false;
+		//usual application of "or" (||)
+			console.log(l || a);
+			if(l || a) console.log("Prints " + a);
+			if(l || b) console.log("Prints " + b);
+			if(l || m) console.log("Prints " + m);
+			if(l || z) console.log("Prints " + z);
+	
+			var jobject = {
+				name: "Erik",
+				age: 20,
+				address: "123 Hood Rat",
+				function1: function() {return 15;},
+				array1: [1, 2, 3, 4]
+			}
+			console.log(jobject);
+			
+			// Arrays
+			array2 = [2, 4, 6, 8];
+			array3 = new Array(3, 6, 9, "erik");
+			console.log(jobject.array1[0]);
+			console.log(array2);
+			console.log(array3);
+			
+		//First class function
+			f1 = function() {return 5;};
+			console.log(f1());
+			console.log(f1);
+			console.log(jobject.function1());
+			console.log(jobject.function1);
+			
+		
+		
+		
+			var z = 8;
+			function zippydoo (){
+				var el = document.getElementById("id01");
+				el.innerHTML = "ZippyDoo!";
+				
+				var newP = document.createElement("SPAN");
+				newP.innerHTML = " Span Test";
+				document.getElementById("id01").appendChild(newP);
+				
+				
+			}
+			function zippydee () {
+				var x = 5;
+				y = 6;
+				if(z > 9) alert('not an emergency');
+				for(var i = 0; i<10; i++)
+					document.write("zippydee" + i + "<br />");
+				console.log("Put Message here");
+			}
+			
+			try{
+				var x = 0;
+				if(x < 0)
+					throw"smallerThanError";
+			}
+			catch (err){
+				alert(err + " was thrown");
+			}
+			finally{
+				console.log("value of x:" + x);
+			}
+			
+			
+			array4 = ["CS 101", "CS 102", "CS 103"];
+			console.log(array4);
+			console.log(array4.concat("CS 104"));
+			s2 = "CS 105, CS 106, CS 107";
+			console.log(array4.concat(s2.split((", "))));
+			
+			function loadScript () {
+				var commentTag = document.getElementById("specificTag")
+				commentTag.style.backgroundColor = "#FFFF00";
+				commentTag.style.borderWidth = "3px";
+			
+				console.log("End of script 2");
+				
+				var greetingBox = document.getElementById("gmorn");
+				greetingBox.addEventListener('click', function(){
+				alert("Good Morning") }, false);
+				
+				document.getElementById("firstName").onfocus = function(e) {
+					var firstnamelabel = document.getElementById("label1");
+					firstNameLabel.style.backgroundColor = "#FFFF00";
+				};
+				
+				document.getElementById("firstName").onblur = function(e) {
+					var firstnamelabel = document.getElementById("label1");
+					firstnamelabel.style.backgroundColor = "#FFFFFF";
+				};
+				
+				document.getElementById("firstName").onsubmit = function(e) {
+					var nameValue = document.getElementById("firstName").value;
+					if(nameValue == null || nameValue == ""){
+						e.preventDefault();
+						var firstnamelabel = document.getElementById("label1");
+						document.getElementById("firstName").focus();
+						firstnamelabel.style.backgroundColor = "#FF0000";
+						
+					}
+				};
+			}
+			console.log("End of script 1");
+		</Script>
+	</head>
+	<body id="body01" onload="loadScript()";>
+		<h1 onclick="zippydee();">Alert</h1>
+		<button onclick="zippydoo();">Change paragraph</button>
+		<p id="id01"> This is part of a paragraph </p>
+		<p id="specificTag"> This is the specific tag </p>
+		<p id="gmorn"> Click me </p>
+		<form id="form01" action="junk.html" method="GET">
+			<label id="label1" for="firstName" >First Name: </label>
+			<input name="firstName" type="text" placeholder="Erik">
+			<br> </br>
+			<label for="lastName">Last Name: </label>
+			<input name="lastName" type="text" placeholder="Fed">
+			<br></br>
+			<label for="address">Address: </label>
+			<input name="address" type="text" placeholder="123 Conch">
+			<br></br>
+			<button type="submit" value="Submit"> Submit </button>
+		</form>
+		
+	</body>
+</html>

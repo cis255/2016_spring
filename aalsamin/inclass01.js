@@ -1,11 +1,25 @@
 $(document).ready(function() {
 	$("#readyMessage").text("Ready.");
+	$(".zippydee").text("zippydoo.");
+	
+	console.log($(".zippydonut").html());
+	console.log($("body").html());
+	
+	$("#div1").html("<p>Howdy</p>");
+	console.log($("#div1").html());
+	console.log($("#div1 p").html());
+	
+	console.log($("#v1").val());
+	
+	
+	
+	/*
 	$("#timeDiv").load("currentTime.php");
 	
 	$("#p1").click(function(){
 		$(this).hide();
 	});
-	
+
 	// example GET request
 	$.get("currentTime.php", function (data,textStatus,jsxhr) {
 		if (textStatus == "success") {
@@ -16,7 +30,7 @@ $(document).ready(function() {
 		}
 		console.log("done.");
 	});
-	
+	*/
 });
 
 /* Backbone section requires "publish.php" file not provided! 
@@ -90,7 +104,7 @@ var TravelAlbumView = Backbone.View.extend({
 	}
 });
 
-//listing 15.28 Defining the main app’s view and making use of the Collections and models defined earlier
+//listing 15.28 Defining the main appâ€™s view and making use of the Collections and models defined earlier
 
 // The main view of the entire Backbone application
 var App = Backbone.View.extend({

@@ -1,0 +1,25 @@
+<doctype html>
+<!-- demonstrate AngularJS -->
+<html 
+	ng-app="app2" ng-init="person = {fname: 'George', lname: 'Corser'};
+    capitals = [{city: 'Montgomery', state: 'Alabama'}, {city: 'Juneau', state: 'Alaska'}, {city: 'Phoenix', state: 'Arizona'} ]"
+	>
+	<head>
+		<title>Angular Demo</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	</head>
+	<style>
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+		  display: none !important;
+		}
+	</style>
+	<body>
+		<h4 ng-controller="ctrl1"> First random number: {{randomNum1}} </h4>
+		<h4 ng-controller="ctrl1"> second random number: {{randomNum2}} </h4>
+		
+		<h4 ng-controller="badMood">I'm feeling .... {{bad}}</h4>
+		<h4 ng-controller="goodMood">I'm feeling .... {{good}}</h4>
+		
+		<script src="angulardemo2.js"></script>
+	</body>
+</html>

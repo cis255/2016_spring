@@ -1,0 +1,38 @@
+<doctype html>
+<!-- demonstrate AngularJS -->
+<html 
+	ng-app="app1" ng-init="person = {fname: 'George', lname: 'Corser'};
+    capitals = [{city: 'Montgomery', state: 'Alabama'}, {city: 'Juneau', state: 'Alaska'}, {city: 'Phoenix', state: 'Arizona'} ]"
+	>
+	<head>
+		<title>Angular Demo</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	</head>
+	<style>
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+		  display: none !important;
+		}
+	</style>
+	<body>
+		<div ng-controller="ctrl1">
+			<input type="text" ng-model="first" />
+			<input type="text" ng-model="second" />
+			<button ng-click="updateValue();">Sum</button>
+			<br/><br/>
+			{{calculation}}
+			<br/>
+			<p>5 + 5 = {{5 + 5}}</p>
+			<p>first element of model: {{first}}</p>
+			<p>second element of model: <span data-ng-bind="second"></span></p>
+			<p>Your name is: {{ person.fname + " " + person.lname }}</p>
+
+			<ul>
+				<li ng-repeat="capital in capitals">
+					{{capital.city + ", " + capital.state}}
+				</li>
+			</ul>
+
+		</div>
+		<script src="angulardemo.js"></script>
+	</body>
+</html>

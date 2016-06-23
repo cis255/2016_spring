@@ -1,0 +1,208 @@
+<!-- 
+filename  : program3.html
+author    : Erik Federspiel
+date      : 2016-06-1
+email     : ecfeders@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~ecfeders/cis255/ecfeders/Program3/program3.html
+backup    : https://github.com/cis255/cis255
+purpose   : This file serves as a program03 Assignment for the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			http://stackoverflow.com/questions/1452866/jquery-drag-and-drop-elements-from-list-into-separate-blocks
+			http://embed.plnkr.co/WcIZlD/
+external code references in this file: 
+			
+program structure (design):
+	<head>: 
+		stylesheets
+		text/javascript
+		program3.css
+		script.js
+		title
+	<body>: 
+		<script>
+			First script to declare pre-req array
+			populate the select bar based on the degree
+			set up function to use to check pre-req
+		</script>
+		<html>
+			Create panels, one for the dragables, 8 for the drop areas
+			create title
+			create items to be dragged/dropped
+		<html>
+		<script>
+			commented on java script page
+		</script>
+
+
+ -->
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+	<!-- This is referncing style sheets for bootstrap !-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="program3.css" />
+    
+	<!-- reference to javascrip !-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	
+	<!-- css !-->
+    <script src="script.js"></script>
+    
+	<!-- title !-->
+	<title>A jQuery Drag-and-Drop: Saginaw Valley State University Classes</title>
+	
+  </head>
+
+  <body>
+	<!-- HTML From http://stackoverflow.com/questions/1452866/jquery-drag-and-drop-elements-from-list-into-separate-blocks !-->
+	<!-- Modified for assignment !-->
+	<!-- div for all panels !-->
+    <div class="container-fluid">
+		<!-- div for class row !-->
+      <div class="row">
+			<!-- title of the page !-->
+			<div class="title">
+				<link rel='icon' href='pic.jpg' type='image/png' / >
+				<h1>Drag-and-Drop with jQuery: Classes</h1>
+				<h2>Drag and Drop Your Classes In The Correct Semester</h2>
+			</div>
+		<!-- div for bootstrap !-->
+        <div class="col-xs-3">
+			<!-- panel default !-->
+          <div class="panel panel-default">
+			<!-- div for panel headings and first panel heading!-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Classes</h1>
+            </div>
+			<!-- Div to create the items to be dragged and dropped in other panels !-->
+            <div id="container1" class="panel-body box-container">
+              <div itemid="itm-1" class="btn btn-default box-item">CS 116</div>
+              <div itemid="itm-2" class="btn btn-default box-item">CS 216</div>
+              <div itemid="itm-3" class="btn btn-default box-item">CS 316</div>
+              <div itemid="itm-4" class="btn btn-default box-item">CS 331</div>
+              <div itemid="itm-5" class="btn btn-default box-item">CS 411</div>
+			  <div itemid="itm-6" class="btn btn-default box-item">CIS 255</div>
+			  <div itemid="itm-7" class="btn btn-default box-item">CIS 355</div>
+			  <div itemid="itm-8" class="btn btn-default box-item">CIS 311</div>
+			  <div itemid="itm-9" class="btn btn-default box-item">MATH 300</div>
+			  <div itemid="itm-10" class="btn btn-default box-item">CS 461</div>
+            </div>
+          </div>
+        </div>
+		<!-- boot strap !-->
+        <div class="col-xs-3">
+			<!-- Div for css !-->
+          <div class="panel panel-default">
+			<!-- First Drop panel heading !-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Fall 2015</h1>
+            </div>
+			<!-- Create div so css can create panel to be dropped in !-->
+            <div id="container2" class="panel-body box-container"></div>
+          </div>
+        </div>
+		<!-- boot strap !-->
+		 <div class="col-xs-3">
+		 <!-- div for css!-->
+          <div class="panel panel-default">
+		  <!-- Second Drop panel heading !-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Winter 2016</h1>
+            </div>
+			<!-- Create div so css can create panel to be dropped in !-->
+            <div id="container3" class="panel-body box-container"></div>
+          </div>
+        </div>
+		<!-- boot strap !-->
+		 <div class="col-xs-3">
+		 <!-- div for css!-->
+          <div class="panel panel-default">
+		  <!-- Third Drop panel heading !-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Fall 2016</h1>
+            </div>
+			<!-- Create div so css can create panel to be dropped in !-->
+            <div id="container4" class="panel-body box-container"></div>
+          </div>
+        </div>
+		<!-- boot strap !-->
+		 <div class="col-xs-3">
+		  <!-- div for css!-->
+          <div class="panel panel-default">
+			<!-- fifth Drop panel heading !-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Winter 2017</h1>
+            </div>
+			<!-- Create div so css can create panel to be dropped in !-->
+            <div id="container5" class="panel-body box-container"></div>
+          </div>
+        </div>
+		<!-- boot strap !-->
+		 <div class="col-xs-3">
+		  <!-- div for css!-->
+          <div class="panel panel-default">
+		  <!-- sixth Drop panel heading !-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Fall 2017</h1>
+            </div>
+			<!-- Create div so css can create panel to be dropped in !-->
+            <div id="container6" class="panel-body box-container"></div>
+          </div>
+        </div>
+		<!-- boot strap !-->
+		 <div class="col-xs-3">
+		  <!-- div for css!-->
+          <div class="panel panel-default">
+		  <!-- Seventh Drop panel heading !-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Winter 2018</h1>
+            </div>
+			<!-- Create div so css can create panel to be dropped in !-->
+            <div id="container7" class="panel-body box-container"></div>
+          </div>
+        </div>
+		<!-- boot strap !-->
+		 <div class="col-xs-3">
+		  <!-- div for css!-->
+          <div class="panel panel-default">
+			<!-- EIGTH Drop panel heading !-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Fall 2018</h1>
+            </div>
+			<!-- Create div so css can create panel to be dropped in !-->
+            <div id="container8" class="panel-body box-container"></div>
+          </div>
+        </div>
+		<!-- boot strap !-->
+		 <div class="col-xs-3">
+		  <!-- div for css!-->
+          <div class="panel panel-default">
+			<!-- Ninth Drop panel heading !-->
+            <div class="panel-heading">
+              <h1 class="panel-title">Winter 2019</h1>
+            </div>
+			<!-- Create div so css can create panel to be dropped in !-->
+            <div id="container9" class="panel-body box-container"></div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </body>
+
+</html>

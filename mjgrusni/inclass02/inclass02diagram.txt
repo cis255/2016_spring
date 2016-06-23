@@ -1,0 +1,14 @@
+str <- "______"
+arr <- split(str)
+//bubble sort
+arr <- bubblesort(arr)
+for i = 1 to arr.length
+	print(arr[i])
+//print subset of arr with elements that are not also in arr2
+for i = 1 to arr.length
+	unique <- true
+	for j = 1 to arr2.length
+		if arr[i] = arr2[j]
+			unique = false
+	if(unique)
+		print(arr[i])

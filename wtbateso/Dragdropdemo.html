@@ -1,9 +1,40 @@
 <!doctype html>
-<!-- from: http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html-->
-<html lang="en">
+<!-- ------------------------------------------------------------------------
+filename  : Dragdropdemo.html
+author    : William Bateson
+date      : 2016-06-10
+email     : wtbateso@svsu.edu
+course    : CIS-255
+link      : csis.svsu.edu/~gpcorser/cis255/wtbateso/Dragdropdemo.html
+backup    : github.com/cis255/cis255
+purpose   : This programs purpose is to drag and drop classes into
+			semester blocks using jQuery
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+program structure: 
+	<html> holds all of code within</html>
+	<head> holding meta tag and script tags </head>
+	<script> holds all of the javascript within program </script>
+	<body> contains div's for heading and boxes </body>
+program diagram:
+	-create card pile with classes
+	-create card slots with semesters
+	-reset the page with classes in pile and semesters in slots
+	-create the array of classes
+	-make cards draggable (using div's)
+external code used in this file: 
+			http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html
+------------------------------------------------------------------------- -->
+<html lang="en" id="bground">
 <head>
 
-<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<title>A jQuery Drag-and-Drop Course Planner</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="Dragdropdemo.css">
 
@@ -15,24 +46,14 @@
 	$(init);
 	
 	function init() {
-		  // Hide the success message
-		  $('#successMessage').hide();
-		  $('#successMessage').css( {
-			left: '580px',
-			top: '250px',
-			width: 0,
-			height: 0
-		  });
-
-		  // Reset the game
+		  // Reset the cards
 		  cardContains = 0;
 		  $('#cardPile').html( '' );
 		  $('#cardSlots').html( '' );
 
 		  // Create the pile of shuffled cards
 		  var numbers = ['CS 105', 'CS 116','CS 146', 'CS 216', 'CS 245', 'CIS 255', 'CIS 333', 'CIS 355', 'CS 333', 'CS 490' ];
-		  
-
+		    
 		  for (var i = 0; i < 10; i++) {
 			$('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
 			  containment: '#content',
@@ -40,70 +61,41 @@
 			  cursor: 'move',
 			  revert: true
 			});
+			$("card+numbers[i]").css("background-color", "blue");
 		  }
 
 		  // Create the card slots
 		  var words = [ 'Fall 16', 'Winter 17', 'Fall 17', 'Winter 18', 'Fall 18', 'Winter 19', 'Fall 19', 'Winter 20' ];
-		  for (var i = 1; i <= 8; i++) {
-			$('<div>' + words[i-1] + '</div>').data( 'number', i ).attr( 'id', words[i] ).appendTo( '#cardSlots' ).droppable( {
-			  accept: '#cardPile div',
-			  hoverClass: 'hovered',
-			  drop: handleCardDrop
-			});
-		  }
-
+		  for (i = 1; i <= words.length; i++ ) {
+			    $('<div>' + words[i-1] + '</div>').data('number', i).appendTo('#cardSlots').droppable( {
+			      accept: '#cardPile div',
+			      hoverClass: 'hovered',
+			      drop: handleCardDrop
+			    } );
+			}
+		  
 	}
 
 	function handleCardDrop( event, ui ) {
-	  var slotNumber = $(this).data( 'number' );
-	  var cardNumber = ui.draggable.data( 'number' );
-
-	  // If the card was dropped to the correct slot,
-	  // change the card colour, position it directly
-	  // on top of the slot, and prevent it being dragged
-	  // again
-
-
-		//ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+		var slotNumber = $(this).data( 'number' );
+		var cardNumber = ui.draggable.data( 'number' );
 		ui.draggable.draggable( 'option', 'revert', false );
-		cardContains++;
-	 //} 
-	  
-	  // If all the cards have been placed correctly then display a message
-	  // and reset the cards for another go
-
-	  if ( cardContains == 10 ) {
-			$('#successMessage').show();
-			$('#successMessage').animate( {
-			  left: '380px',
-			  top: '200px',
-			  width: '400px',
-			  height: '100px',
-			  opacity: 1
-			});
-	  }
-
 	}
 
 </script>
 
 </head>
 <body>
-
-	<div class="wideBox">
-	  <h1>Drag-and-Drop with jQuery: Your Guide to Awesome</h1>
-	  <h2>A Class List Game</h2>
+	
+	<div class="wideBox1">
+	  <h1>Drag-and-Drop Courses: Your Guide to Awesome</h1>
+	  <h2>A Class List Planner</h2>
 	</div>
 
 	<div id="content">
 
 	  <div id="cardPile"> </div>
 	  <div id="cardSlots"> </div>
-
-	  <div id="successMessage">
-		<h2>You Will Have No Life ....</h2>
-		<button onclick="init()">Try Again</button>
-	  </div>
 
 	</div>
 
