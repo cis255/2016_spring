@@ -28,11 +28,26 @@ program structure:
 	<head>
 		meta
 		links to external code
+	</head>
+	<body>
 		navbar
 		header carousel
 		calendar 
 		chart 
 		weather
+		list box
+		portfolio section/photos
+		data table widget
+		number selector
+		
+	</body>
+	<footer>
+	</footer>
+	<script>
+	
+	</script>
+		
+		
 		
 
  -->
@@ -223,25 +238,33 @@ program structure:
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-check"></i>Calendar</h4>
                     </div>
-                    <div class="panel-body"> 	<!--------------------- calendar div --------------------------->         						 
+					<!--------------------------------------------------- calendar div ------------------------------------------>
+					<!--------------------------------------------------- - - - - - - - ----------------------------------------->
+                    <div class="panel-body"> 	         						 
 						<div id='calendar'></div>
 						<div id='log'></div>
+						
                     </div>
                 </div>
             </div>
+			
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-gift"></i> Chart</h4>
                     </div>
                     <div class="panel-body">
+					<!--------------------------------------------------- chart ------------------------------------------->
+					<!--------------------------------------------------- - - - ------------------------------------------->
 						<div id="chart">
-							<canvas id="myChart" width="400" height="400"></canvas> <!-- chart ------------->
+							<canvas id="myChart" width="400" height="400"></canvas>
 						</div> <!-- chart div -->
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
+				<!------------------------------------------------------ weather ------------------------------------->
+				<!------------------------------------------------------ - - - - ------------------------------------->
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-compass"></i>Weather</h4>
@@ -268,6 +291,13 @@ program structure:
 					<div id="jqxWidget"></div>
                 </div>
                     </div>
+					<!---------------------------List Box------------------>
+					<!--------------------------- - - - - ----------------->
+					<div id='jqxlistbox'></div>
+						<div style="margin-top: 10px;">
+						<input id="button" type="button" value="Get Selected Item" />
+						<div id="eventlog"></div>
+					</div>
                 </div>
             </div>
         </div>
@@ -294,6 +324,134 @@ program structure:
                 </a>
             </div>
         </div>
+		<!------------------------------------------data table ---------------------->
+		<!--------------------------------------------------------------------------->
+		<div id='dataTable'>
+			<table id="dataTable" border="1">
+			<thead>
+				<tr>
+					<th align="left">First Name</th>
+					<th align="left">Last Name</th>
+					<th align="left">Product</th>
+					<th align="right">Price</th>
+					<th align="right">Quantity</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Ian</td>
+					<td>Devling</td>
+					<td>Espresso Truffle</td>
+					<td>$1.75</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>Nancy</td>
+					<td>Wilson</td>
+					<td>Cappuccino</td>
+					<td>$5.00</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Cheryl</td>
+					<td>Nodier</td>
+					<td>Caffe Americano</td>
+					<td>$2.50</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>Martin</td>
+					<td>Saavedra</td>
+					<td>Caramel Latte</td>
+					<td>$3.80</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>Guylene</td>
+					<td>Bjorn</td>
+					<td>Green Tea</td>
+					<td>$1.50</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>Andrew</td>
+					<td>Burke</td>
+					<td>Caffe Espresso</td>
+					<td>$3.00</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Regina</td>
+					<td>Murphy</td>
+					<td>White Chocolate Mocha</td>
+					<td>$3.60</td>
+					<td>6</td>
+				</tr>
+				<tr>
+					<td>Michael</td>
+					<td>Murphy</td>
+					<td>Caramel Latte</td>
+					<td>$3.80</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Petra</td>
+					<td>Bein</td>
+					<td>Caffe Americano</td>
+					<td>$2.50</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>Nancy</td>
+					<td>Nodier</td>
+					<td>Caffe Latte</td>
+					<td>$4.50</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>Peter</td>
+					<td>Devling</td>
+					<td>Green Tea</td>
+					<td>$1.50</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>Beate</td>
+					<td>Saylor</td>
+					<td>Espresso con Panna</td>
+					<td>$3.25</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Shelley</td>
+					<td>Nodier</td>
+					<td>Peppermint Mocha Twist</td>
+					<td>$4.00</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>Nancy</td>
+					<td>Murphy</td>
+					<td>Peppermint Mocha Twist</td>
+					<td>$4.00</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>Lars</td>
+					<td>Wilson</td>
+					<td>Caffe Espresso</td>
+					<td>$3.00</td>
+					<td>11</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		<!----------------------------number input----------------------->
+		<!---------------------------- - - - - - - ---------------------->
+		<div id='numericInput'></div>
+		<div id='log'></div>
+		
+		</div>
         <!-- /.row -->
 
         
@@ -323,12 +481,25 @@ program structure:
 	
 	<script src="../Chart.js-master/dist/Chart.js"></script>
 	
+	<!------------ jqwidget scripts ------------------>
+	<!------------- - - - - - - - - ------------------>
 	<link rel="stylesheet" href="../jqwidgets/styles/jqx.base.css" type="text/css"/>
 	<script type="text/javascript" src="../scripts/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="../jqwidgets/jqxcore.js"></script>
 	<script type="text/javascript" src="../jqwidgets/jqxdatetimeinput.js"></script>
 	<script type="text/javascript" src="../jqwidgets/jqxcalendar.js"></script>
 	<script type="text/javascript" src="../jqwidgets/globalization/globalize.js"></script>
+	
+	<script type="text/javascript" src="../jqwidgets/jqxdata.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxbuttons.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxscrollbar.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxlistbox.js"></script>
+	<script type="text/javascript" src="../jqwidgets/jqxdropdownlist.js"></script>
+	
+	<script type="text/javascript" src="../jqwidgets/jqxnumberinput.js"></script>
+	
+	<script type="text/javascript" src="../jqwidgets/jqxdatatable.js"></script>
+	
     <!-- Script to Activate the Carousel -->
     <script>
 		$('.carousel').carousel({
