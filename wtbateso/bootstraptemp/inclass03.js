@@ -33,6 +33,9 @@ $jq(document).ready(function() {
 		});
 	} // end function defineChart()
 	
+	$('#container').jqxKnob({ width: 100});
+	console.log($('#container').jqxKnob('width'));
+	
 	// create 3 charts
 	var id = "myChart";
 	defineChart(id, 'doughnut') ;
