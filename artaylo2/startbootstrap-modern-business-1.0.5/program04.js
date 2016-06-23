@@ -49,6 +49,8 @@ $(document).ready(function() {
 	var id = "myChart";
 	defineChart(id, 'doughnut') ;
 	
+<<<<<<< HEAD
+=======
 	// create data table
 	$("#dataTable").jqxDataTable(
             {
@@ -107,6 +109,7 @@ $(document).ready(function() {
 		
 	});
 	
+>>>>>>> b9b8fe7bd7cb1c869356da240c302a7c6ddf3770
 	
 		
 });
