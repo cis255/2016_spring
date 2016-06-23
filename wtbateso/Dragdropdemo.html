@@ -31,7 +31,7 @@ program diagram:
 external code used in this file: 
 			http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html
 ------------------------------------------------------------------------- -->
-<html lang="en">
+<html lang="en" id="bground">
 <head>
 
 <title>A jQuery Drag-and-Drop Course Planner</title>
@@ -66,13 +66,14 @@ external code used in this file:
 
 		  // Create the card slots
 		  var words = [ 'Fall 16', 'Winter 17', 'Fall 17', 'Winter 18', 'Fall 18', 'Winter 19', 'Fall 19', 'Winter 20' ];
-		  for (var i = 1; i <= 8; i++) {
-			$('<div>' + words[i-1] + '</div>').data( 'number', i ).attr( 'id', words[i] ).appendTo( '#cardSlots' ).droppable( {
-			  accept: '#cardPile div',
-			  hoverClass: 'hovered',
-			  drop: handleCardDrop
-			});
-		  }
+		  for (i = 1; i <= words.length; i++ ) {
+			    $('<div>' + words[i-1] + '</div>').data('number', i).appendTo('#cardSlots').droppable( {
+			      accept: '#cardPile div',
+			      hoverClass: 'hovered',
+			      drop: handleCardDrop
+			    } );
+			}
+		  
 	}
 
 	function handleCardDrop( event, ui ) {
@@ -85,8 +86,8 @@ external code used in this file:
 
 </head>
 <body>
-
-	<div class="wideBox">
+	
+	<div class="wideBox1">
 	  <h1>Drag-and-Drop Courses: Your Guide to Awesome</h1>
 	  <h2>A Class List Planner</h2>
 	</div>

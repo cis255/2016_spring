@@ -95,8 +95,8 @@ footer {
  #dial {
             position: absolute;
 			padding: 0px;
-			height:50%;
-			width:50%;
+			height:25px;
+			width:25px;
         }
         .inputField {
             left: 110px;

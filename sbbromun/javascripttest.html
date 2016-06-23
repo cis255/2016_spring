@@ -136,6 +136,7 @@
 		};
 		};
 		console.log("End of Script 1.");
+
 		</script>
 	</head>
 	<body id=body01 onload="loadScript();">
@@ -146,6 +147,7 @@
 		<p id="id02">This is also sample text.</p>
 		<p id="specificTag">Format test.</p>
 		<p id="gmorn"> Click me!</p>
+		<p id="id03">5</p>
 		
 		<form id="form01" action="junk.html" method="GET">
 			<label for="firstName" id="fnl">First Name: </label>
@@ -154,6 +156,14 @@
 			<input name="address" id="address" type="text" placeholder="123 Fourth St"><br />
 			<button type="submit" value="Submit">Submit</button> 
 		</form>
+		
+		<script>
+$(document).ready(function(){
+    $("body").click(function(){
+        $(this).hide();
+    });
+});
+		</script>
 	</body>
 </html>
 		

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!-- 
+filename  : Program04.html
+author    : Kyle Sorenson
+date      : 2016-05-10
+email     : kjsorens@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~kjsorens/cis255/kjsorens/startbootstrap-modern-business-1.0.5/Program04.html
+backup    : https://github.com/cis255/cis255
+purpose   : This is a custom bootstrap website that will use various jqx widgets.
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+			Bootstrap
+			JQWidgets - http://www.jqwidgets.com/
+			IMAGES (Google Images):
+			https://tubeliteinc.files.wordpress.com/2011/07/1svsupioneerhall-wigentincknellmeyer.jpg
+			http://fields-inc.com/wp-content/uploads/2011/09/svsu-field-4.jpg
+			http://www.svsu.edu/media/english/RS159077_IMG_5810.JPG
+			
+program structure (design):
+	<head>: 
+			METADATA
+			BOOTSTRAP
+			CSS
+			JQUERY / JAVASCRIPT
+			
+	<body>:	
+			NAVIGATION - SVSU Homepage
+			CAROUSEL - SVSU Pictures
+			WIDGETS ROW - Calender, Chart, Weather
+			PICTURES ROW - 3 SVSU Pictures 			
+			MORE WIDGETS ROW - Pick a Color, JQ Panel, Progress Bar
+			
+	<footer>:
+			COPYRIGHT
+			-->
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>CIS 255: Program 4 - Kyle Sorenson</title>
+      <!-- Bootstrap Core CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link href="css/modern-business.css" rel="stylesheet">
+      <!-- Custom Fonts -->
+      <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- CIS-255 TEMPLATE FUNCTIONS -->
+      <!-- from: http://csis.svsu.edu/~gpcorser/cis255/gpcorser/template.js -->
+	  <!-- JavaScript for the Widgets -->
+      <script src="http://csis.svsu.edu/~kjsorens/cis255/kjsorens/Chart.js-master/dist/Chart.js"></script>
+      <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css"/>
+      <script src="js/jquery.js"></script>
+      <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+      <script type="text/javascript" src="jqwidgets/jqxdatetimeinput.js"></script>
+      <script type="text/javascript" src="jqwidgets/jqxcalendar.js"></script>
+      <script type="text/javascript" src="jqwidgets/globalization/globalize.js"></script>
+      <script type="text/javascript" src="jqwidgets/jqxcolorpicker.js"></script>
+      <script type="text/javascript" src="jqwidgets/jqxprogressbar.js"></script>
+      <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+      <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+      <script type="text/javascript" src="jqwidgets/jqxpanel.js"></script>
+      <script type="text/javascript" src="weather.js"></script>
+      <style type="text/css">
+         #found { display: none; }	
+         #error { color: red; display: none; }
+      </style>
+   </head>
+   <body>
+      <!-- Navigation -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+         <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="http://www.svsu.edu/">SVSU Homepage</a>
+            </div>
+         </div>
+         <!-- /.container -->
+      </nav>
+      <!-- Header Carousel -->
+      <header id="myCarousel" class="carousel slide">
+         <!-- Indicators -->
+         <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+         </ol>
+         <!-- Wrapper for slides -->
+         <div class="carousel-inner">
+            <div class="item active">
+               <div class="fill" style="background-image:url('http://www.svsu.edu/media/english/RS159077_IMG_5810.JPG');"></div>
+               <div class="carousel-caption">
+                  <h2>Saginaw Valley State University</h2>
+               </div>
+            </div>
+            <div class="item">
+               <div class="fill" style="background-image:url('http://fields-inc.com/wp-content/uploads/2011/09/svsu-field-4.jpg');"></div>
+               <div class="carousel-caption">
+                  <h2>SVSU Football</h2>
+               </div>
+            </div>
+            <div class="item">
+               <div class="fill" style="background-image:url('https://tubeliteinc.files.wordpress.com/2011/07/1svsupioneerhall-wigentincknellmeyer.jpg');"></div>
+               <div class="carousel-caption">
+                  <h2>Pioneer Hall @ SVSU</h2>
+               </div>
+            </div>
+         </div>
+         <!-- Controls -->
+         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+         <span class="icon-prev"></span>
+         </a>
+         <a class="right carousel-control" href="#myCarousel" data-slide="next">
+         <span class="icon-next"></span>
+         </a>
+      </header>
+      <!-- Page Content -->
+      <div class="container">
+	  
+      <!-- Widgets Row -->
+      <div class="row">
+      <div class="col-lg-12">
+         <h1 class="page-header">
+            CIS 255 - Kyle Sorenson - Program 4 - Widgets!
+         </h1>
+      </div>
+      <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h4>Calender</h4>
+            </div>
+            <div class="panel-body">
+               <div id='content'>
+                  <script type="text/javascript">
+                     $(document).ready(function () {
+                     $("#jqxcalendar").jqxCalendar({ width: '250px', height: '250px' });
+                     $('#jqxcalendar').bind('valuechanged', function (event) {
+                     var date = event.args.date;
+                     $("#log").text(date.toDateString());
+                     });
+                     });
+                  </script>  
+                  <div id='jqxcalendar'></div>
+                  <div id='log'></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h4>Chart</h4>
+            </div>
+            <div class="panel-body">
+               <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h4>Weather</h4>
+            </div>
+            <div class="panel-body">
+               <div id="find">
+                  <div class="form-group">
+                     <input type="edit" placeholder="Location" id="loc">
+                     <button class="btn btn-default" onclick="getWeather();">Find</button>
+                  </div>
+               </div>
+               <div id="found">
+                  <p><span id="location"></span></p>
+                  <p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+                  <small><em><a href="javascript:showSearch();">&larr; change location</a></em></small>
+               </div>
+               <div id="error">
+                  <p>Location not found</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- /.row -->
+      <!-- SVSU Picture Section -->
+      <div class="row">
+         <div class="col-lg-12">
+            <h2 class="page-header">Pictures!</h2>
+         </div>
+         <div class="col-md-4 col-sm-6">
+            <img class="img-responsive img-portfolio img-hover" src="https://df3318c9ff60409f5858-33b0735e1ef87c51ff6ab3f3c71c7652.ssl.cf2.rackcdn.com/2014_aids_walk_logos_svsu-1429891592" alt="">
+         </div>
+         <div class="col-md-4 col-sm-6">
+            <img class="img-responsive img-portfolio img-hover" src="https://yt3.ggpht.com/-gSrsKD3Cc_Q/AAAAAAAAAAI/AAAAAAAAAAA/_9lrRQ4QiIQ/s900-c-k-no-rj-c0xffffff/photo.jpg" alt="">
+         </div>
+         <div class="col-md-4 col-sm-6">
+            <img class="img-responsive img-portfolio img-hover" src="http://www.rossetti.com/sites/default/files/6_rossetti_svsu.jpg" alt="">
+         </div>
+      </div>
+      <!-- /.row -->
+      <!-- More Widgets Row -->
+      <div class="row">
+         <div class="col-lg-12">
+            <h1 class="page-header">
+               More Widgets!
+            </h1>
+         </div>
+         <div class="col-md-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h4>Pick a Color</h4>
+               </div>
+               <div class="panel-body">
+                  <div id='jqxColorPicker'>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h4>JQ Panel</h4>
+               </div>
+               <div class="panel-body">
+                  <div id='jqxpanel' style="font-size: 13px; font-family: Verdana; float: left;">
+                     <div style='margin: 10px;'>
+                        <h3>Early History of the Internet</h3>
+                     </div>
+                     <!--Content-->
+                     <div style='white-space: nowrap;'>
+                        <ul>
+                           <li>1961 First packet-switching papers</li>
+                           <li>1966 Merit Network founded</li>
+                           <li>1966 ARPANET planning starts</li>
+                           <li>1969 ARPANET carries its first packets</li>
+                           <li>1970 Mark I network at NPL (UK)</li>
+                           <li>1970 Network Information Center (NIC)</li>
+                           <li>1971 Merit Network's packet-switched network operational</li>
+                           <li>1971 Tymnet packet-switched network</li>
+                           <li>1972 Internet Assigned Numbers Authority (IANA) established</li>
+                           <li>1973 CYCLADES network demonstrated</li>
+                           <li>1974 Telenet packet-switched network</li>
+                           <li>1976 X.25 protocol approved</li>
+                           <li>1979 Internet Activities Board (IAB)</li>
+                           <li>1980 USENET news using UUCP</li>
+                           <li>1980 Ethernet standard introduced</li>
+                           <li>1981 BITNET established</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h4>Progress Bar</h4>
+               </div>
+               <div class="panel-body">
+                  <div id='jqxprogressbar'> 
+                  </div>
+                  <br />
+                  <input id='button' type='button' value='Update' style='padding: 3px; margin-top: 5px;' />	
+               </div>
+            </div>
+         </div>
+         <!-- /.row -->
+         <!-- Footer -->
+         <footer>
+            <div class="row">
+               <div class="col-lg-12">
+                  <p>Copyright &copy; Kyle Sorenson 2016</p>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <!-- /.container -->
+      <!-- jQuery -->
+      <!-- Bootstrap Core JavaScript -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Script to Activate the Carousel -->
+      <script>
+         $('.carousel').carousel({
+             interval: 5000 //changes the speed
+         })
+      </script>
+	  <!-- Chart Function -->
+      <script>
+         function defineChart (id, type) {
+         	var el = document.getElementById(id);
+         	var myChart = new Chart(el, {
+         		type: type,
+         		data: {
+         			labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+         			datasets: [{
+         				label: '# of Votes',
+         				data: [12, 19, 3, 5, 2, 3],
+         				backgroundColor: [
+         					'rgba(255, 99, 132, 0.2)',
+         					'rgba(54, 162, 235, 0.2)',
+         					'rgba(255, 206, 86, 0.2)',
+         					'rgba(75, 192, 192, 0.2)',
+         					'rgba(153, 102, 255, 0.2)',
+         					'rgba(255, 159, 64, 0.2)'
+         				],
+         				borderColor: [
+         					'rgba(255,99,132,1)',
+         					'rgba(54, 162, 235, 1)',
+         					'rgba(255, 206, 86, 1)',
+         					'rgba(75, 192, 192, 1)',
+         					'rgba(153, 102, 255, 1)',
+         					'rgba(255, 159, 64, 1)'
+         				],
+         				borderWidth: 1
+         			}]
+         		},
+         		options: {
+         			scales: {
+         				yAxes: [{
+         					ticks: {
+         						beginAtZero:true
+         					}
+         				}]
+         			}
+         		} 
+         	});
+         } // end function defineChart()
+         
+         // create chart
+         var id = "myChart";
+         defineChart(id, 'bar') ;
+      </script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+             // Create jqxColorPicker.
+             $("#jqxColorPicker").jqxColorPicker({ width: 350, height: 350 });
+         });
+      </script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+             // Create jqxProgressBar.
+             $("#jqxprogressbar").jqxProgressBar({ width: 250, height: 25, value: 50 });
+             $('#jqxprogressbar').bind('valuechanged', function (event) {
+                 alert("Value: " + event.currentValue);
+             });
+             // Update ProgressBars.
+             $('#button').click(function () {
+                 $("#jqxprogressbar").jqxProgressBar({ value: 100 });
+             });
+         });
+      </script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+             // Create jqxPanel
+             $("#jqxpanel").jqxPanel({ width: 250, height: 250});
+         });
+      </script>
+   </body>
+</html>

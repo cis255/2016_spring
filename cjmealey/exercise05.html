@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- examples from chapter 05 of textbook -->
+<html>
+<head>
+<style>
+nav {
+	width: 12em;
+	float: left;
+}
+
+div#main {
+	margin: 220px;
+}
+
+
+#img1 {
+	position: relative;
+	top: 150px; 
+	left: 200px; 
+}
+#para2 {
+	position: absolute;
+	top: 150px; 
+	left: 200px; 
+}
+#img2 {
+	position: absolute;
+	top: 150px; 
+	left: 200px;
+}
+#para1 {
+	position: absolute;
+	z-index: -2;
+}
+#img7 {
+	position: fixed;
+	top: 0px; 
+	left: 0px; 
+	z-index: -1;
+}
+</style>
+</head>
+<body>
+<nav>
+<ul>
+<li>Alpha</li>
+<li>Bravo</li>
+<li>Charlie</li>
+</ul>
+</nav>
+
+<div id="main">
+<p id="para1" style="margin: 50px;">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+</p>
+<img id="img1" src="cat.jpg">
+<p id="para2">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+<img id="img2" src="cat.jpg">
+</p>
+<div>
+<img id="img3" src="cat.jpg">
+<img id="img4" src="cat.jpg">
+<img id="img5" src="cat.jpg">
+<img id="img6" src="cat.jpg">
+<img id="img7" src="puppy-icon.png">
+</div>
+</div> <!-- end: main -->
+</body>
+</html>

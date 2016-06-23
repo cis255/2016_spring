@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+  <link href='https://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
+  <style>
+    body {font-family:'Fauna One', serif;}
+    		td {padding:10px;}
+  </style>
+
+<script>
+//Loadscript...
+function loadScript(){
+//from slide 74
+var commentTag = 
+    document.getElementById("specificTag");
+    commentTag.style.backgroundColor = "#FFFF00";
+    commentTag.style.borderWidth = "3px";
+
+//From slide 80
+var greetingBox = document.getElementById('gomo');
+greetingBox.addEventListener('click', function(){
+   alert('Good Morning') }, false);
+
+	document.getElementById("firstName").onfocus = function(e) {
+		var firstNameLabel = document.getElementById("fnl");
+		firstNameLabel.style.color = "#ff0000";
+		};
+		
+	document.getElementById("firstName").onblur = function(e) {
+		var firstNameLabel = document.getElementById("fnl");
+		firstNameLabel.style.color = "#000000";
+		};
+		
+	document.getElementById("form01").onsubmit = function(e) {
+		var firstNameLabel = document.getElementById("fnl");
+		var nameValue = document.getElementById("firstName").value;
+		if (nameValue == null || nameValue == "")
+			e.preventDefault();
+			firstNameLabel.style.color = "#ff0000";
+			document.getElementById("firstName").focus;
+		};
+	
+}
+
+//.............
+</script>
+</head>
+
+<body id="body01" onload="loadScript()">
+
+
+
+
+<h1> JSTest </h1>
+<p id="specificTag"> CSS Simulated by JavaScript </p>
+<p id="gomo" color="#ff0000"> Click here for ALERT </p>
+<form id="form01" action="junk.html" method="GET">
+	<label for="firstName" id="fnl">First Name&nbsp;<br></label>
+	<input name="firstName" id="firstName" type="text" placeholder="John Doe"><br>
+    <label for="address">Address&nbsp;<br></label>
+    <input name="address" id="address" type="text" placeholder="123 Street Ave">
+    <button type="submit" value="Submit">Submit</button>
+</form>
+
+
+
+
+
+
+
+
+<!-- END SCRIPT DEFINITIONS -->
+
+
+<script>
+var n = "string";
+s = n.length;
+console.log(s);
+//Defs
+var jObject = {
+  name:  "Billy Jean",
+  age: 34,
+  address: "123 Annie Rd",
+  function1: function(){return 5;}}
+//Outputs
+console.log(jObject);
+console.log(jObject.function1);
+console.log(jObject.function1());
+//First class function
+//f1 = function(){return 5;};
+//console.log(f1);
+
+
+
+
+
+//Arrays
+arr1 = [1,2,3,4,5];
+arr2 = new Array(6,7,8, "fle");
+console.log(arr1);
+console.log(arr2);
+arr4 = ["CS 101", "CS 102", "CS 103", "CS 104"];
+console.log(arr4);
+console.log(arr4.concat("CS 105"));
+s2 = "CS 106, CS 107, CS 108";
+//.split can divide a string by parameter, in this case ", ". Using this, all strings can be converted into arrays EASILY AND QUICKLY
+console.log(arr4.concat(s2.split(", ")))
+//............
+
+
+
+
+
+
+
+
+
+//from slide 41
+try{
+  var x = -1;
+  if (x<0)
+     throw "smallerThanError";
+}
+catch (err){
+  console.log(err + " was thrown");
+}
+finally {
+  console.log("value of x: " + x);
+}
+//END
+
+//Inf Tests
+k = 12/0;
+console.log(k);
+//............
+console.log("End of Script");
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

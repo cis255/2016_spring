@@ -1,0 +1,168 @@
+
+<html>
+<head>
+<script>
+	// recap of CS-116-level javascript
+	// primitive data type: number
+	a = 5;
+	var n = 6;
+	var m = -1;
+	var z = 0;
+	// primitive data type: string
+	s = "Hello"; 
+	console.log(s);
+	// primitive data type: null (object)
+	l = null;
+	console.log(l); 
+	typeof(l);
+	// primitive data type: boolean
+	b = true;
+	f = false;
+	console.log(b); 
+	// primitive data type: undefined
+	// console.log(u); 
+	
+	// unusual application of "or" ( || )
+	console.log (l || a); // displays 5
+	
+	if(l || a) console.log("prints " + a); 
+	if(l || b) console.log("prints " + b); 
+	if(l || f) console.log("prints " + f); 
+	if(l || m) console.log("prints " + m); 
+	if(l || z) console.log("prints " + z); 
+	
+	var jobject = {
+	    name: "Jimmy Joe",
+		age: 20,
+		address: "123 Fourth Street",
+		function1: function () {return 15;},
+		array1: [1, 2, 3, 5]
+	}
+	console.log(jobject);
+	
+	// Arrays
+	array2 = [2, 4, 6, 5];
+	array3 = new Array(3, 6, 9, "asd");
+	console.log(jobject.array1[0]);
+	console.log(array2);
+	console.log(array3);
+	
+	// first class function
+	f1 = function () {return 5;};
+	console.log(f1());
+	console.log(f1);
+	console.log(jobject.function1());
+	console.log(jobject.function1);
+	
+    // comments: similar to C++
+    var z = 8; 
+	function zippydoo () {
+	    var el = document.getElementById("id01");
+		el.innerHTML = "ZippyDoo!";
+		
+		var newP = document.createElement("SPAN");
+		newP.innerHTML = " -spanTest- ";
+		document.getElementById("id02").appendChild(newP);
+	
+	}
+    function zippydee () {
+	    // variable
+	    var x = 5;
+		y = 6;
+		// conditionals
+		if (z > 9) alert('not an emergency');
+		
+		// loops
+		for (var i=0; i<10; i++) 
+			document.write("zippydee" + i + "<br />");
+
+		// functions (see this function)
+		console.log("Put Messages Here");
+		
+	};;;;;
+	
+	// try-catch-finally
+	// from slide 41
+	try {
+	    var x = 1; // try -1
+		if (x < 0) 
+			throw "smallerThanZeroError";
+		var y = 99; // try 101
+		if (y > 100) 
+			throw "greaterThan101Error";
+	} 
+	catch(err) {
+	    alert (err + " was thrown");
+	}
+	finally {
+		console.log("value of x: " + x);
+	}
+	k = 12 / 0;
+	console.log(k);
+	// javascript will stop at first error
+	// console.log(j);
+	
+	array4 = ["CS 101", "CS 102", "CS 103"];
+	console.log(array4);
+	console.log(array4.concat("CS 104"));
+	s2 = "CS 105, CS 106, CS 107";
+	console.log(array4.concat(s2.split(", ")));
+	
+	function loadscript () {
+		// from slide 74
+		var commentTag =
+			document.getElementById("specificTag");
+		commentTag.style.backgroundColor = "#FFFF00";
+		commentTag.style.borderWidth = "3px";
+		
+		// from slide 80 ( textbook has error! )
+		var greetingBox = document.getElementById('gmorn');
+		// greetingBox.onclick = alert("Good Morning");
+		// from w3 schools
+		greetingBox.addEventListener("click", function () {
+			alert("Good Morning") }, false); 
+			
+		document.getElementById("firstname").onfocus = function (e) {
+			var firstnamelabel = document.getElementById("fnl");
+			firstnamelabel.style.backgroundColor = "#FFFF00";
+		};
+		document.getElementById("firstname").onblur = function (e) {
+			var firstnamelabel = document.getElementById("fnl");
+			firstnamelabel.style.backgroundColor = "#FFFFFF";
+		};
+		document.getElementById("form01").onsubmit = function (e) {
+			var nameValue = document.getElementById("firstname").value;
+			if(nameValue == null || nameValue == "") {
+				e.preventDefault();
+				var firstnamelabel = document.getElementById("fnl");
+				document.getElementById("firstname").focus();
+				firstnamelabel.style.backgroundColor = "#FF0000";
+
+			}
+		};
+	}
+	
+	console.log("End of Script 1");
+</script>
+</head>
+<body id="body01" onload="loadscript();">
+   <h1 onclick="zippydee();">Alert</h1>
+   <p>If you click on "Alert" above it will replace the entire page</p>
+   <button onclick="zippydoo();">Change Paragraphs</button>
+      <p>If you click the button above it will replace the first paragraph and append content into second paragraph</p>
+   <p id="id01">This is a paragraph</p>
+   <p id="id02">This is a paragraph</p>
+   <p id="specificTag">This is a specific paragraph</p>
+   <p id="gmorn">Click me Sunny</p>
+   
+   <form id="form01" action="junk.html" method="GET">
+		<label id="fnl" for="firstname">First Name</label>
+		<input name="firstname" id="firstname" type="text" placeholder="Jane"><br />
+		<label for="address">Address</label>
+		<input name="address" id="address" type="text" placeholder="123 Fourth St">
+		<button type="submit" value="Submit">Submit</button>
+   </form>
+   
+</body>
+</html>
+
