@@ -35,10 +35,14 @@
 			}
 			
 					    // insert CS courses into textarea (id="allCoursesNeeded")
+			var allCoursesText = "";
+			var allCourses = "";
+			var ClassesRequired = "";
 			
 			function updateCalssesCS() {
 			var allCourses = document.getElementById("allCoursesNeeded");
 			var allCoursesText = "";
+			ClassesRequired = cs;
 			for(var i=0; i<cs.length; i++) 
 				allCoursesText += cs[i] + ", ";
 			allCourses.innerHTML = allCoursesText;
@@ -47,6 +51,7 @@
 			function updateCalssesCIS() {
 			var allCourses = document.getElementById("allCoursesNeeded");
 			var allCoursesText = "";
+			ClassesRequired = cis;
 			for(var i=0; i<cis.length; i++) 
 				allCoursesText += cis[i] + ", ";
 			allCourses.innerHTML = allCoursesText;
@@ -63,7 +68,7 @@
 				<td>
 					<h2>Courses Taken</h2>
 					<p>Enter courses separated by commas: CS 105, CIS 255, ...</p>
-					<input type="text" id="Taken" onchange="updateCoursesTaken(this.value)"/>
+					<input type="text" id="Taken" onchange="updateCoursesTaken(this.value,allCoursesText)"/>
 				<td>
 					<h2>Courses for Degree</h2>
 					<p>Edit, if desired</p>
@@ -75,7 +80,7 @@
 				<td>
 					<h2>Courses Available for Registration</h2>
 					<p>Courses Needed and Not Taken But Pre-reqs Have Been Taken</p>
-					<textarea id="coursesAvailable" rows="14" cols="30"></textarea>
+					<textarea name="Available" id="coursesAvailable" rows="14" cols="30"></textarea>
 				</td>
 				<td>
 					<h2>Courses Not Yet Available</h2>
@@ -108,27 +113,25 @@
 "CIS 357", "CIS 371", "CIS 425", "CIS 486", "CIS 490"];
 
 
-			function updateCoursesTaken(val){
+var allCoursesReady = document.getElementById("allCoursesAvailable");
+
+			function updateCoursesTaken(val,allCoursesText){
 			value = val;
 			Overlap = value.split(', ');
 			
+			var CoursesLeft = "";
+			CoursesLeft = document.getElementById("coursesAvailable");
 			
-			var CoursesLeft = document.getElementById("coursesAvailable");
-			var CoursesLeftText = "";
+			// Works if only ONE class is entered in CoursesTaken
 			
-			
-			for(i=0;i<value.length;i++){
-			for(j=0;j<Overlap.length;j++){
-			if(b[j]===a[i]){
-				//do something
+			for(i=0;i<Overlap.length;i++){
+			for(j=0;j<ClassesRequired.length;j++){
+			if(ClassesRequired[j]!==Overlap[i]){
+				
+				CoursesLeft.innerHTML += ClassesRequired[j] + ", ";
 			}
 			}
 			}
-			
-			allCoursesText += cis[i] + ", ";
-			allCourses.innerHTML = allCoursesText;
-			
-		
 			}
 	
 	
