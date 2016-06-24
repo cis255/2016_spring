@@ -1,0 +1,43 @@
+
+<!doctype html>
+<!-- demonstrate AngularJS -->
+<html ng-app="app2" ng-init="person = {fname: 'George', lname: 'Corser'};
+    capitals = [{city: 'Montgomery', state: 'Alabama'}, {city: 'Juneau', state: 'Alaska'}, {city: 'Phoenix', state: 'Arizona'} ]">
+
+	
+	
+	
+<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="angulardemo2.js"></script>
+
+<title>Angular Demo 2</title>
+<style>
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none;
+}
+</style>
+
+</head>
+<body>
+
+	<a href="angulardemo.html"> Angular Demo 1</a>
+
+	<h4 ng-controller="ctrl1">First Random Number: {{randomNum1}}</h4>
+	<h4 ng-controller="ctrl1">Second Random Number: {{randomNum2}}</h4>
+	
+	<h4 ng-controller="badMood">I'm feelin.... {{bad}}</h4>
+	<h4 ng-controller="goodMood">I'm feelin.... {{good}}</h4>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

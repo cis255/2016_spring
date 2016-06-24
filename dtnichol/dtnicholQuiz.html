@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--filename  : program02.html
+author    : Derek Nichols
+date      : 2016-05-10
+email     : dtnichol@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~dtnichol/cis255/dtnichol/dtnicholQuiz.html
+backup    : https://github.com/cis255/cis255
+purpose   : Quiz,-->
+
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
+
+
+<!--supose to populate the output box but couldnt get it to work-->
+<script>
+		function myFunction() {
+		document.getElementById("myTextarea").innerHtml = "array1()";
+	};
+</script>
+
+	
+
+</head>
+
+
+<!--Creat and input and output area-->
+<body>
+	<div class="row">
+		<div class="col-xs-4">
+			<h3>Inputs</h3>
+				<textarea id="" rows="10" cols="40">
+					Banana, Apple, Cantaloupe, Kiwi, Watermelon, Avacado, Strawberry, Grape
+				
+				
+				
+				
+				
+				</textarea>
+			</div>	
+		<div class="col-xs-4">
+			<h3>Outputs</h3>
+				<textarea id="myTextarea" rows="10" cols="40">
+				
+				</textarea>
+		
+		</div>
+		
+	</div>
+	<!--button to activate the function to fill the output box.-->
+	<button type="button" onclick="myFunction()">Submit</button>
+	
+	
+	
+</body>
+	
+	<script src="dtnicholQuiz.js"></script>
+
+</html>

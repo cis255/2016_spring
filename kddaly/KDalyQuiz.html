@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<!-- Program Structure 
+head
+body
+div
+form
+-->
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Quiz 3</title>
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+        <script src="KDalyQuiz.js"></script>
+    </head>
+    
+    <body>
+        <div id="left">
+			<form action="/dosomething.htm" method="GET" onsubmit="run(); return false"">
+  Enter food name: <input type="text" id="food" name="Name" value="Banana, Apple, Cantaloupe, Kiwi, Watermelon, Avacado, Strawberry, Grape" size="75"><br>
+  Output: <input type="text" id="output" size ="75"> <br />
+  <input type="submit" value="Submit"> 
+			</form>
+        </div>
+    </body>
+</html>

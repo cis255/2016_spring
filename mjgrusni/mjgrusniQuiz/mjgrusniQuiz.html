@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- 
+filename  : mjgrusniQuiz.html
+author    : Michael Grusnick
+date      : 2016-06-21
+email     : mjgrusni@svsu.edu
+course    : CIS-255
+purpose   : To sort and display items that don't end with the letter "e".
+copyright : GNU General Public License (http://www.gnu.org/licenses/)
+			This program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			This program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+external code used in this file: 
+external code references in this file: 
+			jquery library, hosted by Google
+program structure (design):
+	1. Create HTML page with input field, button, and output field
+	2. Set the default contents of the input field
+	3. Use jQuery to sort and display elements from the input that do 
+		not end in the letter "e" when the button is pressed
+	<head>: 
+		Meta Data
+		jQuery
+	<body>: 
+		input field
+		sort button
+		output area
+		
+ -->
+
+<html>
+	<head>
+		<title>mjgrusni</title>
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<script src="mjgrusniQuiz.js"></script>
+	<href
+	</head>
+	<body>
+		<form action="demo_form.asp">
+			<input id="field" type="text" value="Banana, Apple, Cantaloupe, Kiwi, Watermelon, Avacado, Strawberry, Grape" size="60"><br>
+			<input id="btnSort" type="button" value="Sort/Remove">
+			<br />
+			<output id="output">Output will show here</output>
+		</form>
+	</body>
+<html>

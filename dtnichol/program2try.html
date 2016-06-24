@@ -128,12 +128,12 @@ program structure (design):
 			
 			<!-- User Input Row Container -->
 			<div class = "row">
-				<div class = "col-xs-6">
+				<div class = "col-xs-6" align="center">
 					<h2>1. Courses Taken So Far</h2>
 					<h4>Enter courses taken so far, separated by commas</h4>
 					<textarea   class="transparent-input boxShadow" id="coursesTaken"  rows="10" cols="40" placeholder="CS 105, CS 116, CIS 255, ..."></textarea>
 				</div>
-				<div class = "col-xs-6">
+				<div class = "col-xs-6" align="center">
 					<h2>2. All Courses Needed for Degree</h2>
 					<h4>Select degree type first, then edit if desired.</h4>
 					<form name = "selectCourse">
@@ -148,7 +148,7 @@ program structure (design):
 					<textarea class="transparent-input boxShadow" id="allCoursesNeeded" rows="9" cols="40"></textarea>
 					</textarea>
 				</div>
-				<div class = "col-xs-6">
+				<div class = "col-xs-6" align="center">
 					<button type="button" class="btn btn-default btn-lg" onclick="scheduleSubmit();" >
 					  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Update
 					</button>
@@ -156,12 +156,12 @@ program structure (design):
 			</div>
 			<!-- Output Row Container -->
 			<div class = "row">
-				<div class = "col-xs-6">
+				<div class = "col-xs-6" align="center">
 					<h2>3. Courses Needed, But Not Taken, and Eligible for Registration</h2>
 					<p>Courses needed for degree, but not yet taken, and all prereqs taken</p>
 					<select size="12" class="transparent-input boxShadow" multiple class="form-control" id="id02"></select>
 				</div>
-				<div class = "col-xs-6">
+				<div class = "col-xs-6" align="center">
 					<h2>4. Courses Needed But Not Yet Eligible for Registration</h2>
 					<p>Courses needed for degree, but not yet taken, and NOT all prereqs taken</p>
 					<textarea class="transparent-input boxShadow" id="neededButNotEligible" rows="10" cols="40" readonly ></textarea>

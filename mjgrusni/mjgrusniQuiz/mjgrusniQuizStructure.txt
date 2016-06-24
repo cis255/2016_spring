@@ -1,0 +1,18 @@
+.html file:
+	1. Create HTML page with input field, button, and output field
+	2. Set the default contents of the input field
+	3. Use jQuery to sort and display elements from the input that do 
+		not end in the letter "e" when the button is pressed
+	<head>: 
+		Meta Data
+		jQuery
+	<body>: 
+		input field
+		sort button
+		output area
+.js file:
+	1. Wait for document to be ready
+	2. Wait for a click event from the button
+	3. Parse input field into a string array1
+	4. Perform a bubble sort on the data
+	5. Display only the sorted elements which do not end in the letter "e"
