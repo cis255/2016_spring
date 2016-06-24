@@ -49,7 +49,7 @@ $(document).ready(function() {
 	var id = "myChart3";
 	defineChart(id, 'bar') ;
 	
-	$("#jqxcalendar").jqxCalendar({ width: '250px', height: '250px' });
+	$("#jqxcalendar").jqxCalendar({ width: '150px', height: '150px' });
 	$("#jqxcalendar2").jqxCalendar({ width: '250px', height: '250px' });
 	$("#jqxcalendar3").jqxCalendar({ width: '250px', height: '250px' });
 	
